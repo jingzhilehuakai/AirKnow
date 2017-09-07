@@ -1,0 +1,10 @@
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/../Carthage/Build/iOS"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AirKnow"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited)  -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AirKnow"
+OTHER_LDFLAGS = $(inherited) -framework "AFNetworking" -framework "AwesomeCache" -framework "CHIPageControl" -framework "Foundation" -framework "IGListKit" -framework "ScrollableGraphView" -framework "SnapKit" -framework "SwifterSwift" -framework "SwiftyJSON" -framework "XLPagerTabStrip"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
+PODS_ROOT = ${SRCROOT}/Pods

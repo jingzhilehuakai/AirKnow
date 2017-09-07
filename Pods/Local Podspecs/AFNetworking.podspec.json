@@ -1,0 +1,25 @@
+{
+  "name": "AFNetworking",
+  "version": "3.1.0",
+  "license": "MIT",
+  "summary": "A delightful iOS and OS X networking framework.",
+  "homepage": "https://github.com/AFNetworking/AFNetworking",
+  "social_media_url": "https://twitter.com/AFNetworking",
+  "authors": {
+    "Mattt Thompson": "m@mattt.me"
+  },
+  "source": {
+    "git": "https://github.com/AFNetworking/AFNetworking.git",
+    "tag": "3.1.0",
+    "submodules": true
+  },
+  "requires_arc": true,
+  "vendored_frameworks": "Carthage/Build/iOS/AFNetworking.framework",
+  "frameworks": "Foundation",
+  "platforms": {
+    "osx": null,
+    "ios": null,
+    "tvos": null,
+    "watchos": null
+  }
+}

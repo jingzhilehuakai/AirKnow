@@ -1,0 +1,6 @@
+framework module Pods_AirKnow {
+  umbrella header "Pods-AirKnow-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C411F351F5F9B47006F0F47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C411F341F5F9B47006F0F47 /* Assets.xcassets */; };
+		2C411F381F5F9B47006F0F47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C411F361F5F9B47006F0F47 /* LaunchScreen.storyboard */; };
+		2C411F431F6054E5006F0F47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C411F421F6054E5006F0F47 /* AppDelegate.swift */; };
+		2C411F451F605519006F0F47 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C411F441F605519006F0F47 /* ViewConfiguration.swift */; };
+		2C411F481F60ED63006F0F47 /* UIColor+AirKnow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C411F471F60ED63006F0F47 /* UIColor+AirKnow.swift */; };
+		2C411F4B1F60F1E7006F0F47 /* AirKnowConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C411F4A1F60F1E7006F0F47 /* AirKnowConfig.swift */; };
+		B298555DF5896369162E7A11 /* Pods_AirKnow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122842FD00251EE27B052477 /* Pods_AirKnow.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		122842FD00251EE27B052477 /* Pods_AirKnow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirKnow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C411F2A1F5F9B47006F0F47 /* AirKnow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirKnow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C411F341F5F9B47006F0F47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2C411F371F5F9B47006F0F47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2C411F391F5F9B47006F0F47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C411F421F6054E5006F0F47 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2C411F441F605519006F0F47 /* ViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
+		2C411F471F60ED63006F0F47 /* UIColor+AirKnow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+AirKnow.swift"; sourceTree = "<group>"; };
+		2C411F4A1F60F1E7006F0F47 /* AirKnowConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirKnowConfig.swift; sourceTree = "<group>"; };
+		4D8B70FCC9BBECDF1C7C5776 /* Pods-AirKnow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirKnow.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirKnow/Pods-AirKnow.release.xcconfig"; sourceTree = "<group>"; };
+		B4F30F5B2DD3118CD6AF1121 /* Pods-AirKnow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirKnow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirKnow/Pods-AirKnow.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C411F271F5F9B47006F0F47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B298555DF5896369162E7A11 /* Pods_AirKnow.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0394AF29A4836DBD39381FBE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B4F30F5B2DD3118CD6AF1121 /* Pods-AirKnow.debug.xcconfig */,
+				4D8B70FCC9BBECDF1C7C5776 /* Pods-AirKnow.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2C411F211F5F9B47006F0F47 = {
+			isa = PBXGroup;
+			children = (
+				2C411F2C1F5F9B47006F0F47 /* AirKnow */,
+				2C411F2B1F5F9B47006F0F47 /* Products */,
+				0394AF29A4836DBD39381FBE /* Pods */,
+				FFFA4F207164537EE6CD45B0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2C411F2B1F5F9B47006F0F47 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C411F2A1F5F9B47006F0F47 /* AirKnow.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C411F2C1F5F9B47006F0F47 /* AirKnow */ = {
+			isa = PBXGroup;
+			children = (
+				2C411F491F60F1DC006F0F47 /* Helper */,
+				2C411F461F60ED2B006F0F47 /* Extensions */,
+				2C411F411F6054CA006F0F47 /* init */,
+				2C411F341F5F9B47006F0F47 /* Assets.xcassets */,
+				2C411F361F5F9B47006F0F47 /* LaunchScreen.storyboard */,
+				2C411F391F5F9B47006F0F47 /* Info.plist */,
+			);
+			path = AirKnow;
+			sourceTree = "<group>";
+		};
+		2C411F411F6054CA006F0F47 /* init */ = {
+			isa = PBXGroup;
+			children = (
+				2C411F421F6054E5006F0F47 /* AppDelegate.swift */,
+				2C411F441F605519006F0F47 /* ViewConfiguration.swift */,
+			);
+			path = init;
+			sourceTree = "<group>";
+		};
+		2C411F461F60ED2B006F0F47 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2C411F471F60ED63006F0F47 /* UIColor+AirKnow.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2C411F491F60F1DC006F0F47 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2C411F4A1F60F1E7006F0F47 /* AirKnowConfig.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		FFFA4F207164537EE6CD45B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				122842FD00251EE27B052477 /* Pods_AirKnow.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2C411F291F5F9B47006F0F47 /* AirKnow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C411F3C1F5F9B47006F0F47 /* Build configuration list for PBXNativeTarget "AirKnow" */;
+			buildPhases = (
+				EB71EB2F038F0A73A76D9A8F /* [CP] Check Pods Manifest.lock */,
+				2C411F261F5F9B47006F0F47 /* Sources */,
+				2C411F271F5F9B47006F0F47 /* Frameworks */,
+				2C411F281F5F9B47006F0F47 /* Resources */,
+				C709D66594CDBEE62116AE94 /* [CP] Embed Pods Frameworks */,
+				320A4CEF7B0518881DE23EA7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AirKnow;
+			productName = AirKnow;
+			productReference = 2C411F2A1F5F9B47006F0F47 /* AirKnow.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C411F221F5F9B47006F0F47 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "陈超邦";
+				TargetAttributes = {
+					2C411F291F5F9B47006F0F47 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = LW6H7DW53Z;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2C411F251F5F9B47006F0F47 /* Build configuration list for PBXProject "AirKnow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2C411F211F5F9B47006F0F47;
+			productRefGroup = 2C411F2B1F5F9B47006F0F47 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C411F291F5F9B47006F0F47 /* AirKnow */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C411F281F5F9B47006F0F47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C411F381F5F9B47006F0F47 /* LaunchScreen.storyboard in Resources */,
+				2C411F351F5F9B47006F0F47 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		320A4CEF7B0518881DE23EA7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AirKnow/Pods-AirKnow-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C709D66594CDBEE62116AE94 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AirKnow/Pods-AirKnow-frameworks.sh",
+				"${PODS_ROOT}/../Carthage/Build/iOS/AFNetworking.framework",
+				"${PODS_ROOT}/../Carthage/Build/iOS/AFNetworking.framework.dSYM",
+				"${PODS_ROOT}/../Carthage/Build/iOS/AwesomeCache.framework",
+				"${PODS_ROOT}/../Carthage/Build/iOS/AwesomeCache.framework.dSYM",
+				"${PODS_ROOT}/../Carthage/Build/iOS/IGListKit.framework",
+				"${PODS_ROOT}/../Carthage/Build/iOS/IGListKit.framework.dSYM",
+				"${PODS_ROOT}/../Carthage/Build/iOS/SnapKit.framework",
+				"${PODS_ROOT}/../Carthage/Build/iOS/SnapKit.framework.dSYM",
+				"${PODS_ROOT}/../Carthage/Build/iOS/ScrollableGraphView.framework",
+				"${PODS_ROOT}/../Carthage/Build/iOS/ScrollableGraphView.framework.dSYM",
+				"${PODS_ROOT}/../Carthage/Build/iOS/SwiftyJSON.framework",
+				"${PODS_ROOT}/../Carthage/Build/iOS/SwiftyJSON.framework.dSYM",
+				"${PODS_ROOT}/../Carthage/Build/iOS/XLPagerTabStrip.framework",
+				"${PODS_ROOT}/../Carthage/Build/iOS/XLPagerTabStrip.framework.dSYM",
+				"${PODS_ROOT}/../Carthage/Build/iOS/CHIPageControl.framework",
+				"${PODS_ROOT}/../Carthage/Build/iOS/CHIPageControl.framework.dSYM",
+				"${PODS_ROOT}/../Carthage/Build/iOS/SwifterSwift.framework",
+				"${PODS_ROOT}/../Carthage/Build/iOS/SwifterSwift.framework.dSYM",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/AFNetworking.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AwesomeCache.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/AwesomeCache.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/IGListKit.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/SnapKit.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScrollableGraphView.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/ScrollableGraphView.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/SwiftyJSON.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/XLPagerTabStrip.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CHIPageControl.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/CHIPageControl.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/SwifterSwift.framework.dSYM",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AirKnow/Pods-AirKnow-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB71EB2F038F0A73A76D9A8F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AirKnow-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C411F261F5F9B47006F0F47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C411F451F605519006F0F47 /* ViewConfiguration.swift in Sources */,
+				2C411F431F6054E5006F0F47 /* AppDelegate.swift in Sources */,
+				2C411F481F60ED63006F0F47 /* UIColor+AirKnow.swift in Sources */,
+				2C411F4B1F60F1E7006F0F47 /* AirKnowConfig.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2C411F361F5F9B47006F0F47 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C411F371F5F9B47006F0F47 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2C411F3A1F5F9B47006F0F47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2C411F3B1F5F9B47006F0F47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2C411F3D1F5F9B47006F0F47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4F30F5B2DD3118CD6AF1121 /* Pods-AirKnow.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LW6H7DW53Z;
+				INFOPLIST_FILE = AirKnow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenchaobang.AirKnow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		2C411F3E1F5F9B47006F0F47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D8B70FCC9BBECDF1C7C5776 /* Pods-AirKnow.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LW6H7DW53Z;
+				INFOPLIST_FILE = AirKnow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenchaobang.AirKnow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C411F251F5F9B47006F0F47 /* Build configuration list for PBXProject "AirKnow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C411F3A1F5F9B47006F0F47 /* Debug */,
+				2C411F3B1F5F9B47006F0F47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C411F3C1F5F9B47006F0F47 /* Build configuration list for PBXNativeTarget "AirKnow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C411F3D1F5F9B47006F0F47 /* Debug */,
+				2C411F3E1F5F9B47006F0F47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C411F221F5F9B47006F0F47 /* Project object */;
+}
