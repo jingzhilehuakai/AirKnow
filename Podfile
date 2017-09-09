@@ -6,8 +6,17 @@ use_frameworks!
 
 # COCOAPOD INSTALLER
 def startPodInstaller
-	# DEPENDENCY
-	pod 'AirKnow', :path => './'
+	# pod 'AirKnow', :path => './'
+
+	pod 'AFNetworking'
+	pod 'AwesomeCache'
+	pod 'IGListKit'
+	pod 'SnapKit'
+	pod 'ScrollableGraphView'
+	pod 'SwiftyJSON'
+	pod 'SwifterSwift'
+	pod 'CHIPageControl'
+	pod 'SwiftTheme'
 end
 
 # TARGET 'AIRKNOW' ACTION

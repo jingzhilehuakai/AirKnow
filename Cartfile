@@ -10,9 +10,9 @@ github "SnapKit/SnapKit"
 github "philackm/ScrollableGraphView"
 # JSON
 github "SwiftyJSON/SwiftyJSON"
-# PAGER
-github "xmartlabs/XLPagerTabStrip"
-# PAGERCONTROLLER
-github "ChiliLabs/CHIPageControl"
 # EXTENSION
 github "SwifterSwift/SwifterSwift"
+# PAGECONTROL
+github "ChiliLabs/CHIPageControl"
+# THEME
+github "jiecao-fm/SwiftTheme"

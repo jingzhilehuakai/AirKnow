@@ -11,8 +11,12 @@
 		2C411F381F5F9B47006F0F47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C411F361F5F9B47006F0F47 /* LaunchScreen.storyboard */; };
 		2C411F431F6054E5006F0F47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C411F421F6054E5006F0F47 /* AppDelegate.swift */; };
 		2C411F451F605519006F0F47 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C411F441F605519006F0F47 /* ViewConfiguration.swift */; };
-		2C411F481F60ED63006F0F47 /* UIColor+AirKnow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C411F471F60ED63006F0F47 /* UIColor+AirKnow.swift */; };
 		2C411F4B1F60F1E7006F0F47 /* AirKnowConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C411F4A1F60F1E7006F0F47 /* AirKnowConfig.swift */; };
+		2C411F691F629FAE006F0F47 /* UITabbar+AirKnow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C411F681F629FAE006F0F47 /* UITabbar+AirKnow.swift */; };
+		2C411F801F63AAAF006F0F47 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C411F7D1F63AAAF006F0F47 /* HomePageViewController.swift */; };
+		2C411F811F63AAAF006F0F47 /* HomePageAirCoditionSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C411F7E1F63AAAF006F0F47 /* HomePageAirCoditionSectionController.swift */; };
+		2C411F821F63AAAF006F0F47 /* HomePageSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C411F7F1F63AAAF006F0F47 /* HomePageSectionViewController.swift */; };
+		2C411F841F63AADD006F0F47 /* HomePageTabbrControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C411F831F63AADD006F0F47 /* HomePageTabbrControllerViewController.swift */; };
 		B298555DF5896369162E7A11 /* Pods_AirKnow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122842FD00251EE27B052477 /* Pods_AirKnow.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,8 +28,12 @@
 		2C411F391F5F9B47006F0F47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C411F421F6054E5006F0F47 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C411F441F605519006F0F47 /* ViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
-		2C411F471F60ED63006F0F47 /* UIColor+AirKnow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+AirKnow.swift"; sourceTree = "<group>"; };
 		2C411F4A1F60F1E7006F0F47 /* AirKnowConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirKnowConfig.swift; sourceTree = "<group>"; };
+		2C411F681F629FAE006F0F47 /* UITabbar+AirKnow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabbar+AirKnow.swift"; sourceTree = "<group>"; };
+		2C411F7D1F63AAAF006F0F47 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		2C411F7E1F63AAAF006F0F47 /* HomePageAirCoditionSectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageAirCoditionSectionController.swift; sourceTree = "<group>"; };
+		2C411F7F1F63AAAF006F0F47 /* HomePageSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageSectionViewController.swift; sourceTree = "<group>"; };
+		2C411F831F63AADD006F0F47 /* HomePageTabbrControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageTabbrControllerViewController.swift; sourceTree = "<group>"; };
 		4D8B70FCC9BBECDF1C7C5776 /* Pods-AirKnow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirKnow.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirKnow/Pods-AirKnow.release.xcconfig"; sourceTree = "<group>"; };
 		B4F30F5B2DD3118CD6AF1121 /* Pods-AirKnow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirKnow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirKnow/Pods-AirKnow.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,9 +80,11 @@
 		2C411F2C1F5F9B47006F0F47 /* AirKnow */ = {
 			isa = PBXGroup;
 			children = (
-				2C411F491F60F1DC006F0F47 /* Helper */,
-				2C411F461F60ED2B006F0F47 /* Extensions */,
+				2C411F641F629F11006F0F47 /* Views */,
 				2C411F411F6054CA006F0F47 /* init */,
+				2C411F461F60ED2B006F0F47 /* Extensions */,
+				2C411F491F60F1DC006F0F47 /* Helper */,
+				2C411F551F6239ED006F0F47 /* ViewControllers */,
 				2C411F341F5F9B47006F0F47 /* Assets.xcassets */,
 				2C411F361F5F9B47006F0F47 /* LaunchScreen.storyboard */,
 				2C411F391F5F9B47006F0F47 /* Info.plist */,
@@ -94,7 +104,7 @@
 		2C411F461F60ED2B006F0F47 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				2C411F471F60ED63006F0F47 /* UIColor+AirKnow.swift */,
+				2C411F681F629FAE006F0F47 /* UITabbar+AirKnow.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -105,6 +115,40 @@
 				2C411F4A1F60F1E7006F0F47 /* AirKnowConfig.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		2C411F551F6239ED006F0F47 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2C411F7C1F63AAAF006F0F47 /* HomePage */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2C411F641F629F11006F0F47 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C411F651F629F1A006F0F47 /* Tabbar */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2C411F651F629F1A006F0F47 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		2C411F7C1F63AAAF006F0F47 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				2C411F831F63AADD006F0F47 /* HomePageTabbrControllerViewController.swift */,
+				2C411F7D1F63AAAF006F0F47 /* HomePageViewController.swift */,
+				2C411F7E1F63AAAF006F0F47 /* HomePageAirCoditionSectionController.swift */,
+				2C411F7F1F63AAAF006F0F47 /* HomePageSectionViewController.swift */,
+			);
+			path = HomePage;
 			sourceTree = "<group>";
 		};
 		FFFA4F207164537EE6CD45B0 /* Frameworks */ = {
@@ -208,45 +252,27 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AirKnow/Pods-AirKnow-frameworks.sh",
-				"${PODS_ROOT}/../Carthage/Build/iOS/AFNetworking.framework",
-				"${PODS_ROOT}/../Carthage/Build/iOS/AFNetworking.framework.dSYM",
-				"${PODS_ROOT}/../Carthage/Build/iOS/AwesomeCache.framework",
-				"${PODS_ROOT}/../Carthage/Build/iOS/AwesomeCache.framework.dSYM",
-				"${PODS_ROOT}/../Carthage/Build/iOS/IGListKit.framework",
-				"${PODS_ROOT}/../Carthage/Build/iOS/IGListKit.framework.dSYM",
-				"${PODS_ROOT}/../Carthage/Build/iOS/SnapKit.framework",
-				"${PODS_ROOT}/../Carthage/Build/iOS/SnapKit.framework.dSYM",
-				"${PODS_ROOT}/../Carthage/Build/iOS/ScrollableGraphView.framework",
-				"${PODS_ROOT}/../Carthage/Build/iOS/ScrollableGraphView.framework.dSYM",
-				"${PODS_ROOT}/../Carthage/Build/iOS/SwiftyJSON.framework",
-				"${PODS_ROOT}/../Carthage/Build/iOS/SwiftyJSON.framework.dSYM",
-				"${PODS_ROOT}/../Carthage/Build/iOS/XLPagerTabStrip.framework",
-				"${PODS_ROOT}/../Carthage/Build/iOS/XLPagerTabStrip.framework.dSYM",
-				"${PODS_ROOT}/../Carthage/Build/iOS/CHIPageControl.framework",
-				"${PODS_ROOT}/../Carthage/Build/iOS/CHIPageControl.framework.dSYM",
-				"${PODS_ROOT}/../Carthage/Build/iOS/SwifterSwift.framework",
-				"${PODS_ROOT}/../Carthage/Build/iOS/SwifterSwift.framework.dSYM",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/AwesomeCache/AwesomeCache.framework",
+				"${BUILT_PRODUCTS_DIR}/CHIPageControl/CHIPageControl.framework",
+				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ScrollableGraphView/ScrollableGraphView.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftTheme/SwiftTheme.framework",
+				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/AFNetworking.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AwesomeCache.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/AwesomeCache.framework.dSYM",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/IGListKit.framework.dSYM",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/SnapKit.framework.dSYM",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScrollableGraphView.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/ScrollableGraphView.framework.dSYM",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/SwiftyJSON.framework.dSYM",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/XLPagerTabStrip.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CHIPageControl.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/CHIPageControl.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScrollableGraphView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftTheme.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/SwifterSwift.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -279,9 +305,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C411F451F605519006F0F47 /* ViewConfiguration.swift in Sources */,
+				2C411F811F63AAAF006F0F47 /* HomePageAirCoditionSectionController.swift in Sources */,
+				2C411F841F63AADD006F0F47 /* HomePageTabbrControllerViewController.swift in Sources */,
 				2C411F431F6054E5006F0F47 /* AppDelegate.swift in Sources */,
-				2C411F481F60ED63006F0F47 /* UIColor+AirKnow.swift in Sources */,
+				2C411F691F629FAE006F0F47 /* UITabbar+AirKnow.swift in Sources */,
+				2C411F801F63AAAF006F0F47 /* HomePageViewController.swift in Sources */,
 				2C411F4B1F60F1E7006F0F47 /* AirKnowConfig.swift in Sources */,
+				2C411F821F63AAAF006F0F47 /* HomePageSectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

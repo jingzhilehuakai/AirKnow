@@ -15,9 +15,9 @@ Pod::Spec.new do |s|
   "Carthage/Build/iOS/SnapKit.framework",
   "Carthage/Build/iOS/ScrollableGraphView.framework",
   "Carthage/Build/iOS/SwiftyJSON.framework",
-  "Carthage/Build/iOS/XLPagerTabStrip.framework",
+  "Carthage/Build/iOS/SwifterSwift.framework",
   "Carthage/Build/iOS/CHIPageControl.framework",
-  "Carthage/Build/iOS/SwifterSwift.framework"
+  "Carthage/Build/iOS/SwiftTheme.framework"
 
-  s.frameworks = 'Foundation'
+  s.frameworks = 'Foundation, CoreGraphics, Security, MobileCoreServices, SystemConfiguration, UIKit'
 end

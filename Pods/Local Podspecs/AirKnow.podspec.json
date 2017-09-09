@@ -21,9 +21,9 @@
     "Carthage/Build/iOS/SnapKit.framework",
     "Carthage/Build/iOS/ScrollableGraphView.framework",
     "Carthage/Build/iOS/SwiftyJSON.framework",
-    "Carthage/Build/iOS/XLPagerTabStrip.framework",
+    "Carthage/Build/iOS/SwifterSwift.framework",
     "Carthage/Build/iOS/CHIPageControl.framework",
-    "Carthage/Build/iOS/SwifterSwift.framework"
+    "Carthage/Build/iOS/SwiftTheme.framework"
   ],
   "frameworks": "Foundation",
   "platforms": {

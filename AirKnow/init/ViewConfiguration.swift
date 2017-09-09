@@ -7,24 +7,22 @@
 //
 
 import UIKit
+import SnapKit
 import SwifterSwift
-import XLPagerTabStrip
+import SwiftTheme
 
 class ViewConfiguration: NSObject {
     
-    // View Configuration
+    // MARK: View Configuration
     class func setup(window: inout UIWindow?) {
         window = UIWindow.init(frame: UIScreen.main.bounds)
-        window?.rootViewController = self.tabbarConfiguration()
+        window?.rootViewController = HomePageTabbrControllerViewController()
         window?.makeKeyAndVisible()
+        
+        setupStatus()
     }
     
-    // Tabbar ViewController Configuration
-    class func tabbarConfiguration() -> UITabBarController {
-        let tabbarController = UITabBarController.init()
-        let tabFrame: CGRect = CGRect.init(x: tabbarController.tabBar.x, y: tabbarController.view.height - AirKnowConfig.airKnowTabbarHeight, width: tabbarController.tabBar.width, height: AirKnowConfig.airKnowTabbarHeight)
-        tabbarController.tabBar.frame = tabFrame
-        tabbarController.tabBar.backgroundImage = UIImage.init(color: UIColor.airKnowTabbarColor(), size: tabbarController.tabBar.frame.size)
-        return tabbarController
+    class func setupStatus() {
+        UIApplication.shared.theme_setStatusBarStyle(AirKnowConfig.airKnowGlobalStatusBarStringStyles, animated: true)
     }
 }
