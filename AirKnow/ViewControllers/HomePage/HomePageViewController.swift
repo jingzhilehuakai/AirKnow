@@ -43,7 +43,7 @@ class HomePageViewController: UIViewController {
         adapter.dataSource = self
         adapter.scrollViewDelegate = self
         
-        ThemeManager.setTheme(index: 1)
+        ThemeManager.setTheme(index: AirKnowConfig.airKnowTheme.dark.rawValue)
     }
     
     override func viewDidLayoutSubviews() {

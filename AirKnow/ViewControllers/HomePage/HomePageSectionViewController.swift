@@ -13,19 +13,28 @@ import SwiftTheme
 // MARK: HomePageSectionViewControllerCell, contanier of air cells
 final class HomePageSectionViewControllerCell: UICollectionViewCell {
     
+    // City Name Background View
+    lazy var locationName: MonitorLocationView = {
+        let locationNameInternal = MonitorLocationView.init(frame: self.contentView.frame)
+        locationNameInternal.theme_backgroundColor = AirKnowConfig.airKnowGlobalHomePageVCBGStringStyels
+        return locationNameInternal
+    }()
+    
+    // CollectionView Above CityBGView
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        view.theme_backgroundColor = AirKnowConfig.airKnowGlobalHomePageVCBGStringStyels
-        view.alwaysBounceHorizontal = false
-        self.contentView.addSubview(view)
-        return view
+        let collectionViewInternal = UICollectionView(frame: self.locationName.frame, collectionViewLayout: layout)
+        collectionViewInternal.backgroundColor = UIColor.clear
+        collectionViewInternal.alwaysBounceHorizontal = false
+        collectionViewInternal.contentInset = UIEdgeInsets.init(top: AirKnowConfig.airKnowHomePageCollectionViewEdgePadding, left: 0, bottom: 0, right: 0)
+        return collectionViewInternal
     }()
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        collectionView.frame = contentView.frame
+        contentView.addSubview(locationName)
+        contentView.addSubview(collectionView)
     }
 }
 
@@ -50,7 +59,6 @@ class HomePageSectionViewController: ListSectionController {
             fatalError()
         }
         adapter.collectionView = cell.collectionView
-        
         return cell
     }
     
@@ -59,16 +67,20 @@ class HomePageSectionViewController: ListSectionController {
     }
 }
 
-
 // MARK: ListAdapterDataSource
 extension HomePageSectionViewController: ListAdapterDataSource {
     
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return [0 as ListDiffable]
+        return [AirConditionStatusModel(AQI: 0, status: "", warmLog: "") as ListDiffable,
+                0 as ListDiffable]
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        return HomePageAirCoditionSectionController()
+        if object is AirConditionStatusModel {
+            return HomePageAirCoditionStatusSectionController()
+        } else {
+            return HomePageAirCoditionSectionController()
+        }
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
