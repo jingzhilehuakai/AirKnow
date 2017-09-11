@@ -24,6 +24,9 @@ final class AirKnowConfig {
         return CGSize.init(width: size.width * screenProportion, height: size.height * screenProportion)
     }
     
+    // Associate Object
+    static let homePageSectionViewControllerCellAssociateString = "homePageSectionViewControllerCellAssociateString"
+    
     // Tabbar
     static let tabbarHeight: CGFloat = AirKnowConfig.ajustLength(40.0)
 

@@ -10,39 +10,9 @@ import IGListKit
 import SwifterSwift
 import SwiftTheme
 
-// MARK: HomePageSectionViewControllerCell, contanier of air cells
-final class HomePageSectionViewControllerCell: UICollectionViewCell {
-    
-    // Location Name Background View
-    lazy var location: MonitorLocationView = {
-        let locationInternal = MonitorLocationView.init(frame: self.contentView.frame)
-        locationInternal.theme_backgroundColor = AirKnowConfig.homePageVCBGStringStyels
-        return locationInternal
-    }()
-    
-    // CollectionView Above CityBGView
-    lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        let collectionViewInternal = UICollectionView(frame: self.location.frame, collectionViewLayout: layout)
-        collectionViewInternal.backgroundColor = UIColor.clear
-        collectionViewInternal.alwaysBounceHorizontal = false
-        collectionViewInternal.showsVerticalScrollIndicator = false
-        collectionViewInternal.showsHorizontalScrollIndicator = false
-        collectionViewInternal.contentInset = UIEdgeInsets.init(top: AirKnowConfig.homePageCollectionViewEdgeTopPadding, left: 0, bottom: 0, right: 0)
-        return collectionViewInternal
-    }()
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        contentView.addSubview(location)
-        contentView.addSubview(collectionView)
-    }
-}
-
 // MARK: HomePageSectionViewController, container of tableview
 class HomePageSectionViewController: ListSectionController {
-    
+        
     // MARK: List Adapter
     lazy var adapter: ListAdapter = {
         let adapter = ListAdapter(updater: ListAdapterUpdater(),
@@ -61,17 +31,33 @@ class HomePageSectionViewController: ListSectionController {
             fatalError()
         }
         adapter.collectionView = cell.collectionView
-        
+        adapter.scrollViewDelegate = self
         
         cell.location.locationName.text = "BeiJing"
         cell.location.updateTime.text = "21.02.2017 00:00"
-        
         
         return cell
     }
     
     override func didUpdate(to object: Any) {
-    
+        
+    }
+}
+
+// ScrollView Delegate
+extension HomePageSectionViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY: CGFloat = scrollView.contentOffset.y
+        if offsetY + AirKnowConfig.homePageCollectionViewEdgeTopPadding > 0 {
+            var alpha = 1 - (offsetY + AirKnowConfig.homePageCollectionViewEdgeTopPadding) / AirKnowConfig.homePageCollectionViewEdgeTopPadding
+            alpha = alpha <= 0 ? 0 : alpha >= 1 ? 1 : alpha
+            let superView = scrollView.superview?.superview
+            if superView is HomePageSectionViewControllerCell {
+                let cell: HomePageSectionViewControllerCell = superView as! HomePageSectionViewControllerCell
+                cell.location.locationName.alpha = alpha
+                cell.location.updateTime.alpha = alpha
+            }
+        }
     }
 }
 

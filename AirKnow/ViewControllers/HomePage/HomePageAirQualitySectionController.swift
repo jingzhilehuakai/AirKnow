@@ -30,13 +30,15 @@ class HomePageAirQualitySectionController: ListSectionController {
         guard let cell = collectionContext?.dequeueReusableCell(of: HomePageAirQualitySectionControllerCell.self, for: self, at: index) as? HomePageAirQualitySectionControllerCell else {
             fatalError()
         }
+        
          cell.pollutionMaterialName.text = "Particular Matter"
          cell.pollutionMaterialProfessionName.text = "PM10:"
          cell.pollutionNumber.text = "888"
          cell.pollutionUnit.text = "ug/m3"
          cell.percentageNumber.text = "500%"
          cell.normalStandardNumber.text = "50 ug/m"
-        cell.normalHolderLabel.text = "NORM"
+         cell.normalHolderLabel.text = "NORM"
+        
         return cell
     }
     

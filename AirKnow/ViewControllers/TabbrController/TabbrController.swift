@@ -11,7 +11,7 @@ import SwifterSwift
 import SwiftTheme
 import CHIPageControl
 
-class TabbrControllerViewController: UITabBarController {
+class TabbrController: UITabBarController {
 
     // MARK: Prompt Button
     lazy var promptButton: UIButton! = {
@@ -31,7 +31,6 @@ class TabbrControllerViewController: UITabBarController {
             ThemeManager.setTheme(index: AirKnowConfig.airKnowTheme.light.rawValue)
         }
     }
-
     
     // MARK: Add Location Button
     lazy var addLoadtionButton: UIButton! = {
@@ -51,7 +50,7 @@ class TabbrControllerViewController: UITabBarController {
     }()
     
     // Layout Views
-    func layoutSubViews() {
+    func layoutViews() {
         // MARK: Setup Prompt Button
         func setupPromptButton() {
             self.tabBar.addSubview(promptButton)
@@ -90,8 +89,7 @@ class TabbrControllerViewController: UITabBarController {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-    
+        
         // Setup Shadows Image
         tabBar.shadowImage = UIImage.init(color: UIColor.clear, size: tabBar.frame.size)
         
@@ -103,15 +101,20 @@ class TabbrControllerViewController: UITabBarController {
         }
         setupHomePageViewController()
         
+        super.viewDidLoad()
+        
         // MARK: Setup Theme Color
         self.tabBar.theme_backgroundColor = AirKnowConfig.tabbarStringStyles
-        
-        layoutSubViews()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        layoutViews()
     }
 
     /*
