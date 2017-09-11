@@ -146,3 +146,54 @@ final class AirKnowConfig {
     //MARK: Holder Label
     static let homePageAirQualitySectionControllerCellNormalHolderStringStyles: ThemeColorPicker = ["#999999", "#494949"]
 }
+
+// MARK: - The Configuration of AirQualityStatusView
+extension AirKnowConfig {
+    
+    // AirQualityStatusView TitleButton
+    static let airKnowAQSTitleButtonFont: UIFont = UIFont(name: "Futura-Medium", size: 27)!
+    static let airKnowAQSTitleButtonLeftPadding: CGFloat = AirKnowConfig.ajustLength(10)
+    static let airKnowAQSTitleButtonRightPadding: CGFloat = -AirKnowConfig.ajustLength(10)
+    static let airKnowAQSTitleButtonTopPadding: CGFloat = AirKnowConfig.ajustLength(0)
+    static let airKnowAQSTitleButtonHeight: CGFloat = AirKnowConfig.ajustLength(35)
+    static let airKnowAQSTitleButtonDefaultNameString: String = "Good"
+    
+    // AirQualityStatusView TriangleIndicator
+    static let airKnowAQSTriangleIndicatorTopPadding: CGFloat = AirKnowConfig.ajustLength(0)
+    static let airKnowAQSTriangleIndicatorHeight: CGFloat = AirKnowConfig.ajustLength(8)
+    static let airKnowAQSTriangleIndicatorWidth: CGFloat = AirKnowConfig.ajustLength(8)
+    static let airKnowAQSTriangleIndicatorImageStringStyles: ThemeImagePicker = ["triangleIndicator_gray", "triangleIndicator_white"]
+    
+    // AirQualityStatusView ProgressView
+    static let airKnowAQSProgressTopPadding: CGFloat = AirKnowConfig.ajustLength(2)
+    static let airKnowAQSProgressHeight: CGFloat = AirKnowConfig.ajustLength(3)
+    static let airKnowAQSProgressSectionWidth: CGFloat = AirKnowConfig.ajustLength(10)
+    static let airKnowAQSProgressLineWidth: CGFloat = AirKnowConfig.ajustLength(0.5)
+    
+    static let airKnowAQSProgressBackgroundStyles: ThemeCGColorPicker = ["#DCDCDC", "#4A4A4A"]
+    static let airKnowAQSProgressLineStyles: ThemeCGColorPicker = ["#FFFFFF", "#000000"]
+    
+    // AirQualityStatusView DescriptionLabel
+    static let airKnowAQSDescriptionLabelFont: UIFont = UIFont(name: "HiraKakuProN-W3", size: AirKnowConfig.ajustLength(10))!
+    static let airKnowAQSDescriptionLabelLeftPadding: CGFloat = AirKnowConfig.ajustLength(10)
+    static let airKnowAQSDescriptionLabelRightPadding: CGFloat = -AirKnowConfig.ajustLength(10)
+    static let airKnowAQSDescriptionLabelTopPadding: CGFloat = AirKnowConfig.ajustLength(5)
+    static let airKnowAQSDescriptionLabelBottomPadding: CGFloat = AirKnowConfig.ajustLength(0)
+    static let airKnowAQSDescriptionLabelHeight: CGFloat = AirKnowConfig.ajustLength(20)
+    static let airKnowAQSDescriptionLabelDefaultNameString: String = "Perfect Quilty!"
+    
+    static let airKnowAQSDescriptionLabelStringStyles: ThemeColorPicker = ["#4A4A4A", "#4A4A4A"]
+    
+    // AirQualityStatusView Status
+    static let airKonwAQSTypeCount: NSInteger = 6
+    
+    static let airKnowAQSGoodStyles: ThemeColorPicker = ["#009966", "#009966"]
+    static let airKnowAQSModerateStyles: ThemeColorPicker = ["#ffde33", "#ffde33"]
+    static let airKnowAQSUnhealthyForSensitiveGroupsStyles: ThemeColorPicker = ["#FF9933", "#FF9933"]
+    static let airKnowAQSUnhealthyStyles: ThemeColorPicker = ["#CC0033", "#CC0033"]
+    static let airKnowAQSVeryUnhealthyStyles: ThemeColorPicker = ["#660099", "#660099"]
+    static let airKnowAQSHazardousStyles: ThemeColorPicker = ["#7E0023", "#7E0023"]
+    
+    static let airKnowAQSViewHeight: CGFloat = airKnowAQSTitleButtonTopPadding + airKnowAQSTitleButtonHeight + airKnowAQSTriangleIndicatorTopPadding + airKnowAQSTriangleIndicatorHeight + airKnowAQSProgressTopPadding + airKnowAQSProgressHeight + airKnowAQSDescriptionLabelTopPadding + airKnowAQSDescriptionLabelHeight + airKnowAQSDescriptionLabelBottomPadding
+
+}
