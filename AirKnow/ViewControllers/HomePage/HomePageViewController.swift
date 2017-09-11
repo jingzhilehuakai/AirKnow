@@ -14,7 +14,13 @@ import CHIPageControl
 
 class HomePageViewController: UIViewController {
     
+    //MARK: Origin Section Index
+    var originIndex: NSInteger = 0
+    
+    // MARK: Page Contrl
     var pageControl: CHIPageControlJalapeno?
+    
+    // ...
     var numberOfPages = 3
     
     // MARK: List Adapter
@@ -79,7 +85,8 @@ extension HomePageViewController: ListAdapterDataSource {
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        return HomePageSectionViewController()
+        let homePageSectionViewController = HomePageSectionViewController()
+        return homePageSectionViewController
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
@@ -99,6 +106,12 @@ extension HomePageViewController: UIScrollViewDelegate {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        //let currentIndex: NSInteger = NSInteger(fabs(collectionView.contentOffset.x) / collectionView.frame.size.width);
+        let currentIndex: NSInteger = NSInteger(fabs(collectionView.contentOffset.x) / collectionView.frame.size.width);
+        if originIndex != currentIndex {
+            let homePageSectionViewController: HomePageSectionViewController = adapter.sectionController(forSection: originIndex) as! HomePageSectionViewController
+            homePageSectionViewController.retentionCell?.collectionView.setContentOffset(CGPoint.init(x: 0, y: -AirKnowConfig.homePageCollectionViewEdgeTopPadding), animated: false)
+            homePageSectionViewController.retentionCell?.location.setAlpppha(1)
+        }
+        originIndex = currentIndex
     }
 }

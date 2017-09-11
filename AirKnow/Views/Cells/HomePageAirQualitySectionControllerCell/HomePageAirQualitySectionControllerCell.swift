@@ -80,7 +80,7 @@ class HomePageAirQualitySectionControllerCell: UICollectionViewCell {
         percentageNumberInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellPercentNumberStringStyles
         percentageNumberInternal.textAlignment = NSTextAlignment.center
         percentageNumberInternal.theme_backgroundColor = AirKnowConfig.homePageAirQualitySectionControllerCellNODataBGStringStyles
-
+        percentageNumberInternal.font = AirKnowConfig.homePageAirQualitySectionControllerCelPercentNumberFont
         percentageNumberInternal.layer.cornerRadius = 2
         return percentageNumberInternal
     }()

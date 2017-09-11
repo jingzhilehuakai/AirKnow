@@ -12,7 +12,10 @@ import SwiftTheme
 
 // MARK: HomePageSectionViewController, container of tableview
 class HomePageSectionViewController: ListSectionController {
-        
+    
+    // MARK: Retention Cell
+    var retentionCell: HomePageSectionViewControllerCell?
+    
     // MARK: List Adapter
     lazy var adapter: ListAdapter = {
         let adapter = ListAdapter(updater: ListAdapterUpdater(),
@@ -30,8 +33,11 @@ class HomePageSectionViewController: ListSectionController {
         guard let cell = collectionContext?.dequeueReusableCell(of: HomePageSectionViewControllerCell.self, for: self, at: index) as? HomePageSectionViewControllerCell else {
             fatalError()
         }
+        
         adapter.collectionView = cell.collectionView
         adapter.scrollViewDelegate = self
+        
+        self.retentionCell = cell
         
         cell.location.locationName.text = "BeiJing"
         cell.location.updateTime.text = "21.02.2017 00:00"
@@ -54,8 +60,7 @@ extension HomePageSectionViewController: UIScrollViewDelegate {
             let superView = scrollView.superview?.superview
             if superView is HomePageSectionViewControllerCell {
                 let cell: HomePageSectionViewControllerCell = superView as! HomePageSectionViewControllerCell
-                cell.location.locationName.alpha = alpha
-                cell.location.updateTime.alpha = alpha
+                cell.location.setAlpppha(alpha)
             }
         }
     }

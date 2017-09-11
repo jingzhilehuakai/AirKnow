@@ -23,14 +23,14 @@ final class HomePageSectionViewControllerCell: UICollectionViewCell, UIScrollVie
         fatalError("init(coder:) has not been implemented")
     }
     
-    // Location Name Background View
+    //MARK: Location Name Background View
     lazy var location: MonitorLocationView = {
         let locationInternal = MonitorLocationView.init(frame: self.contentView.frame)
         locationInternal.theme_backgroundColor = AirKnowConfig.homePageVCBGStringStyels
         return locationInternal
     }()
     
-    // CollectionView Above CityBGView
+    //MARK: CollectionView Above CityBGView
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical

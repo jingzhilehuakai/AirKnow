@@ -10,7 +10,6 @@
 		2C411F351F5F9B47006F0F47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C411F341F5F9B47006F0F47 /* Assets.xcassets */; };
 		2C411F381F5F9B47006F0F47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C411F361F5F9B47006F0F47 /* LaunchScreen.storyboard */; };
 		2C411F4B1F60F1E7006F0F47 /* AirKnowConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C411F4A1F60F1E7006F0F47 /* AirKnowConfig.swift */; };
-		2C411F691F629FAE006F0F47 /* UITabbar+AirKnow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C411F681F629FAE006F0F47 /* UITabbar+AirKnow.swift */; };
 		2C411F801F63AAAF006F0F47 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C411F7D1F63AAAF006F0F47 /* HomePageViewController.swift */; };
 		2C411F811F63AAAF006F0F47 /* HomePageAirQualitySectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C411F7E1F63AAAF006F0F47 /* HomePageAirQualitySectionController.swift */; };
 		2C411F821F63AAAF006F0F47 /* HomePageSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C411F7F1F63AAAF006F0F47 /* HomePageSectionViewController.swift */; };
@@ -24,6 +23,7 @@
 		2C962F1C1F66734A0009FEC8 /* HomePageAirQualityStatusSectionControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C962F1A1F66734A0009FEC8 /* HomePageAirQualityStatusSectionControllerCell.swift */; };
 		2C962F1F1F66739E0009FEC8 /* TabbrController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C962F1E1F66739E0009FEC8 /* TabbrController.swift */; };
 		2C962F221F6673F20009FEC8 /* HomePageSectionViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C962F211F6673F20009FEC8 /* HomePageSectionViewControllerCell.swift */; };
+		2C962F241F66D2C00009FEC8 /* UITabbar+AirKnow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C962F231F66D2C00009FEC8 /* UITabbar+AirKnow.swift */; };
 		B298555DF5896369162E7A11 /* Pods_AirKnow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122842FD00251EE27B052477 /* Pods_AirKnow.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +34,6 @@
 		2C411F371F5F9B47006F0F47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C411F391F5F9B47006F0F47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C411F4A1F60F1E7006F0F47 /* AirKnowConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirKnowConfig.swift; sourceTree = "<group>"; };
-		2C411F681F629FAE006F0F47 /* UITabbar+AirKnow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabbar+AirKnow.swift"; sourceTree = "<group>"; };
 		2C411F7D1F63AAAF006F0F47 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		2C411F7E1F63AAAF006F0F47 /* HomePageAirQualitySectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageAirQualitySectionController.swift; sourceTree = "<group>"; };
 		2C411F7F1F63AAAF006F0F47 /* HomePageSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageSectionViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		2C962F1A1F66734A0009FEC8 /* HomePageAirQualityStatusSectionControllerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageAirQualityStatusSectionControllerCell.swift; sourceTree = "<group>"; };
 		2C962F1E1F66739E0009FEC8 /* TabbrController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbrController.swift; sourceTree = "<group>"; };
 		2C962F211F6673F20009FEC8 /* HomePageSectionViewControllerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageSectionViewControllerCell.swift; sourceTree = "<group>"; };
+		2C962F231F66D2C00009FEC8 /* UITabbar+AirKnow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabbar+AirKnow.swift"; sourceTree = "<group>"; };
 		4D8B70FCC9BBECDF1C7C5776 /* Pods-AirKnow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirKnow.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirKnow/Pods-AirKnow.release.xcconfig"; sourceTree = "<group>"; };
 		B4F30F5B2DD3118CD6AF1121 /* Pods-AirKnow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirKnow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirKnow/Pods-AirKnow.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,7 +110,7 @@
 		2C411F461F60ED2B006F0F47 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				2C411F681F629FAE006F0F47 /* UITabbar+AirKnow.swift */,
+				2C962F231F66D2C00009FEC8 /* UITabbar+AirKnow.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -378,11 +378,11 @@
 				2C4D719A1F643A5400EC9210 /* AppDelegate.swift in Sources */,
 				2C4D718F1F64318300EC9210 /* HomePageAirQualityStatusSectionController.swift in Sources */,
 				2C411F811F63AAAF006F0F47 /* HomePageAirQualitySectionController.swift in Sources */,
-				2C411F691F629FAE006F0F47 /* UITabbar+AirKnow.swift in Sources */,
 				2C962F1F1F66739E0009FEC8 /* TabbrController.swift in Sources */,
 				2C411F801F63AAAF006F0F47 /* HomePageViewController.swift in Sources */,
 				2C962F1B1F66734A0009FEC8 /* HomePageAirQualitySectionControllerCell.swift in Sources */,
 				2C4D718D1F642EB400EC9210 /* MonitorLocationView.swift in Sources */,
+				2C962F241F66D2C00009FEC8 /* UITabbar+AirKnow.swift in Sources */,
 				2C411F4B1F60F1E7006F0F47 /* AirKnowConfig.swift in Sources */,
 				2C4D718A1F642E8000EC9210 /* AirQualityStatusModel.swift in Sources */,
 				2C962F221F6673F20009FEC8 /* HomePageSectionViewControllerCell.swift in Sources */,

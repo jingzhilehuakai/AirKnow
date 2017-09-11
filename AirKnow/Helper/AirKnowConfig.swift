@@ -77,7 +77,7 @@ final class AirKnowConfig {
     static let homePageAirQualitySectionControllerCelPMPNheight: CGFloat = AirKnowConfig.homePageAirQualitySectionControllerCellHeight / 2.5
     // Home Page AirQuality SC Cell PN
     static let homePageAirQualitySectionControllerCelPNWidth: CGFloat = UIScreen.main.bounds.width / 8
-    static let homePageAirQualitySectionControllerCelPNFont: UIFont = UIFont.init(name: "HiraKakuProN-W3", size: AirKnowConfig.ajustLength(19.5))!
+    static let homePageAirQualitySectionControllerCelPNFont: UIFont = UIFont.init(name: "HiraKakuProN-W3", size: AirKnowConfig.ajustLength(19.0))!
     // Home Page AirQuality SC Cell PU
     static let homePageAirQualitySectionControllerCelPUWidth: CGFloat = UIScreen.main.bounds.width / 9.5
     static let homePageAirQualitySectionControllerCelPUFont: UIFont = UIFont.init(name: "HiraKakuProN-W3", size: AirKnowConfig.ajustLength(10.0))!
@@ -87,7 +87,7 @@ final class AirKnowConfig {
     // Home Page AirQuality SC Global Settiing
     static let homePageAirQualitySectionControllerCellElementsPadding: CGFloat = AirKnowConfig.ajustLength(2.0)
     // Home Page AirQuality SC Cell Percent Number
-    static let homePageAirQualitySectionControllerCelPercentNumberFont: UIFont = AirKnowConfig.homePageAirQualitySectionControllerCelPNFont
+    static let homePageAirQualitySectionControllerCelPercentNumberFont: UIFont = UIFont.init(name: "HiraKakuProN-W3", size: AirKnowConfig.ajustLength(17.5))!
     static let homePageAirQualitySectionControllerCelPercentNumberLeftPadding: CGFloat = AirKnowConfig.ajustLength(10.0)
     // Home Page AirQuality SC Cell Normal Standard Number
     static let homePageAirQualitySectionControllerCelNSNRightPadding: CGFloat = -AirKnowConfig.ajustLength(10.0)
