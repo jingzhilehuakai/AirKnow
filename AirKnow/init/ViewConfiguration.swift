@@ -16,7 +16,7 @@ class ViewConfiguration: NSObject {
     // MARK: View Configuration
     class func setup(window: inout UIWindow?) {
         window = UIWindow.init(frame: UIScreen.main.bounds)
-        window?.rootViewController = HomePageTabbrControllerViewController()
+        window?.rootViewController = TabbrController()
         window?.makeKeyAndVisible()
         setupStatus()
     }

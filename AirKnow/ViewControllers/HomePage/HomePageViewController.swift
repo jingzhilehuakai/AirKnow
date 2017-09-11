@@ -99,6 +99,6 @@ extension HomePageViewController: UIScrollViewDelegate {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let currentIndex: NSInteger = NSInteger(fabs(collectionView.contentOffset.x) / collectionView.frame.size.width);
+        //let currentIndex: NSInteger = NSInteger(fabs(collectionView.contentOffset.x) / collectionView.frame.size.width);
     }
 }
