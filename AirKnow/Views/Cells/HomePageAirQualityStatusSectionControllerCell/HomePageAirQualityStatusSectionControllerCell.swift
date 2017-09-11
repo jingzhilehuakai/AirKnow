@@ -26,7 +26,6 @@ class HomePageAirQualityStatusSectionControllerCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        
         func layoutCircleBackgroundView() {
             self.contentView.addSubview(circleBackgroundView)
             circleBackgroundView.snp.makeConstraints { (make) in
@@ -40,8 +39,9 @@ class HomePageAirQualityStatusSectionControllerCell: UICollectionViewCell {
         
         func configureAirQualityStatusView() {
             let airQualityStatusViewWith: CGFloat = UIScreen.main.bounds.width - AirKnowConfig.homePageAirQualityStatusSectionControllerCelLeftPadding + AirKnowConfig.homePageAirQualityStatusSectionControllerCelRightPadding
-            let airQualityStatusViewHeight: CGFloat = AirKnowConfig.homePageAirQualityStatusSectionControllerCellHeight
-            let airQualityStatusViewInternal = AirQualityStatusView(frame: CGRect.init(x: 0, y: 0, width: airQualityStatusViewWith, height: airQualityStatusViewHeight))
+            let airQualityStatusViewHeight: CGFloat = AirKnowConfig.airKnowAQSViewHeight
+            let airQualityStatusViewFrameY: CGFloat = (AirKnowConfig.homePageAirQualityStatusSectionControllerCellHeight - airQualityStatusViewHeight) * 0.5
+            let airQualityStatusViewInternal = AirQualityStatusView(frame: CGRect.init(x: 0, y: airQualityStatusViewFrameY, width: airQualityStatusViewWith, height: airQualityStatusViewHeight))
             airQualityStatusViewInternal.backgroundColor = UIColor.clear
             circleBackgroundView.addSubview(airQualityStatusViewInternal)
             airQualityStatusView = airQualityStatusViewInternal

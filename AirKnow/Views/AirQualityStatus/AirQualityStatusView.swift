@@ -40,7 +40,7 @@ class AirQualityStatusView: UIView {
     
     lazy var triangleIndicatorImageView: UIImageView = {
         let triangleIndicatorImageViewInternal: UIImageView = UIImageView(frame: CGRect.init(x: 0, y: 0, width: AirKnowConfig.airKnowAQSTriangleIndicatorWidth, height: AirKnowConfig.airKnowAQSTriangleIndicatorHeight))
-        triangleIndicatorImageViewInternal.image = UIImage(named:"triangleIndicator")
+        triangleIndicatorImageViewInternal.theme_image = AirKnowConfig.airKnowAQSTriangleIndicatorImageStringStyles
         triangleIndicatorImageViewInternal.backgroundColor = UIColor.clear
         return triangleIndicatorImageViewInternal
     }()
@@ -51,7 +51,7 @@ class AirQualityStatusView: UIView {
         descriptionLabelInternal.backgroundColor = UIColor.clear
         descriptionLabelInternal.text = AirKnowConfig.airKnowAQSDescriptionLabelDefaultNameString
         descriptionLabelInternal.font = AirKnowConfig.airKnowAQSDescriptionLabelFont
-//        descriptionLabelInternal.theme_textColor = AirKnowConfig.airKnowAQSDescriptionLabelStringStyles
+        descriptionLabelInternal.theme_textColor = AirKnowConfig.airKnowAQSDescriptionLabelStringStyles
         return descriptionLabelInternal
     }()
     
@@ -80,7 +80,7 @@ class AirQualityStatusView: UIView {
         
         func layoutTitleButtonView() {
             titleButton.snp.makeConstraints { (make) in
-                make.centerY.equalTo(self.snp.centerY)
+                make.top.equalTo(self.snp.top).offset(AirKnowConfig.airKnowAQSTitleButtonTopPadding)
                 make.height.equalTo(AirKnowConfig.airKnowAQSTitleButtonHeight)
                 make.left.equalTo(self.snp.left).offset(AirKnowConfig.airKnowAQSTitleButtonLeftPadding)
                 make.right.equalTo(self.snp.right).offset(AirKnowConfig.airKnowAQSTitleButtonRightPadding)
@@ -111,6 +111,7 @@ class AirQualityStatusView: UIView {
                 make.top.equalTo(progressView.snp.bottom).offset(AirKnowConfig.airKnowAQSDescriptionLabelTopPadding)
                 make.left.equalTo(self.snp.left).offset(AirKnowConfig.airKnowAQSDescriptionLabelLeftPadding)
                 make.right.equalTo(self.snp.right).offset(AirKnowConfig.airKnowAQSDescriptionLabelRightPadding)
+                make.bottom.equalTo(self.snp.bottom).offset(AirKnowConfig.airKnowAQSDescriptionLabelBottomPadding)
                 make.height.equalTo(AirKnowConfig.airKnowAQSDescriptionLabelHeight)
             }
         }
@@ -128,7 +129,7 @@ extension AirQualityStatusView {
             let backgroundLayer: CALayer = CALayer()
             backgroundLayer.theme_backgroundColor = AirKnowConfig.airKnowAQSProgressBackgroundStyles
             backgroundLayer.frame = progressView.frame
-            backgroundLayer.cornerRadius = 3.0
+            backgroundLayer.cornerRadius = 1.0
             backgroundLayer.masksToBounds = true
             progressView.layer.addSublayer(backgroundLayer)
             
