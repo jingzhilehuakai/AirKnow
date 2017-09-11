@@ -21,7 +21,7 @@ class HomePageAirQualitySectionControllerCell: UICollectionViewCell {
     // Pollution Material Name
     lazy var pollutionMaterialName : PlaceholderLabel = {
         let pollutionMaterialNameInternal = PlaceholderLabel()
-        pollutionMaterialNameInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellSMNStringStyles
+        pollutionMaterialNameInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellPMNStringStyles
         pollutionMaterialNameInternal.textAlignment = NSTextAlignment.left
         pollutionMaterialNameInternal.font = AirKnowConfig.homePageAirQualitySectionControllerCelPMNFont
         pollutionMaterialNameInternal.theme_backgroundColor = AirKnowConfig.homePageAirQualitySectionControllerCellNODataBGStringStyles
@@ -35,7 +35,7 @@ class HomePageAirQualitySectionControllerCell: UICollectionViewCell {
         pollutionMaterialProfessionNameInternal.textAlignment = NSTextAlignment.left
         pollutionMaterialProfessionNameInternal.font = AirKnowConfig.homePageAirQualitySectionControllerCelPMPNFont
         pollutionMaterialProfessionNameInternal.layer.cornerRadius = 2
-        pollutionMaterialProfessionNameInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellSMPNStringStyles
+        pollutionMaterialProfessionNameInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellPMPNStringStyles
         pollutionMaterialProfessionNameInternal.theme_backgroundColor = AirKnowConfig.homePageAirQualitySectionControllerCellNODataBGStringStyles
         return pollutionMaterialProfessionNameInternal
     }()
@@ -189,7 +189,7 @@ class HomePageAirQualitySectionControllerCell: UICollectionViewCell {
             circleBackgroundView.addSubview(lineS)
             lineS.snp.makeConstraints { (make) in
                 make.left.equalTo(percentageNumber.snp.right).offset(AirKnowConfig.homePageAirQualitySectionControllerCelLineLeftPadding)
-                make.width.equalTo(1)
+                make.width.equalTo(AirKnowConfig.homePageAirQualitySectionControllerCelLineWidth)
                 make.topMargin.equalTo(lineF.snp.topMargin)
                 make.bottomMargin.equalTo(lineF.snp.bottomMargin)
             }

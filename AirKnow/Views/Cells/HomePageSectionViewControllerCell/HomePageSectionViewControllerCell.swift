@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import SwifterSwift
 
 // MARK: HomePageSectionViewControllerCell, contanier of air cells
 final class HomePageSectionViewControllerCell: UICollectionViewCell, UIScrollViewDelegate {
@@ -39,7 +40,8 @@ final class HomePageSectionViewControllerCell: UICollectionViewCell, UIScrollVie
         collectionViewInternal.alwaysBounceHorizontal = false
         collectionViewInternal.showsVerticalScrollIndicator = false
         collectionViewInternal.showsHorizontalScrollIndicator = false
-        collectionViewInternal.contentInset = UIEdgeInsets.init(top: AirKnowConfig.homePageCollectionViewEdgeTopPadding, left: 0, bottom: 0, right: 0)
+        let bottomInset = AirKnowConfig.shouldFIxTabbarInset ? AirKnowConfig.tabbarHeight : 0
+        collectionViewInternal.contentInset = UIEdgeInsets.init(top: AirKnowConfig.homePageCollectionViewEdgeTopPadding, left: 0, bottom: bottomInset, right: 0)
         return collectionViewInternal
     }()
 }

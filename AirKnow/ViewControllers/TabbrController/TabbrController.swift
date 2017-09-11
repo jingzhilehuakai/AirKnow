@@ -16,7 +16,7 @@ class TabbrController: UITabBarController {
     // MARK: Prompt Button
     lazy var promptButton: UIButton! = {
         var promptButtonInternal: UIButton = UIButton.init()
-        promptButtonInternal.theme_setImage(AirKnowConfig.tabbarPromptButtonImageStringStyels, forState: .normal)
+        promptButtonInternal.theme_setImage(AirKnowConfig.promptButtonImageStringStyels, forState: .normal)
         
         promptButtonInternal.addTarget(self, action:#selector(tapped(_:)), for:.touchUpInside)
 
@@ -35,7 +35,7 @@ class TabbrController: UITabBarController {
     // MARK: Add Location Button
     lazy var addLoadtionButton: UIButton! = {
         var addLocationButtonInternal = UIButton.init()
-        addLocationButtonInternal.theme_setImage(AirKnowConfig.tabbarAddLocationButtonImageStringStyels, forState: .normal)
+        addLocationButtonInternal.theme_setImage(AirKnowConfig.addLocationButtonImageStringStyels, forState: .normal)
         return addLocationButtonInternal
     }()
     
@@ -44,7 +44,7 @@ class TabbrController: UITabBarController {
         var pageControlsInternal: CHIPageControlJalapeno = CHIPageControlJalapeno.init()
         pageControlsInternal.padding = 5
         pageControlsInternal.radius = 3
-        pageControlsInternal.theme_tintColor = AirKnowConfig.homePagePCStringStyels
+        pageControlsInternal.theme_tintColor = AirKnowConfig.homePagePageControllerStringStyels
         pageControlsInternal.numberOfPages = 3
         return pageControlsInternal
     }()

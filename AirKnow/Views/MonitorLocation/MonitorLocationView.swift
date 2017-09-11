@@ -18,7 +18,7 @@ class MonitorLocationView: UIView {
         locationNameInternal.backgroundColor = UIColor.clear
         locationNameInternal.font = AirKnowConfig.MLLocationNameFont
         locationNameInternal.layer.cornerRadius = 2
-        locationNameInternal.theme_backgroundColor = AirKnowConfig.MLNoDataBGStringStyles
+        locationNameInternal.theme_backgroundColor = AirKnowConfig.NoDataBGStringStyles
         locationNameInternal.theme_textColor = AirKnowConfig.MLLocationNameStringStyles
         return locationNameInternal
     }()
@@ -29,7 +29,7 @@ class MonitorLocationView: UIView {
         updateTimeInternal.backgroundColor = UIColor.clear
         updateTimeInternal.numberOfLines = 2
         updateTimeInternal.layer.cornerRadius = 2
-        updateTimeInternal.theme_backgroundColor = AirKnowConfig.MLNoDataBGStringStyles
+        updateTimeInternal.theme_backgroundColor = AirKnowConfig.NoDataBGStringStyles
         updateTimeInternal.font = AirKnowConfig.MLUpdateTimeFont
         updateTimeInternal.theme_textColor = AirKnowConfig.MLUpdateTimeStringStyles
         return updateTimeInternal

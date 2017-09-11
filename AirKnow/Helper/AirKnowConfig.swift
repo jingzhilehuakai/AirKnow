@@ -12,110 +12,137 @@ import SwiftTheme
 
 final class AirKnowConfig {
     
-    // Lengh Ajust
+    //MARK: Fix 'addChildControl' problem
+    static let shouldFIxTabbarInset: Bool = {
+        if UIScreen.main.bounds.width > 320 {
+            return true
+        } else {
+            return false
+        }
+    }()
+    
+    //MARK: Lengh Ajust
     class func ajustLength(_ lengh: CGFloat) -> CGFloat {
         let screenProportion = UIScreen.main.bounds.width / 320
         return lengh * screenProportion
     }
     
-    // Size Ajust
+    //MARK: Size Ajust
     class func ajustSize(_ size: CGSize) -> CGSize {
         let screenProportion = UIScreen.main.bounds.width / 320
         return CGSize.init(width: size.width * screenProportion, height: size.height * screenProportion)
     }
     
-    // Associate Object
+    //MARK: Theme Setting
+    enum airKnowTheme: Int {
+        case light = 0
+        case dark  = 1
+    }
+    
+    //MARK: Status
+    static let statusBarStringStyles: ThemeStatusBarStylePicker = [UIStatusBarStyle.default, UIStatusBarStyle.lightContent]
+    
+    //MARK: Homepage ViewController Background
+    static let homePageVCBGStringStyels: ThemeColorPicker = ["#FAFAFA", "#030303"]
+    
+    //MARK: Associate Object
     static let homePageSectionViewControllerCellAssociateString = "homePageSectionViewControllerCellAssociateString"
     
-    // Tabbar
+    //MARK: Tabbar
     static let tabbarHeight: CGFloat = AirKnowConfig.ajustLength(40.0)
+    static let tabbarStringStyles: ThemeColorPicker = ["#45BB7C", "#1E1E1E"]
 
-    // Prompt Button
+    //MARK: Prompt Button
     static let promptButtonLeftPadding: CGFloat = AirKnowConfig.ajustLength(12)
     static let promptButtonTopPadding: CGFloat = AirKnowConfig.ajustLength(12)
     static let promptButtonHeight: CGFloat = tabbarHeight - 2 * promptButtonTopPadding
+    static let promptButtonImageStringStyels: ThemeImagePicker = ["tabbarPrompt_DayMode", "tabbarPrompt_nightMode"]
+
+    //MARK: Homepage PageControl
+    static let homePagePageControllerStringStyels: ThemeColorPicker = ["#FFFFFF", "#FFFFFF"]
     
-    // Add Location
+    //MARK: Add Location
     static let addLocationButtonRightPadding: CGFloat = -AirKnowConfig.ajustLength(12)
     static let addLocationButtonTopPadding: CGFloat = AirKnowConfig.ajustLength(12)
     static let addLocationButtonHeight: CGFloat = tabbarHeight - 2 * addLocationButtonTopPadding
-    
-    // ML LocationName Lable
+    static let addLocationButtonImageStringStyels: ThemeImagePicker = ["tabbarAdd_Light", "tabbarAdd_Light"]
+
+    //MARK: ML LocationName Lable
     static let MLLocationNameFont: UIFont = UIFont.init(name: "Futura-Medium", size: AirKnowConfig.ajustLength(22.0))!
     static let MLLocationNameLeftPadding: CGFloat = AirKnowConfig.ajustLength(30.0)
     static let MLLocationNameRightPadding: CGFloat = -AirKnowConfig.ajustLength(30.0)
     static let MLLocationNameTopPadding: CGFloat = AirKnowConfig.ajustLength(55.0)
-    
-    // ML UpdateTime Lable
+    static let MLLocationNameStringStyles: ThemeColorPicker = ["#000000", "#FFFFFF"]
+
+    //MARK: ML UpdateTime Lable
     static let MLUpdateTimeTopPadding: CGFloat = AirKnowConfig.ajustLength(6.5)
     static let MLUpdateTimeFont: UIFont = UIFont.init(name: "EuphemiaUCAS", size:AirKnowConfig.ajustLength(14.0))!
     static let MLUpdateTimeWidth: CGFloat = AirKnowConfig.ajustLength(150.0)
-    
-    // Home page CollectionView
+    static let MLUpdateTimeStringStyles: ThemeColorPicker = ["#4A4A4A", "#4A4A4A"]
+
+    //MARK: Homepage CollectionView
     static let homePageCollectionViewEdgeTopPadding: CGFloat = AirKnowConfig.ajustLength(135)
     
-    // Home Page AirQuality Status SC Cell
+    //MARK: Homepage AirQuality Status SC Cell
     static let homePageAirQualityStatusSectionControllerCellHeight: CGFloat = UIScreen.main.bounds.height / 6.5
     static let homePageAirQualityStatusSectionControllerCelLeftPadding: CGFloat = AirKnowConfig.ajustLength(10)
     static let homePageAirQualityStatusSectionControllerCelRightPadding: CGFloat = -AirKnowConfig.ajustLength(10)
-    
-    // Home Page AirQuality SC Cell
+    static let homePageAirQualityStatusSectionControllerCellBGStringStyles: ThemeColorPicker = ["#FFFFFF", "#0D0D0D"]
+
+    //MARK: Homepage AirQuality SC Cell
     static let homePageAirQualitySectionControllerCellHeight: CGFloat = UIScreen.main.bounds.height / 7.5
     static let homePageAirQualitySectionControllerCelLeftPadding: CGFloat = AirKnowConfig.ajustLength(10)
     static let homePageAirQualitySectionControllerCelRightPadding: CGFloat = -AirKnowConfig.ajustLength(10)
-    // Home Page AirQuality SC Cell PMN
+    static let homePageAirQualitySectionControllerCellNODataBGStringStyles: ThemeColorPicker = ["#FAFAFA", "#030303"]
+
+    //MARK: Homepage AirQuality SC Cell Polltion Material Name
     static let homePageAirQualitySectionControllerCelPMNHeight: CGFloat = AirKnowConfig.ajustLength(15.0)
     static let homePageAirQualitySectionControllerCelPMNWidth: CGFloat = AirKnowConfig.homePageAirQualitySectionControllerCelPMPNWidth + AirKnowConfig.homePageAirQualitySectionControllerCelPNWidth + AirKnowConfig.homePageAirQualitySectionControllerCelPUWidth + 2 * homePageAirQualitySectionControllerCellElementsPadding
     static let homePageAirQualitySectionControllerCelPMNLeftPadding: CGFloat = AirKnowConfig.ajustLength(10)
     static let homePageAirQualitySectionControllerCelPMNTopPadding: CGFloat = AirKnowConfig.ajustLength(13.5)
     static let homePageAirQualitySectionControllerCelPMNFont: UIFont = UIFont.init(name: "HiraKakuProN-W3", size: AirKnowConfig.ajustLength(12.5))!
-    // Home Page AirQuality SC Cell PMPN
+    static let homePageAirQualitySectionControllerCellPMNStringStyles: ThemeColorPicker = ["#999999", "#494949"]
+
+    //MARK: Homepage AirQuality SC Cell Pollution Material Profession Name
     static let homePageAirQualitySectionControllerCelPMPNFont: UIFont = UIFont.init(name: "HiraKakuProN-W3", size: AirKnowConfig.ajustLength(13.5))!
     static let homePageAirQualitySectionControllerCelPMPNTopPadding: CGFloat = AirKnowConfig.ajustLength(8.0)
     static let homePageAirQualitySectionControllerCelPMPNBottomPadding: CGFloat = -AirKnowConfig.homePageAirQualitySectionControllerCelPMPNTopPadding
     static let homePageAirQualitySectionControllerCelPMPNWidth: CGFloat = UIScreen.main.bounds.width / 6
     static let homePageAirQualitySectionControllerCelPMPNheight: CGFloat = AirKnowConfig.homePageAirQualitySectionControllerCellHeight / 2.5
-    // Home Page AirQuality SC Cell PN
+    static let homePageAirQualitySectionControllerCellPMPNStringStyles: ThemeColorPicker = ["#313131", "#7A7A7A"]
+    
+    //MARK: Homepage AirQuality SC Cell Pollution Number
     static let homePageAirQualitySectionControllerCelPNWidth: CGFloat = UIScreen.main.bounds.width / 8
-    static let homePageAirQualitySectionControllerCelPNFont: UIFont = UIFont.init(name: "HiraKakuProN-W3", size: AirKnowConfig.ajustLength(19.0))!
-    // Home Page AirQuality SC Cell PU
+    static let homePageAirQualitySectionControllerCelPNFont: UIFont = UIFont.init(name: "Optima-Regular", size: AirKnowConfig.ajustLength(19.0))!
+    static let homePageAirQualitySectionControllerCellPNStringStyles: ThemeColorPicker = ["#313131", "#FFFFFF"]
+
+    //MARK: Homepage AirQuality SC Cell Pollution Unit
     static let homePageAirQualitySectionControllerCelPUWidth: CGFloat = UIScreen.main.bounds.width / 9.5
     static let homePageAirQualitySectionControllerCelPUFont: UIFont = UIFont.init(name: "HiraKakuProN-W3", size: AirKnowConfig.ajustLength(10.0))!
-    // Home Page AirQuality SC Cell Line
+    static let homePageAirQualitySectionControllerCellPUStringStyles: ThemeColorPicker = ["#313131", "#949494"]
+
+    //MARK: Homepage AirQuality SC Cell Line
     static let homePageAirQualitySectionControllerCelLineWidth: CGFloat = 1.0
     static let homePageAirQualitySectionControllerCelLineLeftPadding: CGFloat = AirKnowConfig.ajustLength(10.0)
-    // Home Page AirQuality SC Global Settiing
+    static let homePageAirQualitySectionControllerCellLineStringStyles: ThemeColorPicker = ["#DCDCDC", "#1C1C1C"]
+
+    //MARK: Homepage AirQuality SC Global Settiing
     static let homePageAirQualitySectionControllerCellElementsPadding: CGFloat = AirKnowConfig.ajustLength(2.0)
-    // Home Page AirQuality SC Cell Percent Number
-    static let homePageAirQualitySectionControllerCelPercentNumberFont: UIFont = UIFont.init(name: "HiraKakuProN-W3", size: AirKnowConfig.ajustLength(17.5))!
+    
+    //MARK: Homepage AirQuality SC Cell Percent Number
+    static let homePageAirQualitySectionControllerCelPercentNumberFont: UIFont = UIFont.init(name: "Optima-Regular", size: AirKnowConfig.ajustLength(17.5))!
     static let homePageAirQualitySectionControllerCelPercentNumberLeftPadding: CGFloat = AirKnowConfig.ajustLength(10.0)
-    // Home Page AirQuality SC Cell Normal Standard Number
+    static let homePageAirQualitySectionControllerCellPercentNumberStringStyles: ThemeColorPicker = ["#313131", "#FFFFFF"]
+
+    //MARK: Homepage AirQuality SC Cell Normal Standard Number
     static let homePageAirQualitySectionControllerCelNSNRightPadding: CGFloat = -AirKnowConfig.ajustLength(10.0)
     static let homePageAirQualitySectionControllerCelNSNLeftPadding: CGFloat = AirKnowConfig.ajustLength(10.0)
     static let homePageAirQualitySectionControllerCelNSNFont: UIFont = UIFont.init(name: "HiraKakuProN-W3", size: AirKnowConfig.ajustLength(10.0))!
-    
-    // Theme Setting
-    enum airKnowTheme: Int {
-        case light = 0
-        case dark  = 1
-    }
-    static let statusBarStringStyles: ThemeStatusBarStylePicker = [UIStatusBarStyle.default, UIStatusBarStyle.lightContent]
-    static let homePageVCBGStringStyels: ThemeColorPicker = ["#FAFAFA", "#030303"]
-    static let tabbarStringStyles: ThemeColorPicker = ["#45BB7C", "#1E1E1E"]
-    static let tabbarPromptButtonImageStringStyels: ThemeImagePicker = ["tabbarPrompt_DayMode", "tabbarPrompt_nightMode"]
-    static let tabbarAddLocationButtonImageStringStyels: ThemeImagePicker = ["tabbarAdd_Light", "tabbarAdd_Light"]
-    static let homePagePCStringStyels: ThemeColorPicker = ["#FFFFFF", "#FFFFFF"]
-    static let MLLocationNameStringStyles: ThemeColorPicker = ["#000000", "#FFFFFF"]
-    static let MLUpdateTimeStringStyles: ThemeColorPicker = ["#4A4A4A", "#4A4A4A"]
-    static let MLNoDataBGStringStyles: ThemeColorPicker = ["#FFFFFF", "#0D0D0D"]
-    static let homePageAirQualityStatusSectionControllerCellBGStringStyles: ThemeColorPicker = ["#FFFFFF", "#0D0D0D"]
-    static let homePageAirQualitySectionControllerCellSMNStringStyles: ThemeColorPicker = ["#999999", "#494949"]
-    static let homePageAirQualitySectionControllerCellNODataBGStringStyles: ThemeColorPicker = ["#FAFAFA", "#030303"]
-    static let homePageAirQualitySectionControllerCellSMPNStringStyles: ThemeColorPicker = ["#313131", "#7A7A7A"]
-    static let homePageAirQualitySectionControllerCellPNStringStyles: ThemeColorPicker = ["#313131", "#FFFFFF"]
-    static let homePageAirQualitySectionControllerCellPUStringStyles: ThemeColorPicker = ["#313131", "#949494"]
-    static let homePageAirQualitySectionControllerCellLineStringStyles: ThemeColorPicker = ["#DCDCDC", "#1C1C1C"]
-    static let homePageAirQualitySectionControllerCellPercentNumberStringStyles: ThemeColorPicker = ["#313131", "#FFFFFF"]
-    static let homePageAirQualitySectionControllerCellNormalHolderStringStyles: ThemeColorPicker = ["#999999", "#494949"]
     static let homePageAirQualitySectionControllerCellNormalStandardStringStyles: ThemeColorPicker = ["#313131", "#7A7A7A"]
+    
+    //MARK: NODATA Background
+    static let NoDataBGStringStyles: ThemeColorPicker = ["#FFFFFF", "#0D0D0D"]
+    
+    //MARK: Holder Label
+    static let homePageAirQualitySectionControllerCellNormalHolderStringStyles: ThemeColorPicker = ["#999999", "#494949"]
 }
