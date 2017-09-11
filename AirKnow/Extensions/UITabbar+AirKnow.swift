@@ -23,7 +23,7 @@ extension UITabBar {
     // Control The Height of That Bar
     override open func sizeThatFits(_ size: CGSize) -> CGSize {
         var sizeThatFits = super.sizeThatFits(size)
-        sizeThatFits.height = AirKnowConfig.airKnowTabbarHeight
+        sizeThatFits.height = AirKnowConfig.tabbarHeight
         return sizeThatFits
     }
 }

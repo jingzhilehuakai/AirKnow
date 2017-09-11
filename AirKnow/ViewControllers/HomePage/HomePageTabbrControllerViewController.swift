@@ -8,6 +8,7 @@
 
 import UIKit
 import SwifterSwift
+import SwiftTheme
 import CHIPageControl
 
 class HomePageTabbrControllerViewController: UITabBarController {
@@ -15,14 +16,27 @@ class HomePageTabbrControllerViewController: UITabBarController {
     // MARK: Prompt Button
     lazy var promptButton: UIButton! = {
         var promptButtonInternal: UIButton = UIButton.init()
-        promptButtonInternal.theme_setImage(AirKnowConfig.airKnowGlobalTabbarPromptButtonImageStringStyels, forState: .normal)
+        promptButtonInternal.theme_setImage(AirKnowConfig.tabbarPromptButtonImageStringStyels, forState: .normal)
+        
+        promptButtonInternal.addTarget(self, action:#selector(tapped(_:)), for:.touchUpInside)
+
         return promptButtonInternal
     }()
+    
+    func tapped(_ button:UIButton){
+        switch ThemeManager.currentThemeIndex {
+        case 0:
+            ThemeManager.setTheme(index: AirKnowConfig.airKnowTheme.dark.rawValue)
+        default:
+            ThemeManager.setTheme(index: AirKnowConfig.airKnowTheme.light.rawValue)
+        }
+    }
+
     
     // MARK: Add Location Button
     lazy var addLoadtionButton: UIButton! = {
         var addLocationButtonInternal = UIButton.init()
-        addLocationButtonInternal.theme_setImage(AirKnowConfig.airKnowGlobalTabbarAddLocationButtonImageStringStyels, forState: .normal)
+        addLocationButtonInternal.theme_setImage(AirKnowConfig.tabbarAddLocationButtonImageStringStyels, forState: .normal)
         return addLocationButtonInternal
     }()
     
@@ -31,37 +45,20 @@ class HomePageTabbrControllerViewController: UITabBarController {
         var pageControlsInternal: CHIPageControlJalapeno = CHIPageControlJalapeno.init()
         pageControlsInternal.padding = 5
         pageControlsInternal.radius = 3
-        pageControlsInternal.theme_tintColor = AirKnowConfig.airKnowGlobalHomePagePCStringStyels
+        pageControlsInternal.theme_tintColor = AirKnowConfig.homePagePCStringStyels
         pageControlsInternal.numberOfPages = 3
         return pageControlsInternal
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    
-        // Setup Shadows Image
-        tabBar.shadowImage = UIImage.init(color: UIColor.clear, size: tabBar.frame.size)
-        
-        // MARK: Home Page VC
-        func setupHomePageViewController() {
-            let homePageVC = HomePageViewController()
-            homePageVC.pageControl = pageControl
-            self.addChildViewController(homePageVC)
-        }
-        setupHomePageViewController()
-        
-        // MARK: Setup Theme Color
-        self.tabBar.theme_backgroundColor = AirKnowConfig.airKnowGlobalTabbarStringStyles
-    }
-    
-    override func viewDidLayoutSubviews() {
+    // Layout Views
+    func layoutSubViews() {
         // MARK: Setup Prompt Button
         func setupPromptButton() {
             self.tabBar.addSubview(promptButton)
             promptButton.snp.makeConstraints { (make) in
-                make.left.equalTo(self.tabBar.snp.left).offset(AirKnowConfig.airKnowPromptButtonLeftPadding)
-                make.top.equalTo(self.tabBar.snp.top).offset(AirKnowConfig.airKnowPromptButtonTopPadding)
-                make.height.equalTo(AirKnowConfig.airKnowPromptButtonHeight)
+                make.left.equalTo(self.tabBar.snp.left).offset(AirKnowConfig.promptButtonLeftPadding)
+                make.top.equalTo(self.tabBar.snp.top).offset(AirKnowConfig.promptButtonTopPadding)
+                make.height.equalTo(AirKnowConfig.promptButtonHeight)
                 make.height.equalTo(promptButton.snp.width)
             }
         }
@@ -71,9 +68,9 @@ class HomePageTabbrControllerViewController: UITabBarController {
         func setupAddLocationButton() {
             self.tabBar.addSubview(addLoadtionButton)
             addLoadtionButton.snp.makeConstraints { (make) in
-                make.right.equalTo(self.tabBar.snp.right).offset(AirKnowConfig.airKnowAddLocationButtonRightPadding)
-                make.top.equalTo(self.tabBar.snp.top).offset(AirKnowConfig.airKnowAddLocationButtonTopPadding)
-                make.height.equalTo(AirKnowConfig.airKnowAddLocationButtonHeight)
+                make.right.equalTo(self.tabBar.snp.right).offset(AirKnowConfig.addLocationButtonRightPadding)
+                make.top.equalTo(self.tabBar.snp.top).offset(AirKnowConfig.addLocationButtonTopPadding)
+                make.height.equalTo(AirKnowConfig.addLocationButtonHeight)
                 make.height.equalTo(addLoadtionButton.snp.width)
             }
         }
@@ -91,7 +88,27 @@ class HomePageTabbrControllerViewController: UITabBarController {
         }
         setupPageControl()
     }
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        // Setup Shadows Image
+        tabBar.shadowImage = UIImage.init(color: UIColor.clear, size: tabBar.frame.size)
+        
+        // MARK: Home Page VC
+        func setupHomePageViewController() {
+            let homePageVC = HomePageViewController()
+            homePageVC.pageControl = pageControl
+            self.addChildViewController(homePageVC)
+        }
+        setupHomePageViewController()
+        
+        // MARK: Setup Theme Color
+        self.tabBar.theme_backgroundColor = AirKnowConfig.tabbarStringStyles
+        
+        layoutSubViews()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

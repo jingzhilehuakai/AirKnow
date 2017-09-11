@@ -13,27 +13,29 @@ import SwiftTheme
 // MARK: HomePageSectionViewControllerCell, contanier of air cells
 final class HomePageSectionViewControllerCell: UICollectionViewCell {
     
-    // City Name Background View
-    lazy var locationName: MonitorLocationView = {
-        let locationNameInternal = MonitorLocationView.init(frame: self.contentView.frame)
-        locationNameInternal.theme_backgroundColor = AirKnowConfig.airKnowGlobalHomePageVCBGStringStyels
-        return locationNameInternal
+    // Location Name Background View
+    lazy var location: MonitorLocationView = {
+        let locationInternal = MonitorLocationView.init(frame: self.contentView.frame)
+        locationInternal.theme_backgroundColor = AirKnowConfig.homePageVCBGStringStyels
+        return locationInternal
     }()
     
     // CollectionView Above CityBGView
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        let collectionViewInternal = UICollectionView(frame: self.locationName.frame, collectionViewLayout: layout)
+        let collectionViewInternal = UICollectionView(frame: self.location.frame, collectionViewLayout: layout)
         collectionViewInternal.backgroundColor = UIColor.clear
         collectionViewInternal.alwaysBounceHorizontal = false
-        collectionViewInternal.contentInset = UIEdgeInsets.init(top: AirKnowConfig.airKnowHomePageCollectionViewEdgePadding, left: 0, bottom: 0, right: 0)
+        collectionViewInternal.showsVerticalScrollIndicator = false
+        collectionViewInternal.showsHorizontalScrollIndicator = false
+        collectionViewInternal.contentInset = UIEdgeInsets.init(top: AirKnowConfig.homePageCollectionViewEdgeTopPadding, left: 0, bottom: 0, right: 0)
         return collectionViewInternal
     }()
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.addSubview(locationName)
+        contentView.addSubview(location)
         contentView.addSubview(collectionView)
     }
 }
@@ -59,11 +61,17 @@ class HomePageSectionViewController: ListSectionController {
             fatalError()
         }
         adapter.collectionView = cell.collectionView
+        
+        
+        cell.location.locationName.text = "BeiJing"
+        cell.location.updateTime.text = "21.02.2017 00:00"
+        
+        
         return cell
     }
     
     override func didUpdate(to object: Any) {
-        
+    
     }
 }
 
@@ -71,15 +79,15 @@ class HomePageSectionViewController: ListSectionController {
 extension HomePageSectionViewController: ListAdapterDataSource {
     
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return [AirConditionStatusModel(AQI: 0, status: "", warmLog: "") as ListDiffable,
+        return [AirQualityStatusModel(AQI: 0, status: "", warmLog: "") as ListDiffable,
                 0 as ListDiffable]
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        if object is AirConditionStatusModel {
-            return HomePageAirCoditionStatusSectionController()
+        if object is AirQualityStatusModel {
+            return HomePageAirQualityStatusSectionController()
         } else {
-            return HomePageAirCoditionSectionController()
+            return HomePageAirQualitySectionController()
         }
     }
     

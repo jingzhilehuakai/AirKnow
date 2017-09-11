@@ -27,8 +27,10 @@ class HomePageViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionViewInternal = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionViewInternal.theme_backgroundColor = AirKnowConfig.airKnowGlobalHomePageVCBGStringStyels
+        collectionViewInternal.theme_backgroundColor = AirKnowConfig.homePageVCBGStringStyels
         collectionViewInternal.isPagingEnabled = true
+        collectionViewInternal.showsVerticalScrollIndicator = false
+        collectionViewInternal.showsHorizontalScrollIndicator = false
         if #available(iOS 10.0, *) {
             collectionViewInternal.isPrefetchingEnabled = false
         }
@@ -42,8 +44,6 @@ class HomePageViewController: UIViewController {
         adapter.collectionView = collectionView
         adapter.dataSource = self
         adapter.scrollViewDelegate = self
-        
-        ThemeManager.setTheme(index: AirKnowConfig.airKnowTheme.dark.rawValue)
     }
     
     override func viewDidLayoutSubviews() {
@@ -96,5 +96,9 @@ extension HomePageViewController: UIScrollViewDelegate {
         let percent = Double(offset / total)
         let progress = percent * Double(self.numberOfPages - 1)
         pageControl?.progress = progress
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let currentIndex: NSInteger = NSInteger(fabs(collectionView.contentOffset.x) / collectionView.frame.size.width);
     }
 }

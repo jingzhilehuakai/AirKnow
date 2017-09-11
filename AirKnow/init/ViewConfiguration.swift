@@ -18,11 +18,10 @@ class ViewConfiguration: NSObject {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.rootViewController = HomePageTabbrControllerViewController()
         window?.makeKeyAndVisible()
-        
         setupStatus()
     }
     
     class func setupStatus() {
-        UIApplication.shared.theme_setStatusBarStyle(AirKnowConfig.airKnowGlobalStatusBarStringStyles, animated: true)
+        UIApplication.shared.theme_setStatusBarStyle(AirKnowConfig.statusBarStringStyles, animated: true)
     }
 }

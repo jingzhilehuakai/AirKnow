@@ -9,7 +9,7 @@
 import UIKit
 import IGListKit
 
-class AirConditionStatusModel: NSObject, ListDiffable {
+class AirQualityStatusModel: NSObject, ListDiffable {
     
     var AQI: Int = 0
     let status: String?
@@ -23,12 +23,12 @@ class AirConditionStatusModel: NSObject, ListDiffable {
 
     // ListDiffable Protocol
     func diffIdentifier() -> NSObjectProtocol {
-        return AQI as NSObjectProtocol
+        return self
     }
 
     func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
         if self === object { return true }
-        guard (object as? AirConditionStatusModel) != nil else { return false }
+        guard (object as? AirQualityStatusModel) != nil else { return false }
         return false
     }
 }
