@@ -151,7 +151,7 @@ final class AirKnowConfig {
 extension AirKnowConfig {
     
     // AirQualityStatusView TitleButton
-    static let airKnowAQSTitleButtonFont: UIFont = UIFont(name: "Futura-Medium", size: 27)!
+    static let airKnowAQSTitleButtonFont: UIFont = UIFont(name: "KohinoorDevanagari-Book", size: AirKnowConfig.ajustLength(25.0))!
     static let airKnowAQSTitleButtonLeftPadding: CGFloat = AirKnowConfig.ajustLength(10)
     static let airKnowAQSTitleButtonRightPadding: CGFloat = -AirKnowConfig.ajustLength(10)
     static let airKnowAQSTitleButtonTopPadding: CGFloat = AirKnowConfig.ajustLength(0)
@@ -165,7 +165,7 @@ extension AirKnowConfig {
     static let airKnowAQSTriangleIndicatorImageStringStyles: ThemeImagePicker = ["triangleIndicator_gray", "triangleIndicator_white"]
     
     // AirQualityStatusView ProgressView
-    static let airKnowAQSProgressTopPadding: CGFloat = AirKnowConfig.ajustLength(2)
+    static let airKnowAQSProgressTopPadding: CGFloat = AirKnowConfig.ajustLength(1)
     static let airKnowAQSProgressHeight: CGFloat = AirKnowConfig.ajustLength(3)
     static let airKnowAQSProgressSectionWidth: CGFloat = AirKnowConfig.ajustLength(10)
     static let airKnowAQSProgressLineWidth: CGFloat = AirKnowConfig.ajustLength(0.5)
@@ -174,10 +174,10 @@ extension AirKnowConfig {
     static let airKnowAQSProgressLineStyles: ThemeCGColorPicker = ["#FFFFFF", "#000000"]
     
     // AirQualityStatusView DescriptionLabel
-    static let airKnowAQSDescriptionLabelFont: UIFont = UIFont(name: "HiraKakuProN-W3", size: AirKnowConfig.ajustLength(10))!
+    static let airKnowAQSDescriptionLabelFont: UIFont = UIFont(name: "Optima-Regular", size: AirKnowConfig.ajustLength(10))!
     static let airKnowAQSDescriptionLabelLeftPadding: CGFloat = AirKnowConfig.ajustLength(10)
     static let airKnowAQSDescriptionLabelRightPadding: CGFloat = -AirKnowConfig.ajustLength(10)
-    static let airKnowAQSDescriptionLabelTopPadding: CGFloat = AirKnowConfig.ajustLength(5)
+    static let airKnowAQSDescriptionLabelTopPadding: CGFloat = AirKnowConfig.ajustLength(2)
     static let airKnowAQSDescriptionLabelBottomPadding: CGFloat = AirKnowConfig.ajustLength(0)
     static let airKnowAQSDescriptionLabelHeight: CGFloat = AirKnowConfig.ajustLength(20)
     static let airKnowAQSDescriptionLabelDefaultNameString: String = "Perfect Quilty!"
