@@ -19,6 +19,7 @@ class HomePageAirQualityStatusSectionController: ListSectionController {
         guard let cell = collectionContext?.dequeueReusableCell(of: HomePageAirQualityStatusSectionControllerCell.self, for: self, at: index) as? HomePageAirQualityStatusSectionControllerCell else {
             fatalError()
         }
+        cell.airQualityStatusData = AirQualityStatusModel(AQI: 15, level: 0, status: "Good", warmLog: "Perfect perfect, very perfect")
         return cell
     }
     

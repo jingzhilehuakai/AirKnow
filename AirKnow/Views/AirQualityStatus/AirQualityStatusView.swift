@@ -8,15 +8,7 @@
 
 import UIKit
 import SnapKit
-
-enum AirQualityStatusType: Int {
-    case airKnowAirQualityStatusGood = 0
-    case airKnowAirQualityStatusModerate  = 1
-    case airKnowAirQualityStatusUnhealthyForSensitiveGroups  = 2
-    case airKnowAirQualityStatusUnhealthy  = 3
-    case airKnowAirQualityStatusVeryUnhealthy  = 4
-    case airKnowAirQualityStatusHazardous  = 5
-}
+import SwiftTheme
 
 class AirQualityStatusView: UIView {
     
@@ -26,12 +18,13 @@ class AirQualityStatusView: UIView {
         titleButtonInternal.backgroundColor = UIColor.clear
         titleButtonInternal.titleLabel?.font = AirKnowConfig.airKnowAQSTitleButtonFont
         titleButtonInternal.theme_setTitleColor(AirKnowConfig.airKnowAQSGoodStyles, forState: .normal)
+        titleButtonInternal.addTarget(self, action: #selector(switchTitleButton(sender:)), for: .touchUpInside)
         return titleButtonInternal
     }()
     
     lazy var progressView: UIView = {
         let progressViewInternal: UIView = UIView()
-        let progressViewInternalWidth: CGFloat = (AirKnowConfig.airKnowAQSProgressSectionWidth + AirKnowConfig.airKnowAQSProgressLineWidth) * CGFloat(AirKnowConfig.airKonwAQSTypeCount)
+        let progressViewInternalWidth: CGFloat = (AirKnowConfig.airKnowAQSProgressSectionWidth + AirKnowConfig.airKnowAQSProgressLineWidth) * CGFloat(AirKnowConfig.airKonwAQSLevelCount)
         let progressViewInternalFrameX: CGFloat = (UIScreen.main.bounds.width - progressViewInternalWidth) * 0.5
         progressViewInternal.frame = CGRect.init(x: progressViewInternalFrameX, y: AirKnowConfig.airKnowAQSProgressTopPadding, width: progressViewInternalWidth, height: AirKnowConfig.airKnowAQSProgressHeight)
         progressViewInternal.backgroundColor = UIColor.clear
@@ -56,6 +49,16 @@ class AirQualityStatusView: UIView {
     }()
     
     fileprivate var triangleIndicatorFrameX: CGFloat = 0.5 * UIScreen.main.bounds.width
+    
+    // data
+    var statusData: AirQualityStatusModel? {
+        didSet {
+            guard let data = statusData else {
+                return
+            }
+            setupStatusData(data: data)
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -118,6 +121,59 @@ class AirQualityStatusView: UIView {
         layoutDescriptionLabel()
     }
     
+    fileprivate func setupStatusData(data: AirQualityStatusModel) {
+        
+        titleButton.setTitle(String(data.AQI), for: .normal)
+        titleButton.tag = 1
+        descriptionLabel.text = data.warmLog
+        
+        func refreshUI() {
+            triangleIndicatorFrameX = progressView.x + CGFloat(data.level.rawValue) * (AirKnowConfig.airKnowAQSProgressSectionWidth + AirKnowConfig.airKnowAQSProgressLineWidth)
+            var frame = triangleIndicatorImageView.frame
+            frame.origin.x = triangleIndicatorFrameX
+            triangleIndicatorImageView.frame = frame
+            
+            let statusLevelThemeColor: ThemeColorPicker = returnAirQualityStatusThemeColor(level: data.level)
+            titleButton.theme_setTitleColor(statusLevelThemeColor, forState: .normal)
+            
+            drawProgressHighSectionView(statusColor: statusLevelThemeColor)
+        }
+        refreshUI()
+    }
+    
+    // Return AirQulityStatus Level Theme Color
+    fileprivate func returnAirQualityStatusThemeColor(level: AirQualityStatusLevel) -> ThemeColorPicker {
+        switch level {
+        case .airKnowAirQualityStatusGood:
+            return AirKnowConfig.airKnowAQSGoodStyles
+            
+        case .airKnowAirQualityStatusModerate:
+            return AirKnowConfig.airKnowAQSModerateStyles
+            
+        case .airKnowAirQualityStatusUnhealthyForSensitiveGroups:
+            return AirKnowConfig.airKnowAQSUnhealthyForSensitiveGroupsStyles
+            
+        case .airKnowAirQualityStatusUnhealthy:
+            return AirKnowConfig.airKnowAQSUnhealthyStyles
+            
+        case .airKnowAirQualityStatusVeryUnhealthy:
+            return AirKnowConfig.airKnowAQSVeryUnhealthyStyles
+            
+        case .airKnowAirQualityStatusHazardous:
+            return AirKnowConfig.airKnowAQSHazardousStyles
+        }
+    }
+    
+    // Switch Title Button
+    @objc fileprivate func switchTitleButton(sender: UIButton) {
+        if sender.tag == 1 {
+            titleButton.tag = 2
+            titleButton.setTitle(statusData?.status, for: .normal)
+        } else {
+            titleButton.tag = 1
+            titleButton.setTitle(String(statusData!.AQI), for: .normal)
+        }
+    }
 }
 
 // MARK: - Draw Progress View
@@ -134,7 +190,7 @@ extension AirQualityStatusView {
             progressView.layer.addSublayer(backgroundLayer)
             
             func drawProgressLineView() {
-                for i in 1..<AirKnowConfig.airKonwAQSTypeCount {
+                for i in 1..<AirKnowConfig.airKonwAQSLevelCount {
                     let lineLayer: CALayer = CALayer()
                     lineLayer.theme_backgroundColor = AirKnowConfig.airKnowAQSProgressLineStyles
                     let linelayerFrameX: CGFloat = (AirKnowConfig.airKnowAQSProgressSectionWidth + AirKnowConfig.airKnowAQSProgressLineWidth) * CGFloat(i) - AirKnowConfig.airKnowAQSProgressLineWidth
@@ -145,5 +201,20 @@ extension AirQualityStatusView {
             drawProgressLineView()
         }
         drawProgressBackgroundView()
+    }
+    
+    fileprivate func drawProgressHighSectionView(statusColor: ThemeColorPicker) {
+//        let highSectionLayer: CALayer = CALayer()
+//        highSectionLayer.theme_backgroundColor = statusColor
+//        highSectionLayer.frame =
+        let highSectionViewFrameX: CGFloat = triangleIndicatorFrameX - AirKnowConfig.airKnowAQSProgressLineWidth
+        let highSectionViewWidth: CGFloat = AirKnowConfig.airKnowAQSProgressSectionWidth + AirKnowConfig.airKnowAQSProgressLineWidth * 2
+        var highSectionFrame = progressView.frame
+        highSectionFrame.origin.x = highSectionViewFrameX
+        highSectionFrame.size.width = highSectionViewWidth
+        let highSectionView: UIView = UIView(frame: highSectionFrame)
+        
+        highSectionView.theme_backgroundColor = statusColor
+        progressView.addSubview(highSectionView)
     }
 }

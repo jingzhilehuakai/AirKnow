@@ -174,7 +174,7 @@ extension AirKnowConfig {
     static let airKnowAQSProgressLineStyles: ThemeCGColorPicker = ["#FFFFFF", "#000000"]
     
     // AirQualityStatusView DescriptionLabel
-    static let airKnowAQSDescriptionLabelFont: UIFont = UIFont(name: "Optima-Regular", size: AirKnowConfig.ajustLength(10))!
+    static let airKnowAQSDescriptionLabelFont: UIFont = UIFont(name: "HiraKakuProN-W3", size: AirKnowConfig.ajustLength(10))!
     static let airKnowAQSDescriptionLabelLeftPadding: CGFloat = AirKnowConfig.ajustLength(10)
     static let airKnowAQSDescriptionLabelRightPadding: CGFloat = -AirKnowConfig.ajustLength(10)
     static let airKnowAQSDescriptionLabelTopPadding: CGFloat = AirKnowConfig.ajustLength(2)
@@ -185,7 +185,7 @@ extension AirKnowConfig {
     static let airKnowAQSDescriptionLabelStringStyles: ThemeColorPicker = ["#4A4A4A", "#4A4A4A"]
     
     // AirQualityStatusView Status
-    static let airKonwAQSTypeCount: NSInteger = 6
+    static let airKonwAQSLevelCount: NSInteger = 6
     
     static let airKnowAQSGoodStyles: ThemeColorPicker = ["#009966", "#009966"]
     static let airKnowAQSModerateStyles: ThemeColorPicker = ["#ffde33", "#ffde33"]

@@ -70,7 +70,7 @@ extension HomePageSectionViewController: UIScrollViewDelegate {
 extension HomePageSectionViewController: ListAdapterDataSource {
     
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return [AirQualityStatusModel(AQI: 0, status: "", warmLog: "") as ListDiffable,
+        return [AirQualityStatusModel(AQI: 15, level: 0, status: "Good", warmLog: "Perfect perfect, very perfect") as ListDiffable,
                 0 as ListDiffable]
     }
     

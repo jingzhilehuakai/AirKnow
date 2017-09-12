@@ -23,6 +23,16 @@ class HomePageAirQualityStatusSectionControllerCell: UICollectionViewCell {
     // Status View
     fileprivate var airQualityStatusView: AirQualityStatusView?
     
+    // data
+    var airQualityStatusData: AirQualityStatusModel? {
+        didSet {
+            guard let data = airQualityStatusData else {
+                return
+            }
+            airQualityStatusView?.statusData = data
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
