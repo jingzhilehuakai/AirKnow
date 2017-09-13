@@ -14,8 +14,8 @@ import CHIPageControl
 class TabbrController: UITabBarController {
 
     // MARK: Prompt Button
-    lazy var promptButton: UIButton! = {
-        var promptButtonInternal: UIButton = UIButton.init()
+    lazy var promptButton: ExpandTouchPointButton! = {
+        var promptButtonInternal: ExpandTouchPointButton = ExpandTouchPointButton.init()
         promptButtonInternal.theme_setImage(AirKnowConfig.promptButtonImageStringStyels, forState: .normal)
         
         promptButtonInternal.addTarget(self, action:#selector(tapped(_:)), for:.touchUpInside)
@@ -33,8 +33,8 @@ class TabbrController: UITabBarController {
     }
     
     // MARK: Add Location Button
-    lazy var addLoadtionButton: UIButton! = {
-        var addLocationButtonInternal = UIButton.init()
+    lazy var addLoadtionButton: ExpandTouchPointButton! = {
+        var addLocationButtonInternal = ExpandTouchPointButton.init()
         addLocationButtonInternal.theme_setImage(AirKnowConfig.addLocationButtonImageStringStyels, forState: .normal)
         return addLocationButtonInternal
     }()
