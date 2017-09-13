@@ -109,7 +109,7 @@ extension HomePageViewController: UIScrollViewDelegate {
         let currentIndex: NSInteger = NSInteger(fabs(collectionView.contentOffset.x) / collectionView.frame.size.width);
         if originIndex != currentIndex {
             let homePageSectionViewController: HomePageSectionViewController = adapter.sectionController(forSection: originIndex) as! HomePageSectionViewController
-            homePageSectionViewController.retentionCell?.collectionView.setContentOffset(CGPoint.init(x: 0, y: -AirKnowConfig.homePageCollectionViewEdgeTopPadding), animated: false)
+            homePageSectionViewController.retentionCell?.collectionView.setContentOffset(CGPoint.init(x: 0, y: -AirKnowConfig.homePageCollectionViewEdgeTopPadding), animated: true)
             homePageSectionViewController.retentionCell?.location.setAlpppha(1)
         }
         originIndex = currentIndex
