@@ -19,12 +19,13 @@
 		2C4D71991F643A5400EC9210 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D71971F643A5400EC9210 /* ViewConfiguration.swift */; };
 		2C4D719A1F643A5400EC9210 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D71981F643A5400EC9210 /* AppDelegate.swift */; };
 		2C962F161F659A530009FEC8 /* PlaceholderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C962F151F659A530009FEC8 /* PlaceholderLabel.swift */; };
-		375CF4AA1F6678C100CC2F1B /* AirQualityStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CF4A91F6678C100CC2F1B /* AirQualityStatusView.swift */; };
 		2C962F1B1F66734A0009FEC8 /* HomePageAirQualitySectionControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C962F181F66734A0009FEC8 /* HomePageAirQualitySectionControllerCell.swift */; };
 		2C962F1C1F66734A0009FEC8 /* HomePageAirQualityStatusSectionControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C962F1A1F66734A0009FEC8 /* HomePageAirQualityStatusSectionControllerCell.swift */; };
 		2C962F1F1F66739E0009FEC8 /* TabbrController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C962F1E1F66739E0009FEC8 /* TabbrController.swift */; };
 		2C962F221F6673F20009FEC8 /* HomePageSectionViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C962F211F6673F20009FEC8 /* HomePageSectionViewControllerCell.swift */; };
 		2C962F241F66D2C00009FEC8 /* UITabbar+AirKnow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C962F231F66D2C00009FEC8 /* UITabbar+AirKnow.swift */; };
+		2CF418FB1F6913F90034E266 /* ExpandTouchPointButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF418FA1F6913F90034E266 /* ExpandTouchPointButton.swift */; };
+		375CF4AA1F6678C100CC2F1B /* AirQualityStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CF4A91F6678C100CC2F1B /* AirQualityStatusView.swift */; };
 		B298555DF5896369162E7A11 /* Pods_AirKnow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122842FD00251EE27B052477 /* Pods_AirKnow.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,12 +45,13 @@
 		2C4D71971F643A5400EC9210 /* ViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 		2C4D71981F643A5400EC9210 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C962F151F659A530009FEC8 /* PlaceholderLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderLabel.swift; sourceTree = "<group>"; };
-		375CF4A91F6678C100CC2F1B /* AirQualityStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualityStatusView.swift; sourceTree = "<group>"; };
 		2C962F181F66734A0009FEC8 /* HomePageAirQualitySectionControllerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageAirQualitySectionControllerCell.swift; sourceTree = "<group>"; };
 		2C962F1A1F66734A0009FEC8 /* HomePageAirQualityStatusSectionControllerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageAirQualityStatusSectionControllerCell.swift; sourceTree = "<group>"; };
 		2C962F1E1F66739E0009FEC8 /* TabbrController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbrController.swift; sourceTree = "<group>"; };
 		2C962F211F6673F20009FEC8 /* HomePageSectionViewControllerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageSectionViewControllerCell.swift; sourceTree = "<group>"; };
 		2C962F231F66D2C00009FEC8 /* UITabbar+AirKnow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabbar+AirKnow.swift"; sourceTree = "<group>"; };
+		2CF418FA1F6913F90034E266 /* ExpandTouchPointButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandTouchPointButton.swift; sourceTree = "<group>"; };
+		375CF4A91F6678C100CC2F1B /* AirQualityStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualityStatusView.swift; sourceTree = "<group>"; };
 		4D8B70FCC9BBECDF1C7C5776 /* Pods-AirKnow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirKnow.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirKnow/Pods-AirKnow.release.xcconfig"; sourceTree = "<group>"; };
 		B4F30F5B2DD3118CD6AF1121 /* Pods-AirKnow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirKnow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirKnow/Pods-AirKnow.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +124,7 @@
 			children = (
 				2C411F4A1F60F1E7006F0F47 /* AirKnowConfig.swift */,
 				2C962F151F659A530009FEC8 /* PlaceholderLabel.swift */,
+				2CF418FA1F6913F90034E266 /* ExpandTouchPointButton.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -274,7 +277,7 @@
 				TargetAttributes = {
 					2C411F291F5F9B47006F0F47 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = LW6H7DW53Z;
+						DevelopmentTeam = E3FWW9E846;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -389,6 +392,7 @@
 				2C4D719A1F643A5400EC9210 /* AppDelegate.swift in Sources */,
 				2C4D718F1F64318300EC9210 /* HomePageAirQualityStatusSectionController.swift in Sources */,
 				2C411F811F63AAAF006F0F47 /* HomePageAirQualitySectionController.swift in Sources */,
+				2CF418FB1F6913F90034E266 /* ExpandTouchPointButton.swift in Sources */,
 				2C962F1F1F66739E0009FEC8 /* TabbrController.swift in Sources */,
 				2C411F801F63AAAF006F0F47 /* HomePageViewController.swift in Sources */,
 				2C962F1B1F66734A0009FEC8 /* HomePageAirQualitySectionControllerCell.swift in Sources */,
@@ -517,7 +521,7 @@
 			baseConfigurationReference = B4F30F5B2DD3118CD6AF1121 /* Pods-AirKnow.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LW6H7DW53Z;
+				DEVELOPMENT_TEAM = E3FWW9E846;
 				INFOPLIST_FILE = AirKnow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chenchaobang.AirKnow;
@@ -531,7 +535,7 @@
 			baseConfigurationReference = 4D8B70FCC9BBECDF1C7C5776 /* Pods-AirKnow.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LW6H7DW53Z;
+				DEVELOPMENT_TEAM = E3FWW9E846;
 				INFOPLIST_FILE = AirKnow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chenchaobang.AirKnow;
