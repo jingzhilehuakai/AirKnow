@@ -12,24 +12,22 @@ import SnapKit
 
 class MonitorLocationView: UIView {
 
-    lazy var locationName: PlaceholderLabel = {
-        let locationNameInternal = PlaceholderLabel()
+    lazy var locationName: UILabel = {
+        let locationNameInternal = UILabel()
         locationNameInternal.textAlignment = NSTextAlignment.center
         locationNameInternal.backgroundColor = UIColor.clear
         locationNameInternal.font = AirKnowConfig.MLLocationNameFont
         locationNameInternal.layer.cornerRadius = 2
-        locationNameInternal.theme_backgroundColor = AirKnowConfig.NoDataBGStringStyles
         locationNameInternal.theme_textColor = AirKnowConfig.MLLocationNameStringStyles
         return locationNameInternal
     }()
     
-    lazy var updateTime: PlaceholderLabel = {
-        let updateTimeInternal = PlaceholderLabel()
+    lazy var updateTime: UILabel = {
+        let updateTimeInternal = UILabel()
         updateTimeInternal.textAlignment = NSTextAlignment.center
         updateTimeInternal.backgroundColor = UIColor.clear
         updateTimeInternal.numberOfLines = 2
         updateTimeInternal.layer.cornerRadius = 2
-        updateTimeInternal.theme_backgroundColor = AirKnowConfig.NoDataBGStringStyles
         updateTimeInternal.font = AirKnowConfig.MLUpdateTimeFont
         updateTimeInternal.theme_textColor = AirKnowConfig.MLUpdateTimeStringStyles
         return updateTimeInternal

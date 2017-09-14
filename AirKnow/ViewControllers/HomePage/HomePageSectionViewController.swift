@@ -14,7 +14,7 @@ import SwiftTheme
 class HomePageSectionViewController: ListSectionController {
     
     // MARK: Retention Cell
-    var retentionCell: HomePageSectionViewControllerCell?
+    var retentionCell: HomePageSectionViewControllerMonitorLocationCell?
     
     // MARK: List Adapter
     lazy var adapter: ListAdapter = {
@@ -30,7 +30,7 @@ class HomePageSectionViewController: ListSectionController {
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
-        guard let cell = collectionContext?.dequeueReusableCell(of: HomePageSectionViewControllerCell.self, for: self, at: index) as? HomePageSectionViewControllerCell else {
+        guard let cell = collectionContext?.dequeueReusableCell(of: HomePageSectionViewControllerMonitorLocationCell.self, for: self, at: index) as? HomePageSectionViewControllerMonitorLocationCell else {
             fatalError()
         }
         
@@ -38,10 +38,9 @@ class HomePageSectionViewController: ListSectionController {
         adapter.scrollViewDelegate = self
         
         self.retentionCell = cell
-        
-        cell.location.locationName.text = "BeiJing"
-        cell.location.updateTime.text = "21.02.2017 00:00"
-        
+
+        cell.configureWithModel(AirMonitorLocationModel.init(location: "Beijing", updateTime: "21.02.2017 00:00"))
+ 
         return cell
     }
     
@@ -58,8 +57,8 @@ extension HomePageSectionViewController: UIScrollViewDelegate {
             var alpha = 1 - (offsetY + AirKnowConfig.homePageCollectionViewEdgeTopPadding) / AirKnowConfig.homePageCollectionViewEdgeTopPadding
             alpha = alpha <= 0 ? 0 : alpha >= 1 ? 1 : alpha
             let superView = scrollView.superview?.superview
-            if superView is HomePageSectionViewControllerCell {
-                let cell: HomePageSectionViewControllerCell = superView as! HomePageSectionViewControllerCell
+            if superView is HomePageSectionViewControllerMonitorLocationCell {
+                let cell: HomePageSectionViewControllerMonitorLocationCell = superView as! HomePageSectionViewControllerMonitorLocationCell
                 cell.location.setAlpppha(alpha)
             }
         }

@@ -9,30 +9,28 @@
 import UIKit
 import SnapKit
 import SwiftTheme
+import Spring
 
 class AirQualityStatusView: UIView {
     
     lazy var titleButton: UIButton = {
         let titleButtonInternal: UIButton = UIButton()
-        titleButtonInternal.setTitle(AirKnowConfig.airKnowAQSTitleButtonDefaultNameString, for: UIControlState.normal)
-        titleButtonInternal.backgroundColor = UIColor.clear
         titleButtonInternal.titleLabel?.font = AirKnowConfig.airKnowAQSTitleButtonFont
         titleButtonInternal.theme_setTitleColor(AirKnowConfig.airKnowAQSGoodStyles, forState: .normal)
         titleButtonInternal.addTarget(self, action: #selector(switchTitleButton(sender:)), for: .touchUpInside)
+        titleButtonInternal.layer.cornerRadius = 2
         return titleButtonInternal
     }()
     
     lazy var progressView: UIView = {
         let progressViewInternal: UIView = UIView()
-        let progressViewInternalWidth: CGFloat = (AirKnowConfig.airKnowAQSProgressSectionWidth + AirKnowConfig.airKnowAQSProgressLineWidth) * CGFloat(AirKnowConfig.airKonwAQSLevelCount)
-        let progressViewInternalFrameX: CGFloat = (UIScreen.main.bounds.width - progressViewInternalWidth) * 0.5
-        progressViewInternal.frame = CGRect.init(x: progressViewInternalFrameX, y: AirKnowConfig.airKnowAQSProgressTopPadding, width: progressViewInternalWidth, height: AirKnowConfig.airKnowAQSProgressHeight)
         progressViewInternal.backgroundColor = UIColor.clear
         return progressViewInternal
     }()
     
     lazy var triangleIndicatorImageView: UIImageView = {
-        let triangleIndicatorImageViewInternal: UIImageView = UIImageView(frame: CGRect.init(x: 0, y: 0, width: AirKnowConfig.airKnowAQSTriangleIndicatorWidth, height: AirKnowConfig.airKnowAQSTriangleIndicatorHeight))
+        let triangleIndicatorImageViewInternal: UIImageView = UIImageView()
+        triangleIndicatorImageViewInternal.isHidden = true
         triangleIndicatorImageViewInternal.theme_image = AirKnowConfig.airKnowAQSTriangleIndicatorImageStringStyles
         triangleIndicatorImageViewInternal.backgroundColor = UIColor.clear
         return triangleIndicatorImageViewInternal
@@ -42,13 +40,14 @@ class AirQualityStatusView: UIView {
         let descriptionLabelInternal: UILabel = UILabel()
         descriptionLabelInternal.textAlignment = NSTextAlignment.center
         descriptionLabelInternal.backgroundColor = UIColor.clear
-        descriptionLabelInternal.text = AirKnowConfig.airKnowAQSDescriptionLabelDefaultNameString
         descriptionLabelInternal.font = AirKnowConfig.airKnowAQSDescriptionLabelFont
         descriptionLabelInternal.theme_textColor = AirKnowConfig.airKnowAQSDescriptionLabelStringStyles
         return descriptionLabelInternal
     }()
     
-    fileprivate var triangleIndicatorFrameX: CGFloat = 0.5 * UIScreen.main.bounds.width
+    fileprivate var triangleIndicatorFrameX: CGFloat = 0
+    fileprivate var progressHighSectionView: UIView?
+    fileprivate var targetModel: AirQualityStatusModel?
     
     // data
     var statusData: AirQualityStatusModel? {
@@ -65,13 +64,53 @@ class AirQualityStatusView: UIView {
         
         func configureSubviews() {
             addSubview(titleButton)
-            addSubview(progressView)
             addSubview(triangleIndicatorImageView)
+            addSubview(progressView)
             addSubview(descriptionLabel)
+            
+            func layoutTitleButtonView() {
+                titleButton.snp.makeConstraints { (make) in
+                    make.top.equalTo(self.snp.top).offset(AirKnowConfig.airKnowAQSTitleButtonTopPadding)
+                    make.height.equalTo(AirKnowConfig.airKnowAQSTitleButtonHeight)
+                    make.left.equalTo(self.snp.left).offset(AirKnowConfig.airKnowAQSTitleButtonLeftPadding)
+                    make.right.equalTo(self.snp.right).offset(AirKnowConfig.airKnowAQSTitleButtonRightPadding)
+                }
+            }
+            layoutTitleButtonView()
+            
+            func layoutTriangleIndicatorView() {
+                triangleIndicatorImageView.snp.makeConstraints { (make) in
+                    make.top.equalTo(titleButton.snp.bottom).offset(AirKnowConfig.airKnowAQSTriangleIndicatorTopPadding)
+                    make.left.equalTo(progressView.snp.left).offset(triangleIndicatorFrameX)
+                    make.width.equalTo(AirKnowConfig.airKnowAQSTriangleIndicatorWidth)
+                    make.height.equalTo(AirKnowConfig.airKnowAQSTriangleIndicatorHeight)
+                }
+            }
+            layoutTriangleIndicatorView()
+            
+            func layoutProgressView() {
+                progressView.snp.makeConstraints { (make) in
+                    make.top.equalTo(triangleIndicatorImageView.snp.bottom).offset(AirKnowConfig.airKnowAQSProgressTopPadding)
+                    make.centerX.equalTo(self.snp.centerX)
+                    make.height.equalTo(AirKnowConfig.airKnowAQSProgressHeight)
+                    make.width.equalTo((AirKnowConfig.airKnowAQSProgressSectionWidth + AirKnowConfig.airKnowAQSProgressLineWidth) * CGFloat(AirKnowConfig.airKonwAQSLevelCount))
+                }
+            }
+            layoutProgressView()
+            
+            func layoutDescriptionLabel() {
+                descriptionLabel.snp.makeConstraints { (make) in
+                    make.top.equalTo(progressView.snp.bottom).offset(AirKnowConfig.airKnowAQSDescriptionLabelTopPadding)
+                    make.left.equalTo(self.snp.left).offset(AirKnowConfig.airKnowAQSDescriptionLabelLeftPadding)
+                    make.right.equalTo(self.snp.right).offset(AirKnowConfig.airKnowAQSDescriptionLabelRightPadding)
+                    make.bottom.equalTo(self.snp.bottom).offset(AirKnowConfig.airKnowAQSDescriptionLabelBottomPadding)
+                    make.height.equalTo(AirKnowConfig.airKnowAQSDescriptionLabelHeight)
+                }
+            }
+            layoutDescriptionLabel()
         }
         
         configureSubviews()
-        drawProgressView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -81,64 +120,34 @@ class AirQualityStatusView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        func layoutTitleButtonView() {
-            titleButton.snp.makeConstraints { (make) in
-                make.top.equalTo(self.snp.top).offset(AirKnowConfig.airKnowAQSTitleButtonTopPadding)
-                make.height.equalTo(AirKnowConfig.airKnowAQSTitleButtonHeight)
-                make.left.equalTo(self.snp.left).offset(AirKnowConfig.airKnowAQSTitleButtonLeftPadding)
-                make.right.equalTo(self.snp.right).offset(AirKnowConfig.airKnowAQSTitleButtonRightPadding)
-            }
+        if targetModel != nil {
+            refreshUI()
         }
-        layoutTitleButtonView()
-        
-        func layoutTriangleIndicatorView() {
-            triangleIndicatorImageView.snp.makeConstraints { (make) in
-                make.top.equalTo(titleButton.snp.bottom).offset(AirKnowConfig.airKnowAQSTriangleIndicatorTopPadding)
-                make.left.equalTo(self.snp.left).offset(triangleIndicatorFrameX)
-                make.width.equalTo(AirKnowConfig.airKnowAQSTriangleIndicatorWidth)
-                make.height.equalTo(AirKnowConfig.airKnowAQSTriangleIndicatorHeight)
-            }
-        }
-        layoutTriangleIndicatorView()
-        
-        func layoutProgressView() {
-            progressView.snp.makeConstraints { (make) in
-                make.top.equalTo(triangleIndicatorImageView.snp.bottom).offset(AirKnowConfig.airKnowAQSProgressTopPadding)
-                
-            }
-        }
-        layoutProgressView()
-        
-        func layoutDescriptionLabel() {
-            descriptionLabel.snp.makeConstraints { (make) in
-                make.top.equalTo(progressView.snp.bottom).offset(AirKnowConfig.airKnowAQSDescriptionLabelTopPadding)
-                make.left.equalTo(self.snp.left).offset(AirKnowConfig.airKnowAQSDescriptionLabelLeftPadding)
-                make.right.equalTo(self.snp.right).offset(AirKnowConfig.airKnowAQSDescriptionLabelRightPadding)
-                make.bottom.equalTo(self.snp.bottom).offset(AirKnowConfig.airKnowAQSDescriptionLabelBottomPadding)
-                make.height.equalTo(AirKnowConfig.airKnowAQSDescriptionLabelHeight)
-            }
-        }
-        layoutDescriptionLabel()
     }
     
     fileprivate func setupStatusData(data: AirQualityStatusModel) {
         
-        titleButton.setTitle(String(data.AQI), for: .normal)
+        if data.AQI != 0 {
+            titleButton.setTitle(String(data.AQI), for: .normal)
+        }
+        
+        triangleIndicatorImageView.isHidden = false
         titleButton.tag = 1
         descriptionLabel.text = data.warmLog
         
-        func refreshUI() {
-            triangleIndicatorFrameX = progressView.x + CGFloat(data.level.rawValue) * (AirKnowConfig.airKnowAQSProgressSectionWidth + AirKnowConfig.airKnowAQSProgressLineWidth)
-            var frame = triangleIndicatorImageView.frame
-            frame.origin.x = triangleIndicatorFrameX
-            triangleIndicatorImageView.frame = frame
-            
-            let statusLevelThemeColor: ThemeColorPicker = returnAirQualityStatusThemeColor(level: data.level)
-            titleButton.theme_setTitleColor(statusLevelThemeColor, forState: .normal)
-            
-            drawProgressHighSectionView(statusColor: statusLevelThemeColor)
+        targetModel = data
+    }
+    
+    fileprivate func refreshUI() {
+        triangleIndicatorImageView.snp.updateConstraints { (make) in
+            make.left.equalTo(progressView.snp.left).offset(CGFloat(targetModel!.level.rawValue) * (AirKnowConfig.airKnowAQSProgressSectionWidth + AirKnowConfig.airKnowAQSProgressLineWidth))
         }
-        refreshUI()
+        
+        let statusLevelThemeColor: ThemeColorPicker = returnAirQualityStatusThemeColor(level: targetModel!.level)
+        titleButton.theme_setTitleColor(statusLevelThemeColor, forState: .normal)
+        
+        drawProgressView()
+        drawProgressHighSectionView(statusColor: statusLevelThemeColor)
     }
     
     // Return AirQulityStatus Level Theme Color
@@ -166,12 +175,24 @@ class AirQualityStatusView: UIView {
     
     // Switch Title Button
     @objc fileprivate func switchTitleButton(sender: UIButton) {
+        guard let statusDataInternal = statusData else {
+            return
+        }
+
         if sender.tag == 1 {
             titleButton.tag = 2
-            titleButton.setTitle(statusData?.status, for: .normal)
+            
+            if statusDataInternal.status == nil || statusDataInternal.status == "" {
+                return
+            }
+            
+            titleButton.setTitle(statusDataInternal.status, for: .normal)
         } else {
             titleButton.tag = 1
-            titleButton.setTitle(String(statusData!.AQI), for: .normal)
+            
+            if statusDataInternal.AQI != 0 {
+                titleButton.setTitle(String(statusDataInternal.AQI), for: .normal)
+            }
         }
     }
 }
@@ -180,11 +201,14 @@ class AirQualityStatusView: UIView {
 extension AirQualityStatusView {
     
     fileprivate func drawProgressView() {
-        
         func drawProgressBackgroundView() {
+            progressView.layer.sublayers?.forEach({ (subLyaer) in
+                subLyaer.removeFromSuperlayer()
+            })
+            
             let backgroundLayer: CALayer = CALayer()
             backgroundLayer.theme_backgroundColor = AirKnowConfig.airKnowAQSProgressBackgroundStyles
-            backgroundLayer.frame = progressView.frame
+            backgroundLayer.frame = progressView.bounds
             backgroundLayer.cornerRadius = 1.0
             backgroundLayer.masksToBounds = true
             progressView.layer.addSublayer(backgroundLayer)
@@ -204,17 +228,20 @@ extension AirQualityStatusView {
     }
     
     fileprivate func drawProgressHighSectionView(statusColor: ThemeColorPicker) {
-//        let highSectionLayer: CALayer = CALayer()
-//        highSectionLayer.theme_backgroundColor = statusColor
-//        highSectionLayer.frame =
-        let highSectionViewFrameX: CGFloat = triangleIndicatorFrameX - AirKnowConfig.airKnowAQSProgressLineWidth
+        if (progressHighSectionView != nil) {
+            progressHighSectionView?.removeFromSuperview()
+        }
+        
+        triangleIndicatorFrameX = progressView.x + CGFloat(targetModel!.level.rawValue) * (AirKnowConfig.airKnowAQSProgressSectionWidth + AirKnowConfig.airKnowAQSProgressLineWidth)
+        let highSectionViewFrameX: CGFloat = triangleIndicatorFrameX - AirKnowConfig.airKnowAQSProgressLineWidth - progressView.x
         let highSectionViewWidth: CGFloat = AirKnowConfig.airKnowAQSProgressSectionWidth + AirKnowConfig.airKnowAQSProgressLineWidth * 2
-        var highSectionFrame = progressView.frame
+        var highSectionFrame = progressView.bounds
         highSectionFrame.origin.x = highSectionViewFrameX
         highSectionFrame.size.width = highSectionViewWidth
         let highSectionView: UIView = UIView(frame: highSectionFrame)
         
         highSectionView.theme_backgroundColor = statusColor
         progressView.addSubview(highSectionView)
+        progressHighSectionView = highSectionView
     }
 }

@@ -39,6 +39,7 @@ PODS:
   - IGListKit/Diffing (3.0.0)
   - ScrollableGraphView (3.1.0)
   - SnapKit (3.2.0)
+  - Spring (1.0.3)
   - SwifterSwift (1.6.4)
   - SwiftTheme (0.3.3)
   - SwiftyJSON (3.1.4)
@@ -50,9 +51,20 @@ DEPENDENCIES:
   - IGListKit
   - ScrollableGraphView
   - SnapKit
+  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
   - SwifterSwift
   - SwiftTheme
   - SwiftyJSON
+
+EXTERNAL SOURCES:
+  Spring:
+    :branch: swift3
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: 8201b5c93bd7ebdf4cd18160bcde1e6e88c2be64
+    :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -61,10 +73,11 @@ SPEC CHECKSUMS:
   IGListKit: 9eab6856a15fa25ad72018ff9d9eb2178c240fff
   ScrollableGraphView: e2c8bedc7bbb643e8ac57b9456070d68355c4e4c
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwifterSwift: 92c73c47c3cbf7d5f788adf6459bf07b5d23d3fb
   SwiftTheme: 85f84747a48749b5b3df7c3e96fc0b1d45677d30
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 871a36c8e6c7a7e96d7d235ba610b75f927630e8
+PODFILE CHECKSUM: e753bca0a534210f851ca4255488c27d2427ec43
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.0.beta.2

@@ -16,3 +16,5 @@ github "SwifterSwift/SwifterSwift"
 github "ChiliLabs/CHIPageControl"
 # THEME
 github "jiecao-fm/SwiftTheme"
+# ANIMATION
+github "MengTo/Spring"

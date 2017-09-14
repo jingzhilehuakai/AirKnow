@@ -11,7 +11,7 @@ import UIKit
 import SwifterSwift
 
 // MARK: HomePageSectionViewControllerCell, contanier of air cells
-final class HomePageSectionViewControllerCell: UICollectionViewCell, UIScrollViewDelegate {
+final class HomePageSectionViewControllerMonitorLocationCell: UICollectionViewCell, UIScrollViewDelegate {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,6 +22,15 @@ final class HomePageSectionViewControllerCell: UICollectionViewCell, UIScrollVie
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configureWithModel(_ model: AirMonitorLocationModel?) {
+        guard let modelInternal = model else {
+            return
+        }
+        
+        location.locationName.text = modelInternal.location
+        location.updateTime.text = modelInternal.updateTime
     }
     
     //MARK: Location Name Background View

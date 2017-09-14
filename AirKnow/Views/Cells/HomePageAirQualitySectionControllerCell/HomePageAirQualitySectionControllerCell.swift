@@ -10,6 +10,23 @@ import UIKit
 
 class HomePageAirQualitySectionControllerCell: UICollectionViewCell {
     
+    func configureWithModel(_ model: AirQualityModel?) {
+        guard let modelInternal = model else {
+            return
+        }
+        
+        pollutionMaterialName.text = modelInternal.pollutionName
+        pollutionMaterialProfessionName.text = modelInternal.pollutionMaterialProfessionName
+        pollutionNumber.text = modelInternal.pollutionNumber
+        pollutionUnit.text = modelInternal.pollutionUnit
+        percentageNumber.text = modelInternal.percentageNumber
+        normalStandardNumber.text = modelInternal.normalStandardNumber
+        normalHolderLabel.text = "NORM"
+        
+        lineS.isHidden = false
+        lineF.isHidden = false
+    }
+    
     // Circle BG
     lazy var circleBackgroundView: UIView = {
         let circleBackgroundViewInternal = UIView()
@@ -19,76 +36,71 @@ class HomePageAirQualitySectionControllerCell: UICollectionViewCell {
     }()
     
     // Pollution Material Name
-    lazy var pollutionMaterialName : PlaceholderLabel = {
-        let pollutionMaterialNameInternal = PlaceholderLabel()
+    lazy var pollutionMaterialName : UILabel = {
+        let pollutionMaterialNameInternal = UILabel()
         pollutionMaterialNameInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellPMNStringStyles
         pollutionMaterialNameInternal.textAlignment = NSTextAlignment.left
         pollutionMaterialNameInternal.font = AirKnowConfig.homePageAirQualitySectionControllerCelPMNFont
-        pollutionMaterialNameInternal.theme_backgroundColor = AirKnowConfig.homePageAirQualitySectionControllerCellNODataBGStringStyles
         pollutionMaterialNameInternal.layer.cornerRadius = 2
         return pollutionMaterialNameInternal
     }()
     
     // Pollution Material Profession Name
-    lazy var pollutionMaterialProfessionName: PlaceholderLabel = {
-        let pollutionMaterialProfessionNameInternal = PlaceholderLabel()
+    lazy var pollutionMaterialProfessionName: UILabel = {
+        let pollutionMaterialProfessionNameInternal = UILabel()
         pollutionMaterialProfessionNameInternal.textAlignment = NSTextAlignment.left
         pollutionMaterialProfessionNameInternal.font = AirKnowConfig.homePageAirQualitySectionControllerCelPMPNFont
         pollutionMaterialProfessionNameInternal.layer.cornerRadius = 2
-        pollutionMaterialProfessionNameInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellPMPNStringStyles
-        pollutionMaterialProfessionNameInternal.theme_backgroundColor = AirKnowConfig.homePageAirQualitySectionControllerCellNODataBGStringStyles
         return pollutionMaterialProfessionNameInternal
     }()
     
     // Pollution Material Pollution Number
-    lazy var pollutionNumber: PlaceholderLabel = {
-        let pollutionNumberInternal = PlaceholderLabel()
+    lazy var pollutionNumber: UILabel = {
+        let pollutionNumberInternal = UILabel()
         pollutionNumberInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellPNStringStyles
         pollutionNumberInternal.font = AirKnowConfig.homePageAirQualitySectionControllerCelPNFont
         pollutionNumberInternal.textAlignment = NSTextAlignment.center
         pollutionNumberInternal.layer.cornerRadius = 2
-        pollutionNumberInternal.theme_backgroundColor = AirKnowConfig.homePageAirQualitySectionControllerCellNODataBGStringStyles
         return pollutionNumberInternal
     }()
     
     // Pollution Material Pollution Unit
-    lazy var pollutionUnit: PlaceholderLabel = {
-        let pollutionUnitInternal = PlaceholderLabel()
+    lazy var pollutionUnit: UILabel = {
+        let pollutionUnitInternal = UILabel()
         pollutionUnitInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellPUStringStyles
         pollutionUnitInternal.font = AirKnowConfig.homePageAirQualitySectionControllerCelPUFont
         pollutionUnitInternal.textAlignment = NSTextAlignment.left
         pollutionUnitInternal.layer.cornerRadius = 2
-        pollutionUnitInternal.theme_backgroundColor = AirKnowConfig.homePageAirQualitySectionControllerCellNODataBGStringStyles
         return pollutionUnitInternal
     }()
     
     // Two Separated Line
     lazy var lineF: UIView = {
         let lineFInternal = UIView()
+        lineFInternal.isHidden = true
         lineFInternal.theme_backgroundColor = AirKnowConfig.homePageAirQualitySectionControllerCellLineStringStyles
         return lineFInternal
     }()
     lazy var lineS: UIView = {
         let lineSInternal = UIView()
+        lineSInternal.isHidden = true
         lineSInternal.theme_backgroundColor = AirKnowConfig.homePageAirQualitySectionControllerCellLineStringStyles
         return lineSInternal
     }()
     
     // Percent Number Label
-    lazy var percentageNumber: PlaceholderLabel = {
-        let percentageNumberInternal = PlaceholderLabel()
+    lazy var percentageNumber: UILabel = {
+        let percentageNumberInternal = UILabel()
         percentageNumberInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellPercentNumberStringStyles
         percentageNumberInternal.textAlignment = NSTextAlignment.center
-        percentageNumberInternal.theme_backgroundColor = AirKnowConfig.homePageAirQualitySectionControllerCellNODataBGStringStyles
         percentageNumberInternal.font = AirKnowConfig.homePageAirQualitySectionControllerCelPercentNumberFont
         percentageNumberInternal.layer.cornerRadius = 2
         return percentageNumberInternal
     }()
     
     // Normal Standard Number
-    lazy var normalStandardNumber: PlaceholderLabel = {
-        let normalStandardNumberInternal = PlaceholderLabel()
-        normalStandardNumberInternal.theme_backgroundColor = AirKnowConfig.homePageAirQualitySectionControllerCellNODataBGStringStyles
+    lazy var normalStandardNumber: UILabel = {
+        let normalStandardNumberInternal = UILabel()
         normalStandardNumberInternal.font = AirKnowConfig.homePageAirQualitySectionControllerCelNSNFont
         normalStandardNumberInternal.textAlignment = NSTextAlignment.left
         normalStandardNumberInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellNormalStandardStringStyles
@@ -96,11 +108,10 @@ class HomePageAirQualitySectionControllerCell: UICollectionViewCell {
     }()
     
     // "NORMAL" Holder Label
-    lazy var normalHolderLabel: PlaceholderLabel = {
-        let normalHolderLabelINternal = PlaceholderLabel()
+    lazy var normalHolderLabel: UILabel = {
+        let normalHolderLabelINternal = UILabel()
         normalHolderLabelINternal.textAlignment = NSTextAlignment.left
         normalHolderLabelINternal.font = UIFont.systemFont(ofSize: 8.0)
-        normalHolderLabelINternal.theme_backgroundColor = AirKnowConfig.homePageAirQualitySectionControllerCellNODataBGStringStyles
         normalHolderLabelINternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellNormalHolderStringStyles
         return normalHolderLabelINternal
     }()

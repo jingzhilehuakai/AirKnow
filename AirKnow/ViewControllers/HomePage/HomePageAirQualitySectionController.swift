@@ -31,13 +31,7 @@ class HomePageAirQualitySectionController: ListSectionController {
             fatalError()
         }
         
-         cell.pollutionMaterialName.text = "Particular Matter"
-         cell.pollutionMaterialProfessionName.text = "PM10:"
-         cell.pollutionNumber.text = "888"
-         cell.pollutionUnit.text = "ug/m3"
-         cell.percentageNumber.text = "500%"
-         cell.normalStandardNumber.text = "50 ug/m"
-         cell.normalHolderLabel.text = "NORM"
+        cell.configureWithModel(AirQualityModel.init(pollutionName: "Particular Matter", pollutionMaterialProfessionName: "PM10:", pollutionNumber: "888", pollutionUnit: "ug/m3", percentageNumber: "500%", normalStandardNumber: "50 ug/m"))
         
         return cell
     }
