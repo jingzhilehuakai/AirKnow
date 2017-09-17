@@ -85,7 +85,7 @@ extension HomePageViewController: ListAdapterDataSource {
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        let homePageSectionViewController = HomePageSectionViewController()
+        let homePageSectionViewController = HomePageSectionController()
         return homePageSectionViewController
     }
     
@@ -108,7 +108,7 @@ extension HomePageViewController: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let currentIndex: NSInteger = NSInteger(fabs(collectionView.contentOffset.x) / collectionView.frame.size.width);
         if originIndex != currentIndex {
-            let homePageSectionViewController: HomePageSectionViewController = adapter.sectionController(forSection: originIndex) as! HomePageSectionViewController
+            let homePageSectionViewController: HomePageSectionController = adapter.sectionController(forSection: originIndex) as! HomePageSectionController
             homePageSectionViewController.retentionCell?.collectionView.setContentOffset(CGPoint.init(x: 0, y: -AirKnowConfig.homePageCollectionViewEdgeTopPadding), animated: true)
             homePageSectionViewController.retentionCell?.location.setAlpppha(1)
         }

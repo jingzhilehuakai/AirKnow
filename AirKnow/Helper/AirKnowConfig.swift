@@ -140,6 +140,9 @@ final class AirKnowConfig {
     
     //MARK: Holder Label
     static let homePageAirQualitySectionControllerCellNormalHolderStringStyles: ThemeColorPicker = ["#999999", "#494949"]
+    
+    //MARK: Graph View
+    static let homePageAirQualityHistoryGraphViewHeight: CGFloat = 150
 }
 
 // MARK: - The Configuration of AirQualityStatusView
@@ -186,5 +189,4 @@ extension AirKnowConfig {
     static let airKnowAQSHazardousStyles: ThemeColorPicker = ["#7E0023", "#7E0023"]
     
     static let airKnowAQSViewHeight: CGFloat = airKnowAQSTitleButtonTopPadding + airKnowAQSTitleButtonHeight + airKnowAQSTriangleIndicatorTopPadding + airKnowAQSTriangleIndicatorHeight + airKnowAQSProgressTopPadding + airKnowAQSProgressHeight + airKnowAQSDescriptionLabelTopPadding + airKnowAQSDescriptionLabelHeight + airKnowAQSDescriptionLabelBottomPadding
-
 }

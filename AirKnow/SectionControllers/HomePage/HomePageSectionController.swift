@@ -11,7 +11,10 @@ import SwifterSwift
 import SwiftTheme
 
 // MARK: HomePageSectionViewController, container of tableview
-class HomePageSectionViewController: ListSectionController {
+class HomePageSectionController: ListSectionController {
+    
+    // MARK: Fetching data
+    var targetData: Any?
     
     // MARK: Retention Cell
     var retentionCell: HomePageSectionViewControllerMonitorLocationCell?
@@ -45,12 +48,12 @@ class HomePageSectionViewController: ListSectionController {
     }
     
     override func didUpdate(to object: Any) {
-        
+        targetData = object
     }
 }
 
 // ScrollView Delegate
-extension HomePageSectionViewController: UIScrollViewDelegate {
+extension HomePageSectionController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY: CGFloat = scrollView.contentOffset.y
         if offsetY + AirKnowConfig.homePageCollectionViewEdgeTopPadding > 0 {
@@ -66,11 +69,10 @@ extension HomePageSectionViewController: UIScrollViewDelegate {
 }
 
 // MARK: ListAdapterDataSource
-extension HomePageSectionViewController: ListAdapterDataSource {
+extension HomePageSectionController: ListAdapterDataSource {
     
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return [AirQualityStatusModel(AQI: 15, level: 0, status: "Good", warmLog: "Perfect perfect, very perfect") as ListDiffable,
-                0 as ListDiffable]
+        return [AirQualityStatusModel(AQI: 15, level: 0, status: "Good", warmLog: "Perfect perfect, very perfect") as ListDiffable, 0 as ListDiffable]
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {

@@ -10,7 +10,7 @@ def startPodInstaller
 
 	pod 'AFNetworking'
 	pod 'AwesomeCache'
-	pod 'IGListKit'
+    pod 'IGListKit', '~> 3.0'
 	pod 'SnapKit'
 	pod 'ScrollableGraphView'
 	pod 'SwiftyJSON'
