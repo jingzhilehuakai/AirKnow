@@ -320,7 +320,7 @@
 				TargetAttributes = {
 					2C411F291F5F9B47006F0F47 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = E3FWW9E846;
+						DevelopmentTeam = LW6H7DW53Z;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -569,12 +569,13 @@
 			baseConfigurationReference = B4F30F5B2DD3118CD6AF1121 /* Pods-AirKnow.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E3FWW9E846;
+				DEVELOPMENT_TEAM = LW6H7DW53Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Spring",
 				);
 				INFOPLIST_FILE = AirKnow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chenchaobang.AirKnow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -587,12 +588,13 @@
 			baseConfigurationReference = 4D8B70FCC9BBECDF1C7C5776 /* Pods-AirKnow.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E3FWW9E846;
+				DEVELOPMENT_TEAM = LW6H7DW53Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Spring",
 				);
 				INFOPLIST_FILE = AirKnow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chenchaobang.AirKnow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
