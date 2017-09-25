@@ -10,7 +10,7 @@ import UIKit
 import IGListKit
 
 class AirQualityModel: NSObject, ListDiffable {
-
+    
     var pollutionName: String?
     var pollutionMaterialProfessionName: String?
     var pollutionNumber: String?

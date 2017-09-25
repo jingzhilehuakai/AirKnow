@@ -51,6 +51,7 @@ class HomePageAirQualitySectionControllerCell: UICollectionViewCell {
         pollutionMaterialProfessionNameInternal.textAlignment = NSTextAlignment.left
         pollutionMaterialProfessionNameInternal.font = AirKnowConfig.homePageAirQualitySectionControllerCelPMPNFont
         pollutionMaterialProfessionNameInternal.layer.cornerRadius = 2
+        pollutionMaterialProfessionNameInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellPMPNStringStyles
         return pollutionMaterialProfessionNameInternal
     }()
     

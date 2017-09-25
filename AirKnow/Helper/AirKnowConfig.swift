@@ -108,6 +108,8 @@ final class AirKnowConfig {
     static let homePageAirQualitySectionControllerCelPMPNBottomPadding: CGFloat = -AirKnowConfig.homePageAirQualitySectionControllerCelPMPNTopPadding
     static let homePageAirQualitySectionControllerCelPMPNWidth: CGFloat = UIScreen.main.bounds.width / 6
     static let homePageAirQualitySectionControllerCelPMPNheight: CGFloat = AirKnowConfig.homePageAirQualitySectionControllerCellHeight / 2.5
+    static let homePageAirQualitySectionControllerCellPMPNStringStyles: ThemeColorPicker = ["#313131", "#7A7A7A"]
+
     
     //MARK: Homepage AirQuality SC Cell Pollution Number
     static let homePageAirQualitySectionControllerCelPNWidth: CGFloat = UIScreen.main.bounds.width / 8
