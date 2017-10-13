@@ -36,11 +36,12 @@ class HomePageAirQualitySectionController: ListSectionController {
         var targetCell: UICollectionViewCell!
         
         if expendCellIndex != nil && expendCellIndex == index {
-            guard let cell = collectionContext?.dequeueReusableCell(of: HomePageAirQualitySectionControllerExpendCell.self, for: self, at: index) else {
+            guard let cell = collectionContext?.dequeueReusableCell(of: HomePageAirQualitySectionControllerExpendCell.self, for: self, at: index)  as? HomePageAirQualitySectionControllerExpendCell else {
                 fatalError()
             }
             
             targetCell = cell
+            cell.configureWithModel(AirQualityModel.init(pollutionName: "Particular Matter", pollutionMaterialProfessionName: "PM10:", pollutionNumber: "888", pollutionUnit: "ug/m3", percentageNumber: "500%", normalStandardNumber: "50 ug/m"))
         } else {
             guard let cell = collectionContext?.dequeueReusableCell(of: HomePageAirQualitySectionControllerCell.self, for: self, at: index) as? HomePageAirQualitySectionControllerCell else {
                 fatalError()
