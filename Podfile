@@ -13,7 +13,7 @@ def startPodInstaller
     pod 'IGListKit', '~> 3.0'
 	pod 'SnapKit'
 	pod 'ScrollableGraphView'
-	pod 'SwiftyJSON'
+	pod 'HandyJSON'
 	pod 'SwifterSwift'
 	pod 'CHIPageControl'
 	pod 'SwiftTheme'

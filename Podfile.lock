@@ -32,6 +32,7 @@ PODS:
   - CHIPageControl/Jaloro (0.1.3)
   - CHIPageControl/Paprika (0.1.3)
   - CHIPageControl/Puya (0.1.3)
+  - HandyJSON (1.7.1)
   - IGListKit (3.0.0):
     - IGListKit/Default (= 3.0.0)
   - IGListKit/Default (3.0.0):
@@ -42,19 +43,18 @@ PODS:
   - Spring (1.0.3)
   - SwifterSwift (1.6.4)
   - SwiftTheme (0.3.3)
-  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - AFNetworking
   - AwesomeCache
   - CHIPageControl
+  - HandyJSON
   - IGListKit (~> 3.0)
   - ScrollableGraphView
   - SnapKit
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
   - SwifterSwift
   - SwiftTheme
-  - SwiftyJSON
 
 EXTERNAL SOURCES:
   Spring:
@@ -70,14 +70,14 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   AwesomeCache: d8906955242173357caa0be0214d5e77dec32cc5
   CHIPageControl: 2d3a0edacd7e3bc113bc88cbf187ba8f0b045548
+  HandyJSON: 54b6ce942795f7b2e61b82fe73cf25d9f139d125
   IGListKit: 9eab6856a15fa25ad72018ff9d9eb2178c240fff
   ScrollableGraphView: e2c8bedc7bbb643e8ac57b9456070d68355c4e4c
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwifterSwift: 92c73c47c3cbf7d5f788adf6459bf07b5d23d3fb
   SwiftTheme: 85f84747a48749b5b3df7c3e96fc0b1d45677d30
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 229114474e4e428e62497800d4d5a61ce2079b34
+PODFILE CHECKSUM: 301d3bfebc9eaef127f63aa1267aba2728be0969
 
 COCOAPODS: 1.3.0.beta.2
