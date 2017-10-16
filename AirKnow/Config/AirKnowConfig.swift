@@ -39,6 +39,14 @@ final class AirKnowConfig {
         case dark  = 1
     }
     
+    //MARK: Domain
+    static let networkServiceErrorDomain = "com.airknow.networkError"
+    enum airKnowNetworkError: Int {
+        case responseDataHandlerCode = 4001
+        case networkLinkErrorCode = 4002
+        case modelDeserializeError = 4003
+    }
+    
     //MARK: Status
     static let statusBarStringStyles: ThemeStatusBarStylePicker = [UIStatusBarStyle.default, UIStatusBarStyle.lightContent]
     
