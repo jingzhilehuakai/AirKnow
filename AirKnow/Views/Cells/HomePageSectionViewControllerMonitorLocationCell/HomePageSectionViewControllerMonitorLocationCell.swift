@@ -36,7 +36,7 @@ final class HomePageSectionViewControllerMonitorLocationCell: UICollectionViewCe
     //MARK: Location Name Background View
     lazy var location: MonitorLocationView = {
         let locationInternal = MonitorLocationView.init(frame: self.contentView.frame)
-        locationInternal.theme_backgroundColor = AirKnowConfig.homePageVCBGStringStyels
+        locationInternal.theme_backgroundColor = AirKnowConfig.homePageVCBGStyles
         return locationInternal
     }()
     

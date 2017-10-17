@@ -16,10 +16,8 @@ class TabbrController: UITabBarController {
     // MARK: Prompt Button
     lazy var promptButton: ExpandTouchPointButton! = {
         var promptButtonInternal: ExpandTouchPointButton = ExpandTouchPointButton.init()
-        promptButtonInternal.theme_setImage(AirKnowConfig.promptButtonImageStringStyels, forState: .normal)
-        
+        promptButtonInternal.theme_setImage(AirKnowConfig.promptButtonImageStyles, forState: .normal)
         promptButtonInternal.addTarget(self, action:#selector(tapped(_:)), for:.touchUpInside)
-
         return promptButtonInternal
     }()
     
@@ -35,7 +33,7 @@ class TabbrController: UITabBarController {
     // MARK: Add Location Button
     lazy var addLoadtionButton: ExpandTouchPointButton! = {
         var addLocationButtonInternal = ExpandTouchPointButton.init()
-        addLocationButtonInternal.theme_setImage(AirKnowConfig.addLocationButtonImageStringStyels, forState: .normal)
+        addLocationButtonInternal.theme_setImage(AirKnowConfig.addLocationButtonImageStyles, forState: .normal)
         return addLocationButtonInternal
     }()
     
@@ -44,8 +42,7 @@ class TabbrController: UITabBarController {
         var pageControlsInternal: CHIPageControlJalapeno = CHIPageControlJalapeno.init()
         pageControlsInternal.padding = 5
         pageControlsInternal.radius = 3
-        pageControlsInternal.theme_tintColor = AirKnowConfig.homePagePageControllerStringStyels
-        pageControlsInternal.numberOfPages = 3
+        pageControlsInternal.theme_tintColor = AirKnowConfig.homePagePageControllerStyles
         return pageControlsInternal
     }()
     
@@ -104,7 +101,7 @@ class TabbrController: UITabBarController {
         super.viewDidLoad()
         
         // MARK: Setup Theme Color
-        self.tabBar.theme_backgroundColor = AirKnowConfig.tabbarStringStyles
+        self.tabBar.theme_backgroundColor = AirKnowConfig.tabbarStyles
     }
     
     override func didReceiveMemoryWarning() {

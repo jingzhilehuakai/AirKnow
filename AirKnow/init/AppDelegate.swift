@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import YTKNetwork
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,8 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         // MARK: Override point for customization after application launch.
         ViewConfiguration.setup(window: &window)
+        
+        // MARK: Setup YTK baseUrl
+        YTKNetworkConfig.shared().baseUrl = "http://165.227.165.99:8181";
+        
+        CityAQIInfoService.getWithCityID("beijing") { (apiModel, error) in
+            
+        }
+        
         return true
     }
 

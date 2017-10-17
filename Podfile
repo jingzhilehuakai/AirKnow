@@ -9,14 +9,15 @@ def startPodInstaller
 	# pod 'AirKnow', :path => './'
 
 	pod 'AFNetworking'
-	pod 'AwesomeCache'
+    pod 'Cache'
     pod 'IGListKit', '~> 3.0'
 	pod 'SnapKit'
 	pod 'ScrollableGraphView'
-	pod 'SwiftyJSON'
+	pod 'HandyJSON'
 	pod 'SwifterSwift'
 	pod 'CHIPageControl'
 	pod 'SwiftTheme'
+    pod 'YTKNetwork'
     pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
 end
 

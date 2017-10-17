@@ -15,7 +15,7 @@ class HomePageAirQualityStatusSectionControllerCell: UICollectionViewCell {
     // Circle BG
     lazy var circleBackgroundView: UIView = {
         let circleBackgroundViewInternal = UIView()
-        circleBackgroundViewInternal.theme_backgroundColor = AirKnowConfig.homePageAirQualityStatusSectionControllerCellBGStringStyles
+        circleBackgroundViewInternal.theme_backgroundColor = AirKnowConfig.homePageAirQualityStatusSectionControllerCellBGStyles
         circleBackgroundViewInternal.layer.cornerRadius = 2
         return circleBackgroundViewInternal
     }()

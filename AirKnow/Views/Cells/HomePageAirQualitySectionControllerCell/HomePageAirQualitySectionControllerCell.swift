@@ -30,7 +30,7 @@ class HomePageAirQualitySectionControllerCell: UICollectionViewCell {
     // Circle BG
     lazy var circleBackgroundView: UIView = {
         let circleBackgroundViewInternal = UIView()
-        circleBackgroundViewInternal.theme_backgroundColor = AirKnowConfig.homePageAirQualityStatusSectionControllerCellBGStringStyles
+        circleBackgroundViewInternal.theme_backgroundColor = AirKnowConfig.homePageAirQualityStatusSectionControllerCellBGStyles
         circleBackgroundViewInternal.layer.cornerRadius = 2
         return circleBackgroundViewInternal
     }()
@@ -38,7 +38,7 @@ class HomePageAirQualitySectionControllerCell: UICollectionViewCell {
     // Pollution Material Name
     lazy var pollutionMaterialName : UILabel = {
         let pollutionMaterialNameInternal = UILabel()
-        pollutionMaterialNameInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellPMNStringStyles
+        pollutionMaterialNameInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellPMNStyles
         pollutionMaterialNameInternal.textAlignment = NSTextAlignment.left
         pollutionMaterialNameInternal.font = AirKnowConfig.homePageAirQualitySectionControllerCelPMNFont
         pollutionMaterialNameInternal.layer.cornerRadius = 2
@@ -51,14 +51,14 @@ class HomePageAirQualitySectionControllerCell: UICollectionViewCell {
         pollutionMaterialProfessionNameInternal.textAlignment = NSTextAlignment.left
         pollutionMaterialProfessionNameInternal.font = AirKnowConfig.homePageAirQualitySectionControllerCelPMPNFont
         pollutionMaterialProfessionNameInternal.layer.cornerRadius = 2
-        pollutionMaterialProfessionNameInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellPMPNStringStyles
+        pollutionMaterialProfessionNameInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellPMPNStyles
         return pollutionMaterialProfessionNameInternal
     }()
     
     // Pollution Material Pollution Number
     lazy var pollutionNumber: UILabel = {
         let pollutionNumberInternal = UILabel()
-        pollutionNumberInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellPNStringStyles
+        pollutionNumberInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellPNStyles
         pollutionNumberInternal.font = AirKnowConfig.homePageAirQualitySectionControllerCelPNFont
         pollutionNumberInternal.textAlignment = NSTextAlignment.center
         pollutionNumberInternal.layer.cornerRadius = 2
@@ -68,7 +68,7 @@ class HomePageAirQualitySectionControllerCell: UICollectionViewCell {
     // Pollution Material Pollution Unit
     lazy var pollutionUnit: UILabel = {
         let pollutionUnitInternal = UILabel()
-        pollutionUnitInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellPUStringStyles
+        pollutionUnitInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellPUStyles
         pollutionUnitInternal.font = AirKnowConfig.homePageAirQualitySectionControllerCelPUFont
         pollutionUnitInternal.textAlignment = NSTextAlignment.left
         pollutionUnitInternal.layer.cornerRadius = 2
@@ -79,20 +79,20 @@ class HomePageAirQualitySectionControllerCell: UICollectionViewCell {
     lazy var lineF: UIView = {
         let lineFInternal = UIView()
         lineFInternal.isHidden = true
-        lineFInternal.theme_backgroundColor = AirKnowConfig.homePageAirQualitySectionControllerCellLineStringStyles
+        lineFInternal.theme_backgroundColor = AirKnowConfig.homePageAirQualitySectionControllerCellLineStyles
         return lineFInternal
     }()
     lazy var lineS: UIView = {
         let lineSInternal = UIView()
         lineSInternal.isHidden = true
-        lineSInternal.theme_backgroundColor = AirKnowConfig.homePageAirQualitySectionControllerCellLineStringStyles
+        lineSInternal.theme_backgroundColor = AirKnowConfig.homePageAirQualitySectionControllerCellLineStyles
         return lineSInternal
     }()
     
     // Percent Number Label
     lazy var percentageNumber: UILabel = {
         let percentageNumberInternal = UILabel()
-        percentageNumberInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellPercentNumberStringStyles
+        percentageNumberInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellPercentNumberStyles
         percentageNumberInternal.textAlignment = NSTextAlignment.center
         percentageNumberInternal.font = AirKnowConfig.homePageAirQualitySectionControllerCelPercentNumberFont
         percentageNumberInternal.layer.cornerRadius = 2
@@ -104,7 +104,7 @@ class HomePageAirQualitySectionControllerCell: UICollectionViewCell {
         let normalStandardNumberInternal = UILabel()
         normalStandardNumberInternal.font = AirKnowConfig.homePageAirQualitySectionControllerCelNSNFont
         normalStandardNumberInternal.textAlignment = NSTextAlignment.left
-        normalStandardNumberInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellNormalStandardStringStyles
+        normalStandardNumberInternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellNormalStandardStyles
         return normalStandardNumberInternal
     }()
     
@@ -113,7 +113,7 @@ class HomePageAirQualitySectionControllerCell: UICollectionViewCell {
         let normalHolderLabelINternal = UILabel()
         normalHolderLabelINternal.textAlignment = NSTextAlignment.left
         normalHolderLabelINternal.font = UIFont.systemFont(ofSize: 8.0)
-        normalHolderLabelINternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellNormalHolderStringStyles
+        normalHolderLabelINternal.theme_textColor = AirKnowConfig.homePageAirQualitySectionControllerCellNormalHolderStyles
         return normalHolderLabelINternal
     }()
     
