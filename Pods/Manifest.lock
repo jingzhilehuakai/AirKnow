@@ -14,7 +14,8 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - AwesomeCache (5.0)
+  - Cache (4.0.2):
+    - SwiftHash (~> 2.0.0)
   - CHIPageControl (0.1.3):
     - CHIPageControl/Aji (= 0.1.3)
     - CHIPageControl/Aleppo (= 0.1.3)
@@ -42,13 +43,14 @@ PODS:
   - SnapKit (3.2.0)
   - Spring (1.0.3)
   - SwifterSwift (1.6.4)
+  - SwiftHash (2.0.0)
   - SwiftTheme (0.3.3)
   - YTKNetwork (2.0.4):
     - AFNetworking (~> 3.0)
 
 DEPENDENCIES:
   - AFNetworking
-  - AwesomeCache
+  - Cache
   - CHIPageControl
   - HandyJSON
   - IGListKit (~> 3.0)
@@ -71,7 +73,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  AwesomeCache: d8906955242173357caa0be0214d5e77dec32cc5
+  Cache: 363b6899cee63c82ccbd291e64a6c202abc17a88
   CHIPageControl: 2d3a0edacd7e3bc113bc88cbf187ba8f0b045548
   HandyJSON: 54b6ce942795f7b2e61b82fe73cf25d9f139d125
   IGListKit: 9eab6856a15fa25ad72018ff9d9eb2178c240fff
@@ -79,9 +81,10 @@ SPEC CHECKSUMS:
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwifterSwift: 92c73c47c3cbf7d5f788adf6459bf07b5d23d3fb
+  SwiftHash: d2e09b13495447178cdfb8e46e54a5c46f15f5a9
   SwiftTheme: 85f84747a48749b5b3df7c3e96fc0b1d45677d30
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
 
-PODFILE CHECKSUM: 02c636f96c96bd3dacaeaa68435e7aa479368341
+PODFILE CHECKSUM: 92153e7c1eb568a4ef2bb0a8f6553e891b5fa176
 
 COCOAPODS: 1.3.1

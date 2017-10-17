@@ -33,7 +33,7 @@ class HomePageViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionViewInternal = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionViewInternal.theme_backgroundColor = AirKnowConfig.homePageVCBGStringStyels
+        collectionViewInternal.theme_backgroundColor = AirKnowConfig.homePageVCBGStyles
         collectionViewInternal.isPagingEnabled = true
         collectionViewInternal.showsVerticalScrollIndicator = false
         collectionViewInternal.showsHorizontalScrollIndicator = false
@@ -77,11 +77,9 @@ class HomePageViewController: UIViewController {
 extension HomePageViewController: ListAdapterDataSource {
 
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return [
-            14,
-            6,
-            2
-            ] as [ListDiffable]
+        let dataArr = AirKnowLocationManager.sharedInstance.getAllCityModels()
+        pageControl?.numberOfPages = dataArr != nil ? dataArr!.count : 0
+        return dataArr as! [ListDiffable]
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
@@ -90,7 +88,7 @@ extension HomePageViewController: ListAdapterDataSource {
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
-        return nil
+        return NODataView()
     }
 }
 

@@ -31,7 +31,7 @@ class AirQualityStatusView: UIView {
     lazy var triangleIndicatorImageView: UIImageView = {
         let triangleIndicatorImageViewInternal: UIImageView = UIImageView()
         triangleIndicatorImageViewInternal.isHidden = true
-        triangleIndicatorImageViewInternal.theme_image = AirKnowConfig.airKnowAQSTriangleIndicatorImageStringStyles
+        triangleIndicatorImageViewInternal.theme_image = AirKnowConfig.airKnowAQSTriangleIndicatorImageStyles
         triangleIndicatorImageViewInternal.backgroundColor = UIColor.clear
         return triangleIndicatorImageViewInternal
     }()
@@ -41,7 +41,7 @@ class AirQualityStatusView: UIView {
         descriptionLabelInternal.textAlignment = NSTextAlignment.center
         descriptionLabelInternal.backgroundColor = UIColor.clear
         descriptionLabelInternal.font = AirKnowConfig.airKnowAQSDescriptionLabelFont
-        descriptionLabelInternal.theme_textColor = AirKnowConfig.airKnowAQSDescriptionLabelStringStyles
+        descriptionLabelInternal.theme_textColor = AirKnowConfig.airKnowAQSDescriptionLabelStyles
         return descriptionLabelInternal
     }()
     

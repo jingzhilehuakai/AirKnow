@@ -22,6 +22,6 @@ class ViewConfiguration: NSObject {
     }
     
     class func setupStatus() {
-        UIApplication.shared.theme_setStatusBarStyle(AirKnowConfig.statusBarStringStyles, animated: true)
+        UIApplication.shared.theme_setStatusBarStyle(AirKnowConfig.statusBarStyles, animated: true)
     }
 }

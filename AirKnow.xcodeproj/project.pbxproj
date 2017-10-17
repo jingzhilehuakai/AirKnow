@@ -32,6 +32,9 @@
 		2CFAF1661F7A1BB500C319EE /* AirQualityDataSourceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFAF1651F7A1BB500C319EE /* AirQualityDataSourceHelper.swift */; };
 		375CF4AA1F6678C100CC2F1B /* AirQualityStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CF4A91F6678C100CC2F1B /* AirQualityStatusView.swift */; };
 		B298555DF5896369162E7A11 /* Pods_AirKnow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122842FD00251EE27B052477 /* Pods_AirKnow.framework */; };
+		C49FB1561F95A5E50063F1B6 /* AirKnowLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49FB1551F95A5E50063F1B6 /* AirKnowLocationManager.swift */; };
+		C49FB1591F95AEE30063F1B6 /* AirQualityNearestAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49FB1581F95AEE30063F1B6 /* AirQualityNearestAPIModel.swift */; };
+		C49FB1601F95E5B90063F1B6 /* NODataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49FB15F1F95E5B90063F1B6 /* NODataView.swift */; };
 		C4AF92231F909111009B9E5B /* CityAQIInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AF92221F909111009B9E5B /* CityAQIInfoService.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +69,9 @@
 		375CF4A91F6678C100CC2F1B /* AirQualityStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualityStatusView.swift; sourceTree = "<group>"; };
 		4D8B70FCC9BBECDF1C7C5776 /* Pods-AirKnow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirKnow.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirKnow/Pods-AirKnow.release.xcconfig"; sourceTree = "<group>"; };
 		B4F30F5B2DD3118CD6AF1121 /* Pods-AirKnow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirKnow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirKnow/Pods-AirKnow.debug.xcconfig"; sourceTree = "<group>"; };
+		C49FB1551F95A5E50063F1B6 /* AirKnowLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirKnowLocationManager.swift; sourceTree = "<group>"; };
+		C49FB1581F95AEE30063F1B6 /* AirQualityNearestAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityNearestAPIModel.swift; sourceTree = "<group>"; };
+		C49FB15F1F95E5B90063F1B6 /* NODataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NODataView.swift; sourceTree = "<group>"; };
 		C4AF92221F909111009B9E5B /* CityAQIInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAQIInfoService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,24 +102,6 @@
 				2C1352501F6C1C630077FDC9 /* AirQualityHistoryGraphView.swift */,
 			);
 			path = AirQualityHistoryGraphView;
-			sourceTree = "<group>";
-		};
-		2C1352521F6C2F680077FDC9 /* SectionControllers */ = {
-			isa = PBXGroup;
-			children = (
-				2C1352531F6C2F7D0077FDC9 /* HomePage */,
-			);
-			path = SectionControllers;
-			sourceTree = "<group>";
-		};
-		2C1352531F6C2F7D0077FDC9 /* HomePage */ = {
-			isa = PBXGroup;
-			children = (
-				2C1352561F6C2FC40077FDC9 /* HomePageSectionController.swift */,
-				2C1352541F6C2FC40077FDC9 /* HomePageAirQualitySectionController.swift */,
-				2C1352551F6C2FC40077FDC9 /* HomePageAirQualityStatusSectionController.swift */,
-			);
-			path = HomePage;
 			sourceTree = "<group>";
 		};
 		2C13525A1F6D48180077FDC9 /* HomePageAirQualitySectionControllerExpendCell */ = {
@@ -153,7 +141,6 @@
 				2C411F641F629F11006F0F47 /* Views */,
 				2C411F461F60ED2B006F0F47 /* Extensions */,
 				2C411F491F60F1DC006F0F47 /* Helper */,
-				2C1352521F6C2F680077FDC9 /* SectionControllers */,
 				2C411F551F6239ED006F0F47 /* ViewControllers */,
 				2C411F341F5F9B47006F0F47 /* Assets.xcassets */,
 				2C411F361F5F9B47006F0F47 /* LaunchScreen.storyboard */,
@@ -174,6 +161,7 @@
 		2C411F491F60F1DC006F0F47 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				C49FB1551F95A5E50063F1B6 /* AirKnowLocationManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -190,6 +178,7 @@
 		2C411F641F629F11006F0F47 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C49FB15C1F95E59C0063F1B6 /* NODataView */,
 				2C13524F1F6C1C390077FDC9 /* AirQualityHistoryGraphView */,
 				375CF4A81F6678C100CC2F1B /* AirQualityStatus */,
 				2C4D719B1F64448200EC9210 /* Cells */,
@@ -201,6 +190,9 @@
 		2C411F7C1F63AAAF006F0F47 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				2C1352561F6C2FC40077FDC9 /* HomePageSectionController.swift */,
+				2C1352541F6C2FC40077FDC9 /* HomePageAirQualitySectionController.swift */,
+				2C1352551F6C2FC40077FDC9 /* HomePageAirQualityStatusSectionController.swift */,
 				2C411F7D1F63AAAF006F0F47 /* HomePageViewController.swift */,
 			);
 			path = HomePage;
@@ -214,6 +206,7 @@
 				2C962F4F1F6AE4390009FEC8 /* AirQualityModel.swift */,
 				2CFAF1631F797B9800C319EE /* AirQualityAPIModel.swift */,
 				2CFAF1651F7A1BB500C319EE /* AirQualityDataSourceHelper.swift */,
+				C49FB1581F95AEE30063F1B6 /* AirQualityNearestAPIModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,6 +277,14 @@
 				375CF4A91F6678C100CC2F1B /* AirQualityStatusView.swift */,
 			);
 			path = AirQualityStatus;
+			sourceTree = "<group>";
+		};
+		C49FB15C1F95E59C0063F1B6 /* NODataView */ = {
+			isa = PBXGroup;
+			children = (
+				C49FB15F1F95E5B90063F1B6 /* NODataView.swift */,
+			);
+			path = NODataView;
 			sourceTree = "<group>";
 		};
 		C4AF921E1F908E74009B9E5B /* Services */ = {
@@ -412,13 +413,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AirKnow/Pods-AirKnow-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/AwesomeCache/AwesomeCache.framework",
 				"${BUILT_PRODUCTS_DIR}/CHIPageControl/CHIPageControl.framework",
+				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ScrollableGraphView/ScrollableGraphView.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftHash/SwiftHash.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftTheme/SwiftTheme.framework",
 				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/YTKNetwork/YTKNetwork.framework",
@@ -426,13 +428,14 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AwesomeCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CHIPageControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScrollableGraphView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftTheme.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YTKNetwork.framework",
@@ -467,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C49FB1591F95AEE30063F1B6 /* AirQualityNearestAPIModel.swift in Sources */,
 				2C1352581F6C2FC40077FDC9 /* HomePageAirQualityStatusSectionController.swift in Sources */,
 				2C962F551F6AEA7A0009FEC8 /* AirMonitorLocationModel.swift in Sources */,
 				2C962F1C1F66734A0009FEC8 /* HomePageAirQualityStatusSectionControllerCell.swift in Sources */,
@@ -487,6 +491,8 @@
 				2CFAF1661F7A1BB500C319EE /* AirQualityDataSourceHelper.swift in Sources */,
 				2C962F241F66D2C00009FEC8 /* UITabbar+AirKnow.swift in Sources */,
 				2C411F4B1F60F1E7006F0F47 /* AirKnowConfig.swift in Sources */,
+				C49FB1601F95E5B90063F1B6 /* NODataView.swift in Sources */,
+				C49FB1561F95A5E50063F1B6 /* AirKnowLocationManager.swift in Sources */,
 				2C4D718A1F642E8000EC9210 /* AirQualityStatusModel.swift in Sources */,
 				375CF4AA1F6678C100CC2F1B /* AirQualityStatusView.swift in Sources */,
 				2C4D71991F643A5400EC9210 /* ViewConfiguration.swift in Sources */,

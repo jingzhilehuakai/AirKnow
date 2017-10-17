@@ -49,6 +49,7 @@ class CityAQIInfoService: NSObject {
                 return
             }
             
+            airQualityAPIModel.jsonString = request.responseString
             completetion(airQualityAPIModel, error)
         }) { (request) in
             error = NSError.init(domain: AirKnowConfig.networkServiceErrorDomain, code: AirKnowConfig.airKnowNetworkError.networkLinkErrorCode.rawValue, userInfo: nil)
