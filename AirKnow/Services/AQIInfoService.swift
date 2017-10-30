@@ -51,6 +51,7 @@ class AQIInfoService: NSObject {
                 return
             }
             
+            airQualityAPIModel.cityId = cityId
             airQualityAPIModel.jsonString = request.responseString
             completetion(airQualityAPIModel, error)
         }) { (request) in

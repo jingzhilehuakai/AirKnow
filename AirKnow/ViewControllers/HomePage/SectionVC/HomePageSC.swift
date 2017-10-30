@@ -45,8 +45,18 @@ class HomePageSC: ListSectionController {
         return cell
     }
     
+    func udpateData() {
+        if let lastUpdateTime = targetData?.time  {
+            let timeS = NSDate().timeIntervalSince1970 - lastUpdateTime
+            if timeS >= 60 * 60 {
+                
+            }
+        }
+    }
+    
     override func didUpdate(to object: Any) {
         targetData = object as? AirQualityAPIModel
+        udpateData()
     }
 }
 

@@ -35,6 +35,8 @@ class AirKnowLocationManager: NSObject {
             if let nearest = item.nearest, let nearestF: AirQualityNearestAPIModel = nearest.first, let curMId = nearestF.locationId, let rmId = rm.uid {
                 if rmId == curMId {
                     NotificationCenter.default.post(name: NSNotification.Name("HomePageHideHUD"), object: self, userInfo: ["Er": index])
+                    self.updateLocation(at: index, completetion: {
+                    })
                     return
                 }
             }
@@ -53,6 +55,18 @@ class AirKnowLocationManager: NSObject {
             })
         } else {
             NotificationCenter.default.post(name: NSNotification.Name("HomePageHideHUD"), object: self, userInfo: ["Er": "no valid uid"])
+        }
+    }
+    
+    func updateLocation(at index: Int,  completetion: @escaping ()->()) {
+        var currenCityModels = self.getAllCityModels()
+        let model = currenCityModels![index]
+        if let rmUid = model.cityId {
+            AQIInfoService.goGet(rmUid, completetion: { (apiModel, error) in
+                if apiModel != nil {
+                    currenCityModels?.replaceSubrange(Range(index..<index+1), with: [apiModel!])
+                }
+            })
         }
     }
     
