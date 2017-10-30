@@ -121,6 +121,12 @@ extension HomePageViewController: ListAdapterDataSource {
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
         let homePageSectionViewController = HomePageSC()
+        homePageSectionViewController.needUpdateBlock = {
+            let index = listAdapter.section(for: homePageSectionViewController)
+            AirKnowLocationManager.sharedInstance.updateLocation(at: index, completetion: {
+                listAdapter.reloadData(completion: nil)
+            })
+        }
         return homePageSectionViewController
     }
     

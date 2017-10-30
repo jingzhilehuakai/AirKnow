@@ -13,6 +13,20 @@ import SwiftTheme
 // MARK: HomePageSectionViewController, container of tableview
 class HomePageSC: ListSectionController {
     
+    override init() {
+        super.init()
+       
+        if #available(iOS 10.0, *) {
+            Timer.scheduledTimer(withTimeInterval: 5 * 60, repeats: true, block: { (timer) in
+                self.needUpdateBlock != nil ? self.needUpdateBlock!() : nil
+            })
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+
+    var needUpdateBlock: (() -> ())?
+
     // MARK: Fetching data
     var targetData: AirQualityAPIModel?
     
@@ -45,18 +59,8 @@ class HomePageSC: ListSectionController {
         return cell
     }
     
-    func udpateData() {
-        if let lastUpdateTime = targetData?.time  {
-            let timeS = NSDate().timeIntervalSince1970 - lastUpdateTime
-            if timeS >= 60 * 60 {
-                
-            }
-        }
-    }
-    
     override func didUpdate(to object: Any) {
         targetData = object as? AirQualityAPIModel
-        udpateData()
     }
 }
 

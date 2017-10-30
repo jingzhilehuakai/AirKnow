@@ -31,6 +31,10 @@ class AQIInfoApi: YTKRequest {
     override func baseUrl() -> String {
         return "https://aqicn.org"
     }
+    
+    override func requestTimeoutInterval() -> TimeInterval {
+        return 30
+    }
 }
 
 class AQIInfoService: NSObject {

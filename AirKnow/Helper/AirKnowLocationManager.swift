@@ -65,6 +65,8 @@ class AirKnowLocationManager: NSObject {
             AQIInfoService.goGet(rmUid, completetion: { (apiModel, error) in
                 if apiModel != nil {
                     currenCityModels?.replaceSubrange(Range(index..<index+1), with: [apiModel!])
+                    self.saveAllCityModels(currenCityModels!)
+                    completetion()
                 }
             })
         }
