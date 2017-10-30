@@ -10,7 +10,7 @@ import UIKit
 import HandyJSON
 
 class AirQualityNearestAPIModel: HandyJSON {
-    
+
     var pollutionName: String = ""
     var locationEnglishName: String = ""
     var locationChineseName: String = ""
@@ -19,7 +19,7 @@ class AirQualityNearestAPIModel: HandyJSON {
     var pollutionValue: String = ""
     var urban: String = ""
     var ginwave: Array<Int> = []
-    var locationId: Int = 0
+    var locationId: String?
     
     func mapping(mapper: HelpingMapper) {
         mapper <<< self.pollutionName <-- "pol"

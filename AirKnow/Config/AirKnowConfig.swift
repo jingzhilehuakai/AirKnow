@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import SwiftTheme
+import SwifterSwift
 
 final class AirKnowConfig {
     
@@ -20,6 +21,24 @@ final class AirKnowConfig {
             return false
         }
     }()
+    
+    class func colorWithAQI(_ number: Int) -> UIColor {
+        if number >= 0 && number <= 50 {
+            return UIColor.init(hex: "#009966")
+        } else if number > 50 && number <= 100 {
+            return UIColor.init(hex: "#FDDC33")
+        } else if number > 100 && number <= 150 {
+            return UIColor.init(hex: "#FF9933")
+        } else if number > 150 && number <= 200 {
+            return UIColor.init(hex: "#CC0033")
+        } else if number > 200 && number <= 300 {
+            return UIColor.init(hex: "#660099")
+        } else if number > 300 {
+            return UIColor.init(hex: "#7E0023")
+        } else {
+            return UIColor.black
+        }
+    }
     
     //MARK: Lengh Ajust
     class func ajustLength(_ lengh: CGFloat) -> CGFloat {
@@ -39,6 +58,18 @@ final class AirKnowConfig {
         case dark  = 1
     }
     
+    //MARK: SearchVC
+    static let searchVCHeight: CGFloat = AirKnowConfig.ajustLength(450)
+    static let searchBarTextFont: UIFont = UIFont.init(name: "HiraKakuProN-W3", size: AirKnowConfig.ajustLength(15))!
+    static let searchBarHeight: CGFloat = AirKnowConfig.ajustLength(36)
+    static let searchBarLeftPadding: CGFloat = AirKnowConfig.ajustLength(10)
+    static let searchBarRightPadding: CGFloat = -AirKnowConfig.ajustLength(10)
+    static let searchBarTopPadding: CGFloat = AirKnowConfig.ajustLength(10)
+    static let searchContentCellHieght = 60
+    static let searchContentTextColorStyle: ThemeColorPicker = ["#000000", "#FFFFFF"]
+    static let searchContentTextFont = UIFont.init(name: "HiraKakuProN-W3", size: AirKnowConfig.ajustLength(12))!
+    static let searchTagViewWidth = 60
+    
     //MARK: NoData View Side Length
     static let noDataViewSideLength: CGFloat = 100
     static let noDataViewCenterYOffset: CGFloat = -50
@@ -50,6 +81,7 @@ final class AirKnowConfig {
     //MARK: Domain
     static let networkServiceErrorDomain = "com.airknow.networkError"
     enum airKnowNetworkError: Int {
+        case inputDataErrorCode = 4000
         case responseDataHandlerCode = 4001
         case networkLinkErrorCode = 4002
         case modelDeserializeError = 4003
@@ -128,13 +160,13 @@ final class AirKnowConfig {
 
     
     //MARK: Homepage AirQuality SC Cell Pollution Number
-    static let homePageAirQualitySectionControllerCelPNWidth: CGFloat = UIScreen.main.bounds.width / 8
-    static let homePageAirQualitySectionControllerCelPNFont: UIFont = UIFont.init(name: "Optima-Regular", size: AirKnowConfig.ajustLength(19.0))!
+    static let homePageAirQualitySectionControllerCelPNWidth: CGFloat = UIScreen.main.bounds.width / 10
+    static let homePageAirQualitySectionControllerCelPNFont: UIFont = UIFont.init(name: "Optima-Regular", size: AirKnowConfig.ajustLength(15.0))!
     static let homePageAirQualitySectionControllerCellPNStyles: ThemeColorPicker = ["#313131", "#FFFFFF"]
 
     //MARK: Homepage AirQuality SC Cell Pollution Unit
     static let homePageAirQualitySectionControllerCelPUWidth: CGFloat = UIScreen.main.bounds.width / 9.5
-    static let homePageAirQualitySectionControllerCelPUFont: UIFont = UIFont.init(name: "HiraKakuProN-W3", size: AirKnowConfig.ajustLength(10.0))!
+    static let homePageAirQualitySectionControllerCelPUFont: UIFont = UIFont.init(name: "HiraKakuProN-W3", size: AirKnowConfig.ajustLength(7.5))!
     static let homePageAirQualitySectionControllerCellPUStyles: ThemeColorPicker = ["#313131", "#949494"]
 
     //MARK: Homepage AirQuality SC Cell Line
@@ -143,17 +175,17 @@ final class AirKnowConfig {
     static let homePageAirQualitySectionControllerCellLineStyles: ThemeColorPicker = ["#DCDCDC", "#1C1C1C"]
 
     //MARK: Homepage AirQuality SC Global Settiing
-    static let homePageAirQualitySectionControllerCellElementsPadding: CGFloat = AirKnowConfig.ajustLength(2.0)
+    static let homePageAirQualitySectionControllerCellElementsPadding: CGFloat = AirKnowConfig.ajustLength(1.0)
     
     //MARK: Homepage AirQuality SC Cell Percent Number
-    static let homePageAirQualitySectionControllerCelPercentNumberFont: UIFont = UIFont.init(name: "Optima-Regular", size: AirKnowConfig.ajustLength(17.5))!
+    static let homePageAirQualitySectionControllerCelPercentNumberFont: UIFont = UIFont.init(name: "Optima-Regular", size: AirKnowConfig.ajustLength(13.5))!
     static let homePageAirQualitySectionControllerCelPercentNumberLeftPadding: CGFloat = AirKnowConfig.ajustLength(10.0)
     static let homePageAirQualitySectionControllerCellPercentNumberStyles: ThemeColorPicker = ["#313131", "#FFFFFF"]
 
     //MARK: Homepage AirQuality SC Cell Normal Standard Number
     static let homePageAirQualitySectionControllerCelNSNRightPadding: CGFloat = -AirKnowConfig.ajustLength(10.0)
     static let homePageAirQualitySectionControllerCelNSNLeftPadding: CGFloat = AirKnowConfig.ajustLength(10.0)
-    static let homePageAirQualitySectionControllerCelNSNFont: UIFont = UIFont.init(name: "HiraKakuProN-W3", size: AirKnowConfig.ajustLength(10.0))!
+    static let homePageAirQualitySectionControllerCelNSNFont: UIFont = UIFont.init(name: "HiraKakuProN-W3", size: AirKnowConfig.ajustLength(9.0))!
     static let homePageAirQualitySectionControllerCellNormalStandardStyles: ThemeColorPicker = ["#313131", "#7A7A7A"]
     
     //MARK: Holder Label
@@ -168,8 +200,8 @@ extension AirKnowConfig {
     
     // AirQualityStatusView TitleButton
     static let airKnowAQSTitleButtonFont: UIFont = UIFont(name: "GurmukhiMN-Bold", size: AirKnowConfig.ajustLength(25.0))!
-    static let airKnowAQSTitleButtonLeftPadding: CGFloat = AirKnowConfig.ajustLength(100)
-    static let airKnowAQSTitleButtonRightPadding: CGFloat = -AirKnowConfig.ajustLength(100)
+    static let airKnowAQSTitleButtonLeftPadding: CGFloat = AirKnowConfig.ajustLength(50)
+    static let airKnowAQSTitleButtonRightPadding: CGFloat = -AirKnowConfig.ajustLength(50)
     static let airKnowAQSTitleButtonTopPadding: CGFloat = AirKnowConfig.ajustLength(0)
     static let airKnowAQSTitleButtonHeight: CGFloat = AirKnowConfig.ajustLength(32)
     

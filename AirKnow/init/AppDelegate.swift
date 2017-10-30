@@ -20,11 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ViewConfiguration.setup(window: &window)
         
         // MARK: Setup YTK baseUrl
-        YTKNetworkConfig.shared().baseUrl = "http://165.227.165.99:8181";
-        
-        CityAQIInfoService.getWithCityID("beijing") { (apiModel, error) in
-            
-        }
+        YTKNetworkConfig.shared().baseUrl = "http://api.waqi.info";
         
         return true
     }

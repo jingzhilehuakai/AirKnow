@@ -8,7 +8,6 @@ use_frameworks!
 def startPodInstaller
 	# pod 'AirKnow', :path => './'
 
-	pod 'AFNetworking'
     pod 'Cache'
     pod 'IGListKit', '~> 3.0'
 	pod 'SnapKit'
@@ -17,7 +16,11 @@ def startPodInstaller
 	pod 'SwifterSwift'
 	pod 'CHIPageControl'
 	pod 'SwiftTheme'
+    pod 'TTGTagCollectionView'
+    pod 'MBProgressHUD'
+    pod 'AFNetworking', :path => './'
     pod 'YTKNetwork'
+    pod 'Presentr', :path => './'
     pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
 end
 

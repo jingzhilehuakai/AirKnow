@@ -8,23 +8,21 @@
 
 import UIKit
 import IGListKit
+import SwiftTheme
 
 class AirQualityModel: NSObject, ListDiffable {
     
+    var key: String?
     var pollutionName: String?
     var pollutionMaterialProfessionName: String?
     var pollutionNumber: String?
     var pollutionUnit: String?
     var percentageNumber: String?
     var normalStandardNumber: String?
+    var percentageNumberColor: ThemeColorPicker?
     
-    init(pollutionName: String, pollutionMaterialProfessionName: String, pollutionNumber: String, pollutionUnit: String, percentageNumber: String, normalStandardNumber: String) {
-        self.pollutionName = pollutionName
-        self.pollutionMaterialProfessionName = pollutionMaterialProfessionName
-        self.pollutionNumber = pollutionNumber
-        self.pollutionUnit = pollutionUnit
-        self.percentageNumber = percentageNumber
-        self.normalStandardNumber = normalStandardNumber
+    override init() {
+        super.init()
     }
     
     // ListDiffable Protocol
