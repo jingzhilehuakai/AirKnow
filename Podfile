@@ -20,7 +20,7 @@ def startPodInstaller
     pod 'MBProgressHUD'
     pod 'AFNetworking', :path => './'
     pod 'YTKNetwork'
-    pod 'Presentr', :path => './'
+    pod 'SCLAlertView'
     pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
 end
 

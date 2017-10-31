@@ -26,16 +26,15 @@ class AirKnowLocationManager: NSObject {
         storage = try? Storage(diskConfig: diskConfig, memoryConfig: memoryConfig)
     }
     
-    func addNewLocation(searchResultModel rm: AirQualitySearchResultModel) {
-        NotificationCenter.default.post(name: NSNotification.Name("HomePageShowHUD"), object: self, userInfo: nil)
+    func addNewLocation(searchResultModel rm: AirQualitySearchResultModel, completetion: @escaping (String?)->()) {
 
         var currenCityModels = self.getAllCityModels()
         
         for (index, item)  in currenCityModels!.enumerated() {
             if let nearest = item.nearest, let nearestF: AirQualityNearestAPIModel = nearest.first, let curMId = nearestF.locationId, let rmId = rm.uid {
                 if rmId == curMId {
-                    NotificationCenter.default.post(name: NSNotification.Name("HomePageHideHUD"), object: self, userInfo: ["Er": index])
                     self.updateLocation(at: index, completetion: {
+                        completetion(nil)
                     })
                     return
                 }
@@ -49,12 +48,11 @@ class AirKnowLocationManager: NSObject {
                     self.saveAllCityModels(currenCityModels!)
                 }
                 DispatchQueue.main.async(execute: {
-                    let erContent = error != nil ? error?.description : ""
-                    NotificationCenter.default.post(name: NSNotification.Name("HomePageHideHUD"), object: self, userInfo: ["Er": erContent!])
+                    completetion(error?.localizedDescription)
                 })
             })
         } else {
-            NotificationCenter.default.post(name: NSNotification.Name("HomePageHideHUD"), object: self, userInfo: ["Er": "no valid uid"])
+            completetion("model data error")
         }
     }
     
@@ -66,9 +64,11 @@ class AirKnowLocationManager: NSObject {
                 if apiModel != nil {
                     currenCityModels?.replaceSubrange(Range(index..<index+1), with: [apiModel!])
                     self.saveAllCityModels(currenCityModels!)
-                    completetion()
                 }
+                completetion()
             })
+        } else {
+            completetion()
         }
     }
     

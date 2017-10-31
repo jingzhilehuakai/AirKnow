@@ -26,7 +26,7 @@ PODS:
     - IGListKit/Diffing
   - IGListKit/Diffing (3.0.0)
   - MBProgressHUD (1.0.0)
-  - Presentr (1.3)
+  - SCLAlertView (0.7.0)
   - ScrollableGraphView (3.1.0)
   - SnapKit (3.2.0)
   - Spring (1.0.3)
@@ -44,7 +44,7 @@ DEPENDENCIES:
   - HandyJSON
   - IGListKit (~> 3.0)
   - MBProgressHUD
-  - Presentr (from `./`)
+  - SCLAlertView
   - ScrollableGraphView
   - SnapKit
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
@@ -55,8 +55,6 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   AFNetworking:
-    :path: ./
-  Presentr:
     :path: ./
   Spring:
     :branch: swift3
@@ -74,7 +72,7 @@ SPEC CHECKSUMS:
   HandyJSON: 54b6ce942795f7b2e61b82fe73cf25d9f139d125
   IGListKit: 9eab6856a15fa25ad72018ff9d9eb2178c240fff
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  Presentr: 2e7f1402a103a1416145f07bf0c40bd5d16ec8f9
+  SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   ScrollableGraphView: e2c8bedc7bbb643e8ac57b9456070d68355c4e4c
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
@@ -84,6 +82,6 @@ SPEC CHECKSUMS:
   TTGTagCollectionView: 828087136810b786ce8c30c89acf3877cccb0383
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
 
-PODFILE CHECKSUM: 90ce3e814ce8dbafa97632be0b5b7882a78fe2db
+PODFILE CHECKSUM: bca7d15eebdc2885174ef865fa0cdf302b8e0bb6
 
 COCOAPODS: 1.3.1

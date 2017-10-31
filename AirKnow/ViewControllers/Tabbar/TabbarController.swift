@@ -12,7 +12,7 @@ import SwiftTheme
 import CHIPageControl
 import Spring
 import MBProgressHUD
-import Presentr
+import SCLAlertView
 
 class TabbarController: UITabBarController {
 
@@ -26,13 +26,6 @@ class TabbarController: UITabBarController {
         return promptButtonInternal
     }()
     
-    lazy var presenter: Presentr = {
-        let presenter = Presentr(presentationType: .alert)
-//        presenter.transitionType = .coverHorizontalFromLeft
-//        presenter.dismissTransitionType = .coverHorizontalFromRight
-        return presenter
-    }()
-    
     var homePageVC: HomePageViewController!
 
     func themeSwitch(_ button:UIButton){
@@ -44,17 +37,26 @@ class TabbarController: UITabBarController {
         }
     }
     
-    var alertController: AlertViewController {
-        let subTitle = AirKnowLocationManager.sharedInstance.currentMonitorLocationNumber() > 0 ? "delete this location or add a new one" : "delete this location"
-        let alertController = Presentr.alertViewController(title: "CHOOSE", body: subTitle)
-        let cancelAction = AlertAction(title: "Delete", style: .cancel) { alert in
-            AirKnowLocationManager.sharedInstance.removeALocatona(at: (self.homePageVC.pageControl?.currentPage)!)
-            self.homePageVC.adapter.reloadData(completion: { (bool) in
-                self.homePageVC.pageControl!.progress = 0
-                self.homePageVC.collectionView.setContentOffset(CGPoint.zero, animated: false)
-            })
+    var alertController: SCLAlertView {
+        let appearance = SCLAlertView.SCLAppearance.init(kTitleTop: 50, showCloseButton: false, showCircularIcon: false, hideWhenBackgroundViewIsTapped: true)
+        let alert = SCLAlertView(appearance: appearance)
+        if AirKnowLocationManager.sharedInstance.currentMonitorLocationNumber() > 0 {
+            alert.addButton("DELETE", backgroundColor: UIColor.red.withAlphaComponent(0.7)) {
+                AirKnowLocationManager.sharedInstance.removeALocatona(at: (self.homePageVC.pageControl?.currentPage)!)
+                self.homePageVC.adapter.reloadData(completion: { (bool) in
+                    self.homePageVC.pageControl!.progress = 0
+                    self.homePageVC.collectionView.setContentOffset(CGPoint.zero, animated: false)
+                })
+            }
+            alert.addButton("UPDATE") {
+                NotificationCenter.default.post(name: NSNotification.Name("shartLocationUpdateNotification"), object: self, userInfo: nil)
+                AirKnowLocationManager.sharedInstance.updateLocation(at: (self.homePageVC.pageControl?.currentPage)!, completetion: {
+                    NotificationCenter.default.post(name: NSNotification.Name("finishLocationUpdateNotification"), object: self, userInfo: nil)
+                })
+            }
         }
-        let okAction = AlertAction(title: "Add", style: .destructive) { alert in
+        
+        alert.addButton("ADD") {
             DispatchQueue.main.async {
                 let searchVC = SearchViewController()
                 searchVC.isModalInPopover = true
@@ -62,11 +64,7 @@ class TabbarController: UITabBarController {
                 self.present(searchVC, animated: true, completion: nil)
             }
         }
-        if AirKnowLocationManager.sharedInstance.currentMonitorLocationNumber() > 0 {
-            alertController.addAction(cancelAction)
-        }
-        alertController.addAction(okAction)
-        return alertController
+        return alert
     }
     
     func minimizeView(_ sender: AnyObject) {
@@ -95,9 +93,8 @@ class TabbarController: UITabBarController {
     }()
     
     func addLocation(_ button:UIButton) {
-        self.presenter.viewControllerForContext = self
-        self.presenter.shouldIgnoreTapOutsideContext = true
-        self.homePageVC.customPresentViewController(self.presenter, viewController: self.alertController, animated: true, completion: nil)
+        let subTitleInternal = AirKnowLocationManager.sharedInstance.currentMonitorLocationNumber() > 0 ? "'DELETE' to remove current location page, 'UPDATE' to update air quality information of current location, 'ADD' to add a new location" : "'ADD' to add a new location"
+        self.alertController.showSuccess("CHOOSE", subTitle: subTitleInternal, animationStyle: SCLAnimationStyle.noAnimation)
     }
     
     // MARK: Page Control

@@ -48,9 +48,9 @@ class HomePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(showHUD(_:)), name: NSNotification.Name(rawValue: "HomePageShowHUD"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(hideHUD(_:)), name: NSNotification.Name(rawValue: "HomePageHideHUD"), object: nil)
-
+        NotificationCenter.default.addObserver(self, selector: #selector(shartLocationUpdate(_:)), name: NSNotification.Name(rawValue: "shartLocationUpdateNotification"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(finishLocationUpdate(_:)), name: NSNotification.Name(rawValue: "finishLocationUpdateNotification"), object: nil)
+        
         view.addSubview(collectionView)
         adapter.collectionView = collectionView
         adapter.dataSource = self
@@ -58,8 +58,8 @@ class HomePageViewController: UIViewController {
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "HomePageShowHUD"), object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "HomePageHideHUD"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "shartLocationUpdateNotification"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "finishLocationUpdateNotification"), object: nil)
     }
     
     override func viewDidLayoutSubviews() {
@@ -72,20 +72,16 @@ class HomePageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func showHUD(_ notification: NSNotification) {
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+    func shartLocationUpdate(_ notification: NSNotification) {
+        MBProgressHUD.showAdded(to: UIApplication.shared.keyWindow!, animated: true)
     }
     
-    func hideHUD(_ notification: NSNotification) {
-        MBProgressHUD.hide(for: self.view, animated: true)
-        
-        if let _: Int = notification.userInfo?["Er"] as? Int {
-            return
-        }
+    func finishLocationUpdate(_ notification: NSNotification) {
+        MBProgressHUD.hide(for: UIApplication.shared.keyWindow!, animated: true)
         
         if let errorStr: String = notification.userInfo?["Er"] as? String {
             if errorStr != "" {
-                let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+                let hud = MBProgressHUD.showAdded(to: UIApplication.shared.keyWindow!, animated: true)
                 hud.mode = MBProgressHUDMode.text
                 hud.label.text = errorStr
                 hud.hide(animated: true, afterDelay: 1.5)
@@ -121,12 +117,6 @@ extension HomePageViewController: ListAdapterDataSource {
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
         let homePageSectionViewController = HomePageSC()
-        homePageSectionViewController.needUpdateBlock = {
-            let index = listAdapter.section(for: homePageSectionViewController)
-            AirKnowLocationManager.sharedInstance.updateLocation(at: index, completetion: {
-                listAdapter.reloadData(completion: nil)
-            })
-        }
         return homePageSectionViewController
     }
     
@@ -149,9 +139,10 @@ extension HomePageViewController: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let currentIndex: NSInteger = NSInteger(fabs(collectionView.contentOffset.x) / collectionView.frame.size.width);
         if originIndex != currentIndex {
-            let homePageSectionViewController: HomePageSC = adapter.sectionController(forSection: originIndex) as! HomePageSC
-            homePageSectionViewController.retentionCell?.collectionView.setContentOffset(CGPoint.init(x: 0, y: -AirKnowConfig.homePageCollectionViewEdgeTopPadding), animated: true)
-            homePageSectionViewController.retentionCell?.location.setAlpppha(1)
+            if let homePageSectionViewController: HomePageSC = adapter.sectionController(forSection: originIndex) as? HomePageSC {
+                homePageSectionViewController.retentionCell?.collectionView.setContentOffset(CGPoint.init(x: 0, y: -AirKnowConfig.homePageCollectionViewEdgeTopPadding), animated: true)
+                homePageSectionViewController.retentionCell?.location.setAlpppha(1)
+            }
         }
         originIndex = currentIndex
     }

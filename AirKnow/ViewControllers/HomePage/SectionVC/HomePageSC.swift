@@ -12,20 +12,6 @@ import SwiftTheme
 
 // MARK: HomePageSectionViewController, container of tableview
 class HomePageSC: ListSectionController {
-    
-    override init() {
-        super.init()
-       
-        if #available(iOS 10.0, *) {
-            Timer.scheduledTimer(withTimeInterval: 5 * 60, repeats: true, block: { (timer) in
-                self.needUpdateBlock != nil ? self.needUpdateBlock!() : nil
-            })
-        } else {
-            // Fallback on earlier versions
-        }
-    }
-
-    var needUpdateBlock: (() -> ())?
 
     // MARK: Fetching data
     var targetData: AirQualityAPIModel?
