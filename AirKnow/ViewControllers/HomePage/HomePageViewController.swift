@@ -48,7 +48,7 @@ class HomePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(shartLocationUpdate(_:)), name: NSNotification.Name(rawValue: "shartLocationUpdateNotification"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(startLocationUpdate(_:)), name: NSNotification.Name(rawValue: "startLocationUpdateNotification"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(finishLocationUpdate(_:)), name: NSNotification.Name(rawValue: "finishLocationUpdateNotification"), object: nil)
         
         view.addSubview(collectionView)
@@ -58,7 +58,7 @@ class HomePageViewController: UIViewController {
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "shartLocationUpdateNotification"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "startLocationUpdateNotification"), object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "finishLocationUpdateNotification"), object: nil)
     }
     
@@ -72,7 +72,7 @@ class HomePageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func shartLocationUpdate(_ notification: NSNotification) {
+    func startLocationUpdate(_ notification: NSNotification) {
         MBProgressHUD.showAdded(to: UIApplication.shared.keyWindow!, animated: true)
     }
     
@@ -100,7 +100,7 @@ class HomePageViewController: UIViewController {
     }
 }
 
-// MARK: ListAdapterDataSo urce
+// MARK: ListAdapterDataSource
 extension HomePageViewController: ListAdapterDataSource {
 
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {

@@ -30,16 +30,16 @@ class AirKnowLocationManager: NSObject {
 
         var currenCityModels = self.getAllCityModels()
         
-        for (index, item)  in currenCityModels!.enumerated() {
-            if let nearest = item.nearest, let nearestF: AirQualityNearestAPIModel = nearest.first, let curMId = nearestF.locationId, let rmId = rm.uid {
-                if rmId == curMId {
-                    self.updateLocation(at: index, completetion: {
-                        completetion(nil)
-                    })
-                    return
-                }
-            }
-        }
+//        for (index, item)  in currenCityModels!.enumerated() {
+//            if let nearest = item.nearest, let nearestF: AirQualityNearestAPIModel = nearest.first, let curMId = nearestF.locationId, let rmId = rm.uid {
+//                if rmId == curMId {
+//                    self.updateLocation(at: index, completetion: {
+//                        completetion(nil)
+//                    })
+//                    return
+//                }
+//            }
+//        }
 
         if let rmUid = rm.uid {
             AQIInfoService.goGet(rmUid, completetion: { (apiModel, error) in
@@ -72,7 +72,7 @@ class AirKnowLocationManager: NSObject {
         }
     }
     
-    func removeALocatona(at index: Int) {
+    func removeLocation(atIndex index: Int) {
         var currenCityModels = self.getAllCityModels()
         currenCityModels?.remove(at: index)
         self.saveAllCityModels(currenCityModels!)
@@ -110,7 +110,7 @@ class AirKnowLocationManager: NSObject {
         
         var jsonStringArray = Array<String>()
         for model in airQualityAPIModels {
-            if let jsonS = model.jsonString {
+            if let jsonS = model.toJSONString() {
                 jsonStringArray.append(jsonS)
             }
         }

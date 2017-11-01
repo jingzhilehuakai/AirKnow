@@ -42,14 +42,20 @@ class TabbarController: UITabBarController {
         let alert = SCLAlertView(appearance: appearance)
         if AirKnowLocationManager.sharedInstance.currentMonitorLocationNumber() > 0 {
             alert.addButton("DELETE", backgroundColor: UIColor.red.withAlphaComponent(0.7)) {
-                AirKnowLocationManager.sharedInstance.removeALocatona(at: (self.homePageVC.pageControl?.currentPage)!)
+                let currentIndex = self.homePageVC.pageControl?.currentPage
+                AirKnowLocationManager.sharedInstance.removeLocation(atIndex: currentIndex!)
                 self.homePageVC.adapter.reloadData(completion: { (bool) in
-                    self.homePageVC.pageControl!.progress = 0
-                    self.homePageVC.collectionView.setContentOffset(CGPoint.zero, animated: false)
+                    if currentIndex != 0 {
+                        self.homePageVC.pageControl!.progress = Double(currentIndex! - 1)
+                        self.homePageVC.collectionView.setContentOffset(CGPoint.init(x: CGFloat(currentIndex! - 1) * self.homePageVC.collectionView.frame.size.width, y: 0), animated: false)
+                    } else {
+                        self.homePageVC.pageControl!.progress = 0
+                        self.homePageVC.collectionView.setContentOffset(CGPoint.zero, animated: false)
+                    }
                 })
             }
             alert.addButton("UPDATE") {
-                NotificationCenter.default.post(name: NSNotification.Name("shartLocationUpdateNotification"), object: self, userInfo: nil)
+                NotificationCenter.default.post(name: NSNotification.Name("startLocationUpdateNotification"), object: self, userInfo: nil)
                 AirKnowLocationManager.sharedInstance.updateLocation(at: (self.homePageVC.pageControl?.currentPage)!, completetion: {
                     NotificationCenter.default.post(name: NSNotification.Name("finishLocationUpdateNotification"), object: self, userInfo: nil)
                 })

@@ -36,7 +36,7 @@ class SearchViewControllerSC: ListSectionController {
     }
     
     override func didSelectItem(at index: Int) {
-        NotificationCenter.default.post(name: NSNotification.Name("shartLocationUpdateNotification"), object: self, userInfo: nil)
+        NotificationCenter.default.post(name: NSNotification.Name("startLocationUpdateNotification"), object: self, userInfo: nil)
         AirKnowLocationManager.sharedInstance.addNewLocation(searchResultModel: targetData!) { (str) in
             NotificationCenter.default.post(name: NSNotification.Name("finishLocationUpdateNotification"), object: self, userInfo: ["Er": str ?? ""])
         }
