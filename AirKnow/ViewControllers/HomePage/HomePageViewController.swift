@@ -125,7 +125,7 @@ extension HomePageViewController: ListAdapterDataSource {
     }
 }
 
-// MRRK: ScrollViewDelegate
+// MARK: ScrollViewDelegate
 extension HomePageViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

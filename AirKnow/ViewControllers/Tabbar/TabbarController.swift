@@ -85,7 +85,7 @@ class TabbarController: UITabBarController {
     }
     
     // MARK: Add Location Button
-    lazy var addLoadtionButton: AirKnowExpandTouchPointButton! = {
+    lazy var addLocationButton: AirKnowExpandTouchPointButton! = {
         var addLocationButtonInternal = AirKnowExpandTouchPointButton.init()
         addLocationButtonInternal.addTarget(self, action:#selector(addLocation(_:)) , for: .touchUpInside)
         addLocationButtonInternal.theme_setImage(AirKnowConfig.addLocationButtonImageStyles, forState: .normal)
@@ -122,12 +122,12 @@ class TabbarController: UITabBarController {
         
         // MARK: Add Location Button
         func setupAddLocationButton() {
-            self.tabBar.addSubview(addLoadtionButton)
-            addLoadtionButton.snp.makeConstraints { (make) in
+            self.tabBar.addSubview(addLocationButton)
+            addLocationButton.snp.makeConstraints { (make) in
                 make.right.equalTo(self.tabBar.snp.right).offset(AirKnowConfig.addLocationButtonRightPadding)
                 make.top.equalTo(self.tabBar.snp.top).offset(AirKnowConfig.addLocationButtonTopPadding)
                 make.height.equalTo(AirKnowConfig.addLocationButtonHeight)
-                make.height.equalTo(addLoadtionButton.snp.width)
+                make.height.equalTo(addLocationButton.snp.width)
             }
         }
         setupAddLocationButton()
@@ -137,7 +137,7 @@ class TabbarController: UITabBarController {
             self.tabBar.addSubview(pageControl)
             pageControl.snp.makeConstraints { (make) in
                 make.left.equalTo(promptButton.snp.right)
-                make.right.equalTo(addLoadtionButton.snp.left)
+                make.right.equalTo(addLocationButton.snp.left)
                 make.height.equalTo(promptButton.snp.width).multipliedBy(0.5)
                 make.center.equalTo(tabBar.snp.center)
             }
