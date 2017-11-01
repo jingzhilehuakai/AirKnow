@@ -93,7 +93,7 @@ class TabbarController: UITabBarController {
     }()
     
     func addLocation(_ button:UIButton) {
-        let subTitleInternal = AirKnowLocationManager.sharedInstance.currentMonitorLocationNumber() > 0 ? "'DELETE' to remove current location page, 'UPDATE' to update air quality information of current location, 'ADD' to add a new location" : "'ADD' to add a new location"
+        let subTitleInternal = AirKnowLocationManager.sharedInstance.currentMonitorLocationNumber() > 0 ? "Tap 'DELETE' button to remove current location page, 'UPDATE' button to update air quality information of current location, 'ADD' button to add a new location" : "Tap 'ADD' button to add a new location"
         self.alertController.showSuccess("CHOOSE", subTitle: subTitleInternal, animationStyle: SCLAnimationStyle.noAnimation)
     }
     
