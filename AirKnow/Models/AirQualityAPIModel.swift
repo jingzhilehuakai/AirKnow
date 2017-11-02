@@ -12,7 +12,7 @@ import IGListKit
 
 class AirQualityAPIModel: HandyJSON, ListDiffable {
     
-    var cityId: String?
+    var udid: String?
     var aqi: Int!
     var time: TimeInterval?
     var uhour: String?

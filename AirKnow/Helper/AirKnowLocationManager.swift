@@ -59,7 +59,7 @@ class AirKnowLocationManager: NSObject {
     func updateLocation(at index: Int,  completetion: @escaping ()->()) {
         var currenCityModels = self.getAllCityModels()
         let model = currenCityModels![index]
-        if let rmUid = model.cityId {
+        if let rmUid = model.udid {
             AQIInfoService.goGet(rmUid, completetion: { (apiModel, error) in
                 if apiModel != nil {
                     currenCityModels?.replaceSubrange(Range(index..<index+1), with: [apiModel!])
@@ -110,8 +110,11 @@ class AirKnowLocationManager: NSObject {
         
         var jsonStringArray = Array<String>()
         for model in airQualityAPIModels {
-            if let jsonS = model.toJSONString() {
-                jsonStringArray.append(jsonS)
+            if let jsonData:Data = model.jsonString?.data(using: .utf8), var dict = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers) as? Dictionary<String, Any> {
+                dict!["udid"] = model.udid
+                if let data = try? JSONSerialization.data(withJSONObject: dict!, options: []), let JSONString = NSString(data:data, encoding: String.Encoding.utf8.rawValue) {
+                    jsonStringArray.append(JSONString as String)
+                }
             }
         }
         
