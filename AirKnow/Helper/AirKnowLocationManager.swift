@@ -56,7 +56,7 @@ class AirKnowLocationManager: NSObject {
         }
     }
     
-    func updateLocation(at index: Int,  completetion: @escaping ()->()) {
+    func updateLocation(at index: Int, completetion: @escaping ()->()) {
         var currenCityModels = self.getAllCityModels()
         let model = currenCityModels![index]
         if let rmUid = model.udid {

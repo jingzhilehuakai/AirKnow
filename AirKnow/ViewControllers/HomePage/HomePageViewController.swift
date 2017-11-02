@@ -50,7 +50,7 @@ class HomePageViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(startLocationUpdate(_:)), name: NSNotification.Name(rawValue: "startLocationUpdateNotification"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(finishLocationUpdate(_:)), name: NSNotification.Name(rawValue: "finishLocationUpdateNotification"), object: nil)
-        
+
         view.addSubview(collectionView)
         adapter.collectionView = collectionView
         adapter.dataSource = self
@@ -89,12 +89,27 @@ class HomePageViewController: UIViewController {
             }
         }
         
-        if let dataArr: [AirQualityAPIModel] = AirKnowLocationManager.sharedInstance.getAllCityModels() {
-            if dataArr.count != pageControl?.numberOfPages {
-                adapter.reloadData(completion: { (bool) in
-                    self.collectionView.setContentOffset(CGPoint.init(x: self.collectionView.contentSize.width - self.collectionView.frame.size.width, y: 0), animated: false)
-                    self.pageControl?.progress = Double(self.collectionView.numberOfItems - 1)
-                })
+        guard let dataArr: [AirQualityAPIModel] = AirKnowLocationManager.sharedInstance.getAllCityModels() else {
+            return
+        }
+        
+        if let operationStr: String = notification.userInfo?["Operation"] as? String {
+            
+            if operationStr == "Add" {
+                if dataArr.count != pageControl?.numberOfPages {
+                    adapter.reloadData(completion: { (bool) in
+                        self.collectionView.setContentOffset(CGPoint.init(x: self.collectionView.contentSize.width - self.collectionView.frame.size.width, y: 0), animated: false)
+                        self.pageControl?.progress = Double(self.collectionView.numberOfItems - 1)
+                    })
+                }
+            }
+            
+            if operationStr == "Update" {
+                if dataArr.count == pageControl?.numberOfPages {
+                    adapter.reloadData(completion: { (bool) in
+                        self.collectionView.reloadData()
+                    })
+                }
             }
         }
     }

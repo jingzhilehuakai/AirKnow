@@ -57,7 +57,7 @@ class TabbarController: UITabBarController {
             alert.addButton("UPDATE") {
                 NotificationCenter.default.post(name: NSNotification.Name("startLocationUpdateNotification"), object: self, userInfo: nil)
                 AirKnowLocationManager.sharedInstance.updateLocation(at: (self.homePageVC.pageControl?.currentPage)!, completetion: {
-                    NotificationCenter.default.post(name: NSNotification.Name("finishLocationUpdateNotification"), object: self, userInfo: nil)
+                    NotificationCenter.default.post(name: NSNotification.Name("finishLocationUpdateNotification"), object: self, userInfo: ["Operation": "Update"])
                 })
             }
         }
