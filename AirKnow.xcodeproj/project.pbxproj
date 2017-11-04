@@ -1,0 +1,665 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C1352511F6C1C630077FDC9 /* AirQualityHistoryGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1352501F6C1C630077FDC9 /* AirQualityHistoryGraphView.swift */; };
+		2C1352571F6C2FC40077FDC9 /* HomePageAirQualitySC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1352541F6C2FC40077FDC9 /* HomePageAirQualitySC.swift */; };
+		2C1352581F6C2FC40077FDC9 /* HomePageAirQualityStatusSC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1352551F6C2FC40077FDC9 /* HomePageAirQualityStatusSC.swift */; };
+		2C1352591F6C2FC40077FDC9 /* HomePageSC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1352561F6C2FC40077FDC9 /* HomePageSC.swift */; };
+		2C13525C1F6D48270077FDC9 /* HomePageAirQualitySCExpendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C13525B1F6D48270077FDC9 /* HomePageAirQualitySCExpendCell.swift */; };
+		2C411F351F5F9B47006F0F47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C411F341F5F9B47006F0F47 /* Assets.xcassets */; };
+		2C411F381F5F9B47006F0F47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C411F361F5F9B47006F0F47 /* LaunchScreen.storyboard */; };
+		2C411F4B1F60F1E7006F0F47 /* AirKnowConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C411F4A1F60F1E7006F0F47 /* AirKnowConfig.swift */; };
+		2C411F801F63AAAF006F0F47 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C411F7D1F63AAAF006F0F47 /* HomePageViewController.swift */; };
+		2C4D718A1F642E8000EC9210 /* AirQualityStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D71891F642E8000EC9210 /* AirQualityStatusModel.swift */; };
+		2C4D718D1F642EB400EC9210 /* AirKnowMonitorLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D718C1F642EB400EC9210 /* AirKnowMonitorLocationView.swift */; };
+		2C4D71991F643A5400EC9210 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D71971F643A5400EC9210 /* ViewConfiguration.swift */; };
+		2C4D719A1F643A5400EC9210 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D71981F643A5400EC9210 /* AppDelegate.swift */; };
+		2C962F1B1F66734A0009FEC8 /* HomePageAirQualitySCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C962F181F66734A0009FEC8 /* HomePageAirQualitySCCell.swift */; };
+		2C962F1C1F66734A0009FEC8 /* HomePageAirQualityStatusSCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C962F1A1F66734A0009FEC8 /* HomePageAirQualityStatusSCCell.swift */; };
+		2C962F1F1F66739E0009FEC8 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C962F1E1F66739E0009FEC8 /* TabbarController.swift */; };
+		2C962F241F66D2C00009FEC8 /* UITabbar+AirKnow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C962F231F66D2C00009FEC8 /* UITabbar+AirKnow.swift */; };
+		2C962F501F6AE4390009FEC8 /* AirQualityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C962F4F1F6AE4390009FEC8 /* AirQualityModel.swift */; };
+		2C962F531F6AE8790009FEC8 /* HomePageSCMonitorLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C962F521F6AE8790009FEC8 /* HomePageSCMonitorLocationCell.swift */; };
+		2CD8A5551F96532C0055E8B4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD8A5541F96532C0055E8B4 /* SearchViewController.swift */; };
+		2CD8A5591F98FDBD0055E8B4 /* AirKnowSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD8A5581F98FDBC0055E8B4 /* AirKnowSearchBar.swift */; };
+		2CF38C7B1F9C625200C0E66D /* LocationSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF38C7A1F9C625200C0E66D /* LocationSearchService.swift */; };
+		2CF38C7D1F9C644F00C0E66D /* AirQualitySearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF38C7C1F9C644F00C0E66D /* AirQualitySearchResultModel.swift */; };
+		2CF38C7F1F9C7FB000C0E66D /* SearchResultSCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF38C7E1F9C7FB000C0E66D /* SearchResultSCCell.swift */; };
+		2CF38C821F9C80DF00C0E66D /* SearchViewControllerSC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF38C811F9C80DF00C0E66D /* SearchViewControllerSC.swift */; };
+		2CF418FB1F6913F90034E266 /* AirKnowExpandTouchPointButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF418FA1F6913F90034E266 /* AirKnowExpandTouchPointButton.swift */; };
+		2CFAF1641F797B9800C319EE /* AirQualityAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFAF1631F797B9800C319EE /* AirQualityAPIModel.swift */; };
+		375CF4AA1F6678C100CC2F1B /* AirQualityStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CF4A91F6678C100CC2F1B /* AirQualityStatusView.swift */; };
+		B298555DF5896369162E7A11 /* Pods_AirKnow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122842FD00251EE27B052477 /* Pods_AirKnow.framework */; };
+		C49FB1561F95A5E50063F1B6 /* AirKnowLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49FB1551F95A5E50063F1B6 /* AirKnowLocationManager.swift */; };
+		C49FB1591F95AEE30063F1B6 /* AirQualityNearestAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49FB1581F95AEE30063F1B6 /* AirQualityNearestAPIModel.swift */; };
+		C49FB1601F95E5B90063F1B6 /* AirKnowNODataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49FB15F1F95E5B90063F1B6 /* AirKnowNODataView.swift */; };
+		C4AF92231F909111009B9E5B /* AQIInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AF92221F909111009B9E5B /* AQIInfoService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		122842FD00251EE27B052477 /* Pods_AirKnow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirKnow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C1352501F6C1C630077FDC9 /* AirQualityHistoryGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualityHistoryGraphView.swift; sourceTree = "<group>"; };
+		2C1352541F6C2FC40077FDC9 /* HomePageAirQualitySC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageAirQualitySC.swift; sourceTree = "<group>"; };
+		2C1352551F6C2FC40077FDC9 /* HomePageAirQualityStatusSC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageAirQualityStatusSC.swift; sourceTree = "<group>"; };
+		2C1352561F6C2FC40077FDC9 /* HomePageSC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageSC.swift; sourceTree = "<group>"; };
+		2C13525B1F6D48270077FDC9 /* HomePageAirQualitySCExpendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageAirQualitySCExpendCell.swift; sourceTree = "<group>"; };
+		2C411F2A1F5F9B47006F0F47 /* AirKnow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirKnow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C411F341F5F9B47006F0F47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2C411F371F5F9B47006F0F47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2C411F391F5F9B47006F0F47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C411F4A1F60F1E7006F0F47 /* AirKnowConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirKnowConfig.swift; sourceTree = "<group>"; };
+		2C411F7D1F63AAAF006F0F47 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		2C4D71891F642E8000EC9210 /* AirQualityStatusModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualityStatusModel.swift; sourceTree = "<group>"; };
+		2C4D718C1F642EB400EC9210 /* AirKnowMonitorLocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirKnowMonitorLocationView.swift; sourceTree = "<group>"; };
+		2C4D71971F643A5400EC9210 /* ViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
+		2C4D71981F643A5400EC9210 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2C962F181F66734A0009FEC8 /* HomePageAirQualitySCCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageAirQualitySCCell.swift; sourceTree = "<group>"; };
+		2C962F1A1F66734A0009FEC8 /* HomePageAirQualityStatusSCCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageAirQualityStatusSCCell.swift; sourceTree = "<group>"; };
+		2C962F1E1F66739E0009FEC8 /* TabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		2C962F231F66D2C00009FEC8 /* UITabbar+AirKnow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabbar+AirKnow.swift"; sourceTree = "<group>"; };
+		2C962F4B1F6A63AA0009FEC8 /* Spring.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spring.framework; path = "Pods/../build/Debug-iphoneos/Spring/Spring.framework"; sourceTree = "<group>"; };
+		2C962F4F1F6AE4390009FEC8 /* AirQualityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualityModel.swift; sourceTree = "<group>"; };
+		2C962F521F6AE8790009FEC8 /* HomePageSCMonitorLocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageSCMonitorLocationCell.swift; sourceTree = "<group>"; };
+		2CD8A5541F96532C0055E8B4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		2CD8A5581F98FDBC0055E8B4 /* AirKnowSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirKnowSearchBar.swift; sourceTree = "<group>"; };
+		2CF38C7A1F9C625200C0E66D /* LocationSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchService.swift; sourceTree = "<group>"; };
+		2CF38C7C1F9C644F00C0E66D /* AirQualitySearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualitySearchResultModel.swift; sourceTree = "<group>"; };
+		2CF38C7E1F9C7FB000C0E66D /* SearchResultSCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultSCCell.swift; sourceTree = "<group>"; };
+		2CF38C811F9C80DF00C0E66D /* SearchViewControllerSC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerSC.swift; sourceTree = "<group>"; };
+		2CF418FA1F6913F90034E266 /* AirKnowExpandTouchPointButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirKnowExpandTouchPointButton.swift; sourceTree = "<group>"; };
+		2CFAF1631F797B9800C319EE /* AirQualityAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityAPIModel.swift; sourceTree = "<group>"; };
+		375CF4A91F6678C100CC2F1B /* AirQualityStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualityStatusView.swift; sourceTree = "<group>"; };
+		4D8B70FCC9BBECDF1C7C5776 /* Pods-AirKnow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirKnow.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirKnow/Pods-AirKnow.release.xcconfig"; sourceTree = "<group>"; };
+		B4F30F5B2DD3118CD6AF1121 /* Pods-AirKnow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirKnow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirKnow/Pods-AirKnow.debug.xcconfig"; sourceTree = "<group>"; };
+		C49FB1551F95A5E50063F1B6 /* AirKnowLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirKnowLocationManager.swift; sourceTree = "<group>"; };
+		C49FB1581F95AEE30063F1B6 /* AirQualityNearestAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityNearestAPIModel.swift; sourceTree = "<group>"; };
+		C49FB15F1F95E5B90063F1B6 /* AirKnowNODataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirKnowNODataView.swift; sourceTree = "<group>"; };
+		C4AF92221F909111009B9E5B /* AQIInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQIInfoService.swift; sourceTree = "<group>"; };
+		F4DD82101FAD63F20030A395 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C411F271F5F9B47006F0F47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B298555DF5896369162E7A11 /* Pods_AirKnow.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0394AF29A4836DBD39381FBE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B4F30F5B2DD3118CD6AF1121 /* Pods-AirKnow.debug.xcconfig */,
+				4D8B70FCC9BBECDF1C7C5776 /* Pods-AirKnow.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2C411F211F5F9B47006F0F47 = {
+			isa = PBXGroup;
+			children = (
+				2C411F2C1F5F9B47006F0F47 /* AirKnow */,
+				2C411F2B1F5F9B47006F0F47 /* Products */,
+				0394AF29A4836DBD39381FBE /* Pods */,
+				FFFA4F207164537EE6CD45B0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2C411F2B1F5F9B47006F0F47 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C411F2A1F5F9B47006F0F47 /* AirKnow.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C411F2C1F5F9B47006F0F47 /* AirKnow */ = {
+			isa = PBXGroup;
+			children = (
+				C4AF92201F908F96009B9E5B /* Config */,
+				C4AF921E1F908E74009B9E5B /* Services */,
+				2C4D71961F643A5400EC9210 /* Init */,
+				2C4D71881F642DC100EC9210 /* Models */,
+				2C411F641F629F11006F0F47 /* Views */,
+				2C411F461F60ED2B006F0F47 /* Extensions */,
+				2C411F491F60F1DC006F0F47 /* Helper */,
+				2C411F551F6239ED006F0F47 /* ViewControllers */,
+				2C411F341F5F9B47006F0F47 /* Assets.xcassets */,
+				2C411F361F5F9B47006F0F47 /* LaunchScreen.storyboard */,
+				2C411F391F5F9B47006F0F47 /* Info.plist */,
+			);
+			path = AirKnow;
+			sourceTree = "<group>";
+		};
+		2C411F461F60ED2B006F0F47 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2C962F231F66D2C00009FEC8 /* UITabbar+AirKnow.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2C411F491F60F1DC006F0F47 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C49FB1551F95A5E50063F1B6 /* AirKnowLocationManager.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		2C411F551F6239ED006F0F47 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2CD8A54F1F9651B50055E8B4 /* Search */,
+				2C962F1D1F66738F0009FEC8 /* Tabbar */,
+				2C411F7C1F63AAAF006F0F47 /* HomePage */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2C411F641F629F11006F0F47 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2CD8A5581F98FDBC0055E8B4 /* AirKnowSearchBar.swift */,
+				2CF418FA1F6913F90034E266 /* AirKnowExpandTouchPointButton.swift */,
+				2C4D718C1F642EB400EC9210 /* AirKnowMonitorLocationView.swift */,
+				375CF4A91F6678C100CC2F1B /* AirQualityStatusView.swift */,
+				2C1352501F6C1C630077FDC9 /* AirQualityHistoryGraphView.swift */,
+				C49FB15F1F95E5B90063F1B6 /* AirKnowNODataView.swift */,
+				2C4D719B1F64448200EC9210 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2C411F7C1F63AAAF006F0F47 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				C49FB1631F96F61D0063F1B6 /* SectionVC */,
+				2C411F7D1F63AAAF006F0F47 /* HomePageViewController.swift */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		2C4D71881F642DC100EC9210 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2CFAF1631F797B9800C319EE /* AirQualityAPIModel.swift */,
+				2C962F4F1F6AE4390009FEC8 /* AirQualityModel.swift */,
+				2C4D71891F642E8000EC9210 /* AirQualityStatusModel.swift */,
+				C49FB1581F95AEE30063F1B6 /* AirQualityNearestAPIModel.swift */,
+				2CF38C7C1F9C644F00C0E66D /* AirQualitySearchResultModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2C4D71961F643A5400EC9210 /* Init */ = {
+			isa = PBXGroup;
+			children = (
+				2C4D71981F643A5400EC9210 /* AppDelegate.swift */,
+				2C4D71971F643A5400EC9210 /* ViewConfiguration.swift */,
+			);
+			path = Init;
+			sourceTree = "<group>";
+		};
+		2C4D719B1F64448200EC9210 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2C13525B1F6D48270077FDC9 /* HomePageAirQualitySCExpendCell.swift */,
+				2C962F521F6AE8790009FEC8 /* HomePageSCMonitorLocationCell.swift */,
+				2C962F181F66734A0009FEC8 /* HomePageAirQualitySCCell.swift */,
+				2C962F1A1F66734A0009FEC8 /* HomePageAirQualityStatusSCCell.swift */,
+				2CF38C7E1F9C7FB000C0E66D /* SearchResultSCCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2C962F1D1F66738F0009FEC8 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				2C962F1E1F66739E0009FEC8 /* TabbarController.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		2CD8A54F1F9651B50055E8B4 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				2CF38C801F9C80CE00C0E66D /* SectionVC */,
+				2CD8A5541F96532C0055E8B4 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		2CF38C801F9C80CE00C0E66D /* SectionVC */ = {
+			isa = PBXGroup;
+			children = (
+				2CF38C811F9C80DF00C0E66D /* SearchViewControllerSC.swift */,
+			);
+			path = SectionVC;
+			sourceTree = "<group>";
+		};
+		C49FB1631F96F61D0063F1B6 /* SectionVC */ = {
+			isa = PBXGroup;
+			children = (
+				2C1352561F6C2FC40077FDC9 /* HomePageSC.swift */,
+				2C1352541F6C2FC40077FDC9 /* HomePageAirQualitySC.swift */,
+				2C1352551F6C2FC40077FDC9 /* HomePageAirQualityStatusSC.swift */,
+			);
+			path = SectionVC;
+			sourceTree = "<group>";
+		};
+		C4AF921E1F908E74009B9E5B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C4AF92221F909111009B9E5B /* AQIInfoService.swift */,
+				2CF38C7A1F9C625200C0E66D /* LocationSearchService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C4AF92201F908F96009B9E5B /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				2C411F4A1F60F1E7006F0F47 /* AirKnowConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		FFFA4F207164537EE6CD45B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C962F4B1F6A63AA0009FEC8 /* Spring.framework */,
+				122842FD00251EE27B052477 /* Pods_AirKnow.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2C411F291F5F9B47006F0F47 /* AirKnow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C411F3C1F5F9B47006F0F47 /* Build configuration list for PBXNativeTarget "AirKnow" */;
+			buildPhases = (
+				EB71EB2F038F0A73A76D9A8F /* [CP] Check Pods Manifest.lock */,
+				2C411F261F5F9B47006F0F47 /* Sources */,
+				2C411F271F5F9B47006F0F47 /* Frameworks */,
+				2C411F281F5F9B47006F0F47 /* Resources */,
+				C709D66594CDBEE62116AE94 /* [CP] Embed Pods Frameworks */,
+				320A4CEF7B0518881DE23EA7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AirKnow;
+			productName = AirKnow;
+			productReference = 2C411F2A1F5F9B47006F0F47 /* AirKnow.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C411F221F5F9B47006F0F47 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "AirKnow-TaskForce";
+				TargetAttributes = {
+					2C411F291F5F9B47006F0F47 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = BV897Y9BD9;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2C411F251F5F9B47006F0F47 /* Build configuration list for PBXProject "AirKnow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2C411F211F5F9B47006F0F47;
+			productRefGroup = 2C411F2B1F5F9B47006F0F47 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C411F291F5F9B47006F0F47 /* AirKnow */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C411F281F5F9B47006F0F47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C411F381F5F9B47006F0F47 /* LaunchScreen.storyboard in Resources */,
+				2C411F351F5F9B47006F0F47 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		320A4CEF7B0518881DE23EA7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AirKnow/Pods-AirKnow-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C709D66594CDBEE62116AE94 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AirKnow/Pods-AirKnow-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/CHIPageControl/CHIPageControl.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/ScrollableGraphView/ScrollableGraphView.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftTheme/SwiftTheme.framework",
+				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/TTGTagCollectionView/TTGTagCollectionView.framework",
+				"${BUILT_PRODUCTS_DIR}/YTKNetwork/YTKNetwork.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CHIPageControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScrollableGraphView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftTheme.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTGTagCollectionView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YTKNetwork.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AirKnow/Pods-AirKnow-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB71EB2F038F0A73A76D9A8F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AirKnow-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C411F261F5F9B47006F0F47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C49FB1591F95AEE30063F1B6 /* AirQualityNearestAPIModel.swift in Sources */,
+				2C1352581F6C2FC40077FDC9 /* HomePageAirQualityStatusSC.swift in Sources */,
+				2CF38C821F9C80DF00C0E66D /* SearchViewControllerSC.swift in Sources */,
+				2CD8A5551F96532C0055E8B4 /* SearchViewController.swift in Sources */,
+				2C962F1C1F66734A0009FEC8 /* HomePageAirQualityStatusSCCell.swift in Sources */,
+				2C962F501F6AE4390009FEC8 /* AirQualityModel.swift in Sources */,
+				C4AF92231F909111009B9E5B /* AQIInfoService.swift in Sources */,
+				2CFAF1641F797B9800C319EE /* AirQualityAPIModel.swift in Sources */,
+				2C1352571F6C2FC40077FDC9 /* HomePageAirQualitySC.swift in Sources */,
+				2C4D719A1F643A5400EC9210 /* AppDelegate.swift in Sources */,
+				2CF418FB1F6913F90034E266 /* AirKnowExpandTouchPointButton.swift in Sources */,
+				2C1352511F6C1C630077FDC9 /* AirQualityHistoryGraphView.swift in Sources */,
+				2C962F1F1F66739E0009FEC8 /* TabbarController.swift in Sources */,
+				2C962F531F6AE8790009FEC8 /* HomePageSCMonitorLocationCell.swift in Sources */,
+				2CF38C7D1F9C644F00C0E66D /* AirQualitySearchResultModel.swift in Sources */,
+				2C1352591F6C2FC40077FDC9 /* HomePageSC.swift in Sources */,
+				2C411F801F63AAAF006F0F47 /* HomePageViewController.swift in Sources */,
+				2C962F1B1F66734A0009FEC8 /* HomePageAirQualitySCCell.swift in Sources */,
+				2C4D718D1F642EB400EC9210 /* AirKnowMonitorLocationView.swift in Sources */,
+				2CF38C7B1F9C625200C0E66D /* LocationSearchService.swift in Sources */,
+				2C13525C1F6D48270077FDC9 /* HomePageAirQualitySCExpendCell.swift in Sources */,
+				2C962F241F66D2C00009FEC8 /* UITabbar+AirKnow.swift in Sources */,
+				2C411F4B1F60F1E7006F0F47 /* AirKnowConfig.swift in Sources */,
+				2CF38C7F1F9C7FB000C0E66D /* SearchResultSCCell.swift in Sources */,
+				C49FB1601F95E5B90063F1B6 /* AirKnowNODataView.swift in Sources */,
+				2CD8A5591F98FDBD0055E8B4 /* AirKnowSearchBar.swift in Sources */,
+				C49FB1561F95A5E50063F1B6 /* AirKnowLocationManager.swift in Sources */,
+				2C4D718A1F642E8000EC9210 /* AirQualityStatusModel.swift in Sources */,
+				375CF4AA1F6678C100CC2F1B /* AirQualityStatusView.swift in Sources */,
+				2C4D71991F643A5400EC9210 /* ViewConfiguration.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2C411F361F5F9B47006F0F47 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C411F371F5F9B47006F0F47 /* Base */,
+				F4DD82101FAD63F20030A395 /* zh-Hans */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2C411F3A1F5F9B47006F0F47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2C411F3B1F5F9B47006F0F47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2C411F3D1F5F9B47006F0F47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4F30F5B2DD3118CD6AF1121 /* Pods-AirKnow.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BV897Y9BD9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Spring",
+				);
+				INFOPLIST_FILE = AirKnow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenchaobang.xcf.AirKnow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		2C411F3E1F5F9B47006F0F47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D8B70FCC9BBECDF1C7C5776 /* Pods-AirKnow.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BV897Y9BD9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Spring",
+				);
+				INFOPLIST_FILE = AirKnow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenchaobang.xcf.AirKnow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C411F251F5F9B47006F0F47 /* Build configuration list for PBXProject "AirKnow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C411F3A1F5F9B47006F0F47 /* Debug */,
+				2C411F3B1F5F9B47006F0F47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C411F3C1F5F9B47006F0F47 /* Build configuration list for PBXNativeTarget "AirKnow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C411F3D1F5F9B47006F0F47 /* Debug */,
+				2C411F3E1F5F9B47006F0F47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C411F221F5F9B47006F0F47 /* Project object */;
+}

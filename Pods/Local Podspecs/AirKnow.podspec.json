@@ -1,0 +1,35 @@
+{
+  "name": "AirKnow",
+  "version": "0.0.1",
+  "license": "MIT",
+  "summary": "A air quality app.",
+  "homepage": "https://github.com/cbangchen/AirKnow",
+  "social_media_url": "https://github.com/cbangchen/AirKnow",
+  "authors": {
+    "cbangchen": "https://github.com/cbangchen"
+  },
+  "source": {
+    "git": "--",
+    "tag": "0.0.1",
+    "submodules": true
+  },
+  "requires_arc": true,
+  "vendored_frameworks": [
+    "Carthage/Build/iOS/AFNetworking.framework",
+    "Carthage/Build/iOS/AwesomeCache.framework",
+    "Carthage/Build/iOS/IGListKit.framework",
+    "Carthage/Build/iOS/SnapKit.framework",
+    "Carthage/Build/iOS/ScrollableGraphView.framework",
+    "Carthage/Build/iOS/SwiftyJSON.framework",
+    "Carthage/Build/iOS/SwifterSwift.framework",
+    "Carthage/Build/iOS/CHIPageControl.framework",
+    "Carthage/Build/iOS/SwiftTheme.framework"
+  ],
+  "frameworks": "Foundation",
+  "platforms": {
+    "osx": null,
+    "ios": null,
+    "tvos": null,
+    "watchos": null
+  }
+}

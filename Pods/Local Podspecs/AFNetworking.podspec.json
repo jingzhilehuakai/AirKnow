@@ -1,0 +1,26 @@
+{
+  "name": "AFNetworking",
+  "version": "3.1.0",
+  "license": "MIT",
+  "summary": "A delightful iOS and OS X networking framework.",
+  "homepage": "https://github.com/AFNetworking/AFNetworking",
+  "social_media_url": "https://twitter.com/AFNetworking",
+  "authors": {
+    "Mattt Thompson": "m@mattt.me"
+  },
+  "source": {
+    "git": "https://github.com/AFNetworking/AFNetworking.git",
+    "tag": "3.1.0",
+    "submodules": true
+  },
+  "requires_arc": true,
+  "public_header_files": "AFNetworking/AFNetworking.h",
+  "source_files": "AirKnow/Lib/AFNetworking/AFNetworking/*.{h,m}",
+  "prefix_header_contents": "#ifndef TARGET_OS_IOS\n  #define TARGET_OS_IOS TARGET_OS_IPHONE\n#endif\n\n#ifndef TARGET_OS_WATCH\n  #define TARGET_OS_WATCH 0\n#endif\n\n#ifndef TARGET_OS_TV\n  #define TARGET_OS_TV 0\n#endif",
+  "platforms": {
+    "ios": "7.0",
+    "osx": "10.9",
+    "watchos": "2.0",
+    "tvos": "9.0"
+  }
+}
