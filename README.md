@@ -3,7 +3,9 @@
 ### AirKnow: An air quality app
 
 When I first came to beijing, the most direct feeling about this city is "THE AIR, SUCKS". The thing is, even though I have already got myself prepared for this situation right before my arrival, but it still shocked me.   
+
 After then, I figure out that I could use some air data from several air quality monitors around this city, to decide whether I wear a mask or not at the very beginning of a day.   
+
 That's why this app was built, with simple and direct instructions.   
 
 ![-c800](https://ws3.sinaimg.cn/large/006tKfTcly1fl6dktkpcoj31420hb44u.jpg)
@@ -19,7 +21,7 @@ GPL-3.0
 
 --- 
 
-> YOU ARE WELCOMED TO JOIN US, By clicking this [button](https://github.com/AKTeam/AirKnow/pulls)
+> YOU ARE WELCOMED TO JOIN US, By clicking [here](https://github.com/AKTeam/AirKnow/pulls).
 
 
 
