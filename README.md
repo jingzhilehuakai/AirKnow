@@ -10,7 +10,7 @@ That's why this app was built, with simple and direct instructions.
 
 ![-c800](https://ws3.sinaimg.cn/large/006tKfTcly1fl6dktkpcoj31420hb44u.jpg)
 
-#### What Your Need To Build This Appw
+#### What Your Need To Build This App
 
 - Xcode 9.0/ AppCode 2017.2.6
 - Swift 3.0
@@ -21,7 +21,7 @@ GPL-3.0
 
 --- 
 
-> YOU ARE WELCOMED TO JOIN US, By clicking [here](https://github.com/AKTeam/AirKnow/pulls).
+> YOU ARE WELCOMED TO JOIN US, BY CLICKING [HERE](https://github.com/AKTeam/AirKnow/pulls).
 
 
 
