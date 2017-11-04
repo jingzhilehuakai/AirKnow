@@ -31,10 +31,14 @@ final class HomePageSCMonitorLocationCell: UICollectionViewCell, UIScrollViewDel
         
         if NSLocale.preferredLanguages.first == "zh-Hans-CN" {
             location.locationName.text = (modelInternal.namena != "" && modelInternal.namena != nil) ? modelInternal.namena : modelInternal.nameen
-            location.updateTime.text = modelInternal.utimecn ?? modelInternal.utime
+            if let validTime = modelInternal.utimecn {
+                location.updateTime.text = "上次更新时间 - " + validTime
+            }
         } else {
             location.locationName.text = modelInternal.nameen
-            location.updateTime.text = modelInternal.utime
+            if let validTime = modelInternal.utime {
+                location.updateTime.text = "Last updated on " + validTime
+            }
         }
     }
     

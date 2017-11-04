@@ -209,10 +209,7 @@ extension AirQualityStatusView {
     }
     
     fileprivate func drawProgressHighSectionView(statusColor: ThemeColorPicker) {
-        if (progressHighSectionView != nil) {
-            progressHighSectionView?.removeFromSuperview()
-        }
-        
+        progressHighSectionView?.superview != nil ? progressHighSectionView?.removeFromSuperview() : nil
         triangleIndicatorFrameX = progressView.x + CGFloat((targetModel!.level?.rawValue)!) * (AirKnowConfig.airKnowAQSProgressSectionWidth + AirKnowConfig.airKnowAQSProgressLineWidth)
         let highSectionViewFrameX: CGFloat = triangleIndicatorFrameX - AirKnowConfig.airKnowAQSProgressLineWidth - progressView.x
         let highSectionViewWidth: CGFloat = AirKnowConfig.airKnowAQSProgressSectionWidth + AirKnowConfig.airKnowAQSProgressLineWidth * 2

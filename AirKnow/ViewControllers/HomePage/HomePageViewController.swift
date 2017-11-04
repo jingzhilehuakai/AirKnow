@@ -106,9 +106,7 @@ class HomePageViewController: UIViewController {
             
             if operationStr == "Update" {
                 if dataArr.count == pageControl?.numberOfPages {
-                    adapter.reloadData(completion: { (bool) in
-                        self.collectionView.reloadData()
-                    })
+                    adapter.reloadData(completion: nil)
                 }
             }
         }

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Cache
 
 let cacheName = "AirKnowAPIModelsCache"
 let cityModelsKey = "cityModelsKey"
@@ -16,30 +15,21 @@ class AirKnowLocationManager: NSObject {
     static let sharedInstance = AirKnowLocationManager()
     
     var cityModels: Array<AirQualityAPIModel>?
-    var storage: Storage!
-    
-    override init() {
-        super.init()
-        
-        let diskConfig = DiskConfig(name: cacheName)
-        let memoryConfig = MemoryConfig(expiry: .never, countLimit: 10, totalCostLimit: 10)
-        storage = try? Storage(diskConfig: diskConfig, memoryConfig: memoryConfig)
-    }
     
     func addNewLocation(searchResultModel rm: AirQualitySearchResultModel, completetion: @escaping (String?)->()) {
 
         var currenCityModels = self.getAllCityModels()
         
-//        for (index, item)  in currenCityModels!.enumerated() {
-//            if let nearest = item.nearest, let nearestF: AirQualityNearestAPIModel = nearest.first, let curMId = nearestF.locationId, let rmId = rm.uid {
-//                if rmId == curMId {
-//                    self.updateLocation(at: index, completetion: {
-//                        completetion(nil)
-//                    })
-//                    return
-//                }
-//            }
-//        }
+        for (index, item)  in currenCityModels!.enumerated() {
+            if let nearest = item.nearest, let nearestF: AirQualityNearestAPIModel = nearest.first, let curMId = nearestF.locationId, let rmId = rm.uid {
+                if rmId == curMId {
+                    self.updateLocation(at: index, completetion: {
+                        completetion(nil)
+                    })
+                    return
+                }
+            }
+        }
 
         if let rmUid = rm.uid {
             AQIInfoService.goGet(rmUid, completetion: { (apiModel, error) in
@@ -52,7 +42,9 @@ class AirKnowLocationManager: NSObject {
                 })
             })
         } else {
-            completetion("model data error")
+            DispatchQueue.main.async(execute: {
+                completetion("model data error")
+            })
         }
     }
     
@@ -92,7 +84,7 @@ class AirKnowLocationManager: NSObject {
         }
         
         cityModels = Array<AirQualityAPIModel>()
-        if let jsonStirngArray: Array = try? storage.object(ofType: Array<String>.self, forKey: cityModelsKey) {
+        if let jsonStirngArray: Array = UserDefaults.standard.value(forKey: cityModelsKey) as? Array<String> {
             for jsonStirng in jsonStirngArray {
                 if let model: AirQualityAPIModel = AirQualityAPIModel.deserialize(from: jsonStirng) {
                     model.jsonString = jsonStirng
@@ -101,7 +93,6 @@ class AirKnowLocationManager: NSObject {
             }
             return cityModels
         }
-        
         return []
     }
     
@@ -118,7 +109,7 @@ class AirKnowLocationManager: NSObject {
             }
         }
         
-        try? storage.removeObject(forKey: cityModelsKey)
-        try? storage.setObject(jsonStringArray, forKey: cityModelsKey)
+        UserDefaults.standard.removeObject(forKey: cityModelsKey)
+        UserDefaults.standard.setValue(jsonStringArray, forKey: cityModelsKey)
     }
 }

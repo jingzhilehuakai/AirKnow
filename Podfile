@@ -8,7 +8,6 @@ use_frameworks!
 def startPodInstaller
 	# pod 'AirKnow', :path => './'
 
-    pod 'Cache'
     pod 'IGListKit', '~> 3.0'
 	pod 'SnapKit'
 	pod 'ScrollableGraphView'

@@ -125,7 +125,7 @@ final class AirKnowConfig {
     //MARK: ML UpdateTime Lable
     static let MLUpdateTimeTopPadding: CGFloat = AirKnowConfig.ajustLength(6.5)
     static let MLUpdateTimeFont: UIFont = UIFont.init(name: "EuphemiaUCAS", size:AirKnowConfig.ajustLength(14.0))!
-    static let MLUpdateTimeWidth: CGFloat = AirKnowConfig.ajustLength(150.0)
+    static let MLUpdateTimeWidth: CGFloat = AirKnowConfig.ajustLength(300)
     static let MLUpdateTimeStyles: ThemeColorPicker = ["#4A4A4A", "#4A4A4A"]
 
     //MARK: Homepage CollectionView

@@ -1,7 +1,5 @@
 PODS:
   - AFNetworking (3.1.0)
-  - Cache (4.0.2):
-    - SwiftHash (~> 2.0.0)
   - CHIPageControl (0.1.3):
     - CHIPageControl/Aji (= 0.1.3)
     - CHIPageControl/Aleppo (= 0.1.3)
@@ -31,7 +29,6 @@ PODS:
   - SnapKit (3.2.0)
   - Spring (1.0.3)
   - SwifterSwift (1.6.4)
-  - SwiftHash (2.0.0)
   - SwiftTheme (0.3.3)
   - TTGTagCollectionView (1.6.1)
   - YTKNetwork (2.0.4):
@@ -39,7 +36,6 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (from `./`)
-  - Cache
   - CHIPageControl
   - HandyJSON
   - IGListKit (~> 3.0)
@@ -67,7 +63,6 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: 7b29f3474d026f3e40d17b9471e463a2d8223487
-  Cache: 363b6899cee63c82ccbd291e64a6c202abc17a88
   CHIPageControl: 2d3a0edacd7e3bc113bc88cbf187ba8f0b045548
   HandyJSON: 54b6ce942795f7b2e61b82fe73cf25d9f139d125
   IGListKit: 9eab6856a15fa25ad72018ff9d9eb2178c240fff
@@ -77,11 +72,10 @@ SPEC CHECKSUMS:
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwifterSwift: 92c73c47c3cbf7d5f788adf6459bf07b5d23d3fb
-  SwiftHash: d2e09b13495447178cdfb8e46e54a5c46f15f5a9
   SwiftTheme: 85f84747a48749b5b3df7c3e96fc0b1d45677d30
   TTGTagCollectionView: 828087136810b786ce8c30c89acf3877cccb0383
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
 
-PODFILE CHECKSUM: bca7d15eebdc2885174ef865fa0cdf302b8e0bb6
+PODFILE CHECKSUM: 71068954f3b6adb6b2ae2aa0cc47a0fad8665b71
 
 COCOAPODS: 1.3.1

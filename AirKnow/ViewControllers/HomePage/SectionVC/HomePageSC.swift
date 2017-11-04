@@ -59,8 +59,8 @@ extension HomePageSC: UIScrollViewDelegate {
             alpha = alpha <= 0 ? 0 : alpha >= 1 ? 1 : alpha
             let superView = scrollView.superview?.superview
             if superView is HomePageSCMonitorLocationCell {
-                let cell: HomePageSCMonitorLocationCell = superView as! HomePageSCMonitorLocationCell
-                cell.location.setAlpppha(alpha)
+//                let cell: HomePageSCMonitorLocationCell = superView as! HomePageSCMonitorLocationCell
+//                cell.location.setAlpppha(alpha)
             }
         }
     }
